@@ -3,7 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import random
 import json
 import uuid
-from typing import Dict, Any, Optional
+import pathlib
+import asyncio
+from typing import Dict, Any, Optional, List
 
 app = FastAPI(title="WebSocket Game Backend")
 
@@ -15,28 +17,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Load questions from questions.json
+QUESTIONS_FILE = pathlib.Path(__file__).parent / "questions.json"
+def load_questions() -> List[Dict[str, Any]]:
+    if QUESTIONS_FILE.exists():
+        with open(QUESTIONS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return [
+        {
+            "id": 1,
+            "text": "{target_name} 最喜歡吃哪種宵夜？",
+            "option_a": "炸雞與波霸奶茶",
+            "option_b": "健康水果與優格"
+        }
+    ]
+
+questions_db = load_questions()
+
 # In-memory data store
-# rooms = {
-#     "839210": {
-#         "code": "839210",
-#         "host_id": "player_id",
-#         "status": "waiting" | "playing",
-#         "target_user_id": Optional[str],
-#         "question_index": int,
-#         "players": {
-#             "player_id": {
-#                 "id": str,
-#                 "name": str,
-#                 "is_host": bool,
-#                 "avatar": str,
-#                 "websocket": WebSocket
-#             }
-#         },
-#         "answers": {
-#             "player_id": "choice"
-#         }
-#     }
-# }
 rooms: Dict[str, Dict[str, Any]] = {}
 
 def generate_room_code() -> str:
@@ -57,16 +55,36 @@ def get_room_state(room_code: str) -> Optional[Dict[str, Any]]:
             "id": p_info["id"],
             "name": p_info["name"],
             "is_host": p_info["is_host"],
-            "avatar": p_info["avatar"]
+            "avatar": p_info["avatar"],
+            "score": room["scores"].get(p_id, 0)
         })
+
+    current_q = None
+    if room["status"] in ["playing", "question_result"] and room["questions"]:
+        idx = room["question_index"]
+        if idx < len(room["questions"]):
+            raw_q = room["questions"][idx]
+            target_p = room["players"].get(room["target_user_id"], {})
+            target_name = target_p.get("name", "目標人物")
+            current_q = {
+                "id": raw_q["id"],
+                "text": raw_q["text"].replace("{target_name}", target_name),
+                "option_a": raw_q["option_a"],
+                "option_b": raw_q["option_b"],
+                "total_questions": len(room["questions"]),
+                "current_index": idx + 1
+            }
+
     return {
         "code": room["code"],
         "host_id": room["host_id"],
         "status": room["status"],
         "target_user_id": room["target_user_id"],
         "question_index": room["question_index"],
+        "current_question": current_q,
         "players": players_list,
-        "answers": room["answers"]
+        "answers": room["answers"],
+        "scores": room["scores"]
     }
 
 async def broadcast_to_room(room_code: str, message: Dict[str, Any]):
@@ -80,6 +98,81 @@ async def broadcast_to_room(room_code: str, message: Dict[str, Any]):
             await ws.send_text(json.dumps(message))
         except Exception:
             pass
+
+async def evaluate_and_advance_question(room_code: str):
+    """Evaluate current question answers when all connected players answered."""
+    if room_code not in rooms:
+        return
+    room = rooms[room_code]
+    target_id = room["target_user_id"]
+    target_answer = room["answers"].get(target_id)
+
+    # Determine correct answer from target user's choice
+    correct_choice = target_answer
+
+    results = []
+    for p_id in room["players"]:
+        p_ans = room["answers"].get(p_id)
+        is_correct = (p_ans == correct_choice) if correct_choice else False
+        if is_correct:
+            room["scores"][p_id] = room["scores"].get(p_id, 0) + 1
+        results.append({
+            "player_id": p_id,
+            "player_name": room["players"][p_id]["name"],
+            "answer": p_ans,
+            "is_correct": is_correct
+        })
+
+    room["status"] = "question_result"
+
+    # Broadcast single question result
+    await broadcast_to_room(room_code, {
+        "type": "QUESTION_RESULT",
+        "correct_choice": correct_choice,
+        "target_user_id": target_id,
+        "target_user_name": room["players"].get(target_id, {}).get("name", "目標人物"),
+        "results": results,
+        "room_state": get_room_state(room_code)
+    })
+
+    # Wait 3.5 seconds so players can comfortably view the round result
+    await asyncio.sleep(3.5)
+
+    if room_code not in rooms:
+        return
+
+    # Advance to next question or end game
+    room["question_index"] += 1
+    room["answers"] = {}
+
+    if room["question_index"] >= len(room["questions"]):
+        # Game Over
+        room["status"] = "game_over"
+        leaderboard = sorted(
+            [
+                {
+                    "player_id": p_id,
+                    "name": p_info["name"],
+                    "avatar": p_info["avatar"],
+                    "score": room["scores"].get(p_id, 0)
+                }
+                for p_id, p_info in room["players"].items()
+            ],
+            key=lambda x: x["score"],
+            reverse=True
+        )
+        await broadcast_to_room(room_code, {
+            "type": "GAME_OVER",
+            "leaderboard": leaderboard,
+            "room_state": get_room_state(room_code)
+        })
+    else:
+        # Next Question
+        room["status"] = "playing"
+        await broadcast_to_room(room_code, {
+            "type": "QUESTION_START",
+            "room_state": get_room_state(room_code)
+        })
 
 @app.get("/")
 def read_root():
@@ -109,13 +202,16 @@ async def websocket_endpoint(websocket: WebSocket):
                 avatar = data.get("avatar", "👑")
                 player_id = str(uuid.uuid4())[:8]
 
-                room_code = generate_room_code()
+                requested_code = str(data.get("room_code", "")).strip()
+                room_code = requested_code if requested_code else generate_room_code()
+
                 rooms[room_code] = {
                     "code": room_code,
                     "host_id": player_id,
                     "status": "waiting",
                     "target_user_id": None,
                     "question_index": 0,
+                    "questions": [],
                     "players": {
                         player_id: {
                             "id": player_id,
@@ -125,13 +221,13 @@ async def websocket_endpoint(websocket: WebSocket):
                             "websocket": websocket
                         }
                     },
-                    "answers": {}
+                    "answers": {},
+                    "scores": {player_id: 0}
                 }
 
                 current_player_id = player_id
                 current_room_code = room_code
 
-                # Send success response to creator
                 await websocket.send_text(json.dumps({
                     "type": "ROOM_CREATED",
                     "room_code": room_code,
@@ -162,6 +258,7 @@ async def websocket_endpoint(websocket: WebSocket):
                     "avatar": avatar,
                     "websocket": websocket
                 }
+                room["scores"][player_id] = 0
 
                 current_player_id = player_id
                 current_room_code = room_code
@@ -173,7 +270,6 @@ async def websocket_endpoint(websocket: WebSocket):
                     "room_state": get_room_state(room_code)
                 }))
 
-                # Broadcast to other players in room
                 await broadcast_to_room(room_code, {
                     "type": "PLAYER_JOINED",
                     "player_id": player_id,
@@ -221,10 +317,13 @@ async def websocket_endpoint(websocket: WebSocket):
 
                 room["status"] = "playing"
                 room["question_index"] = 0
+                room["questions"] = questions_db
                 room["answers"] = {}
+                for p_id in room["players"]:
+                    room["scores"][p_id] = 0
 
                 await broadcast_to_room(current_room_code, {
-                    "type": "GAME_STARTED",
+                    "type": "QUESTION_START",
                     "room_state": get_room_state(current_room_code)
                 })
 
@@ -236,10 +335,10 @@ async def websocket_endpoint(websocket: WebSocket):
 
                 room = rooms[current_room_code]
                 if room["status"] != "playing":
-                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "遊戲尚未開始，無法提交答案"}))
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "遊戲尚未開始或處於結算狀態"}))
                     continue
 
-                choice = data.get("choice") # e.g. "A" or "B"
+                choice = data.get("choice")  # "A" or "B"
                 if choice not in ["A", "B"]:
                     await websocket.send_text(json.dumps({"type": "ERROR", "message": "答案選項格式不符 (需為 A 或 B)"}))
                     continue
@@ -253,6 +352,10 @@ async def websocket_endpoint(websocket: WebSocket):
                     "room_state": get_room_state(current_room_code)
                 })
 
+                # If all connected players submitted their answer, evaluate question
+                if len(room["answers"]) >= len(room["players"]):
+                    await evaluate_and_advance_question(current_room_code)
+
             else:
                 await websocket.send_text(json.dumps({"type": "ERROR", "message": f"未知的事件類型: {event_type}"}))
 
@@ -262,8 +365,9 @@ async def websocket_endpoint(websocket: WebSocket):
             if current_player_id in room["players"]:
                 leaving_player_name = room["players"][current_player_id]["name"]
                 del room["players"][current_player_id]
+                room["scores"].pop(current_player_id, None)
+                room["answers"].pop(current_player_id, None)
 
-                # If host left, assign new host or delete room if empty
                 if len(room["players"]) == 0:
                     del rooms[current_room_code]
                 else:
@@ -281,3 +385,7 @@ async def websocket_endpoint(websocket: WebSocket):
                         "player_name": leaving_player_name,
                         "room_state": get_room_state(current_room_code)
                     })
+
+                    # Check if all remaining players submitted answer
+                    if room["status"] == "playing" and len(room["answers"]) >= len(room["players"]) and len(room["players"]) > 0:
+                        await evaluate_and_advance_question(current_room_code)

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "text": "{target_name} 最喜歡吃哪種宵夜？",
+    "option_a": "炸雞與波霸奶茶",
+    "option_b": "健康水果與優格"
+  },
+  {
+    "id": 2,
+    "text": "{target_name} 假日更傾向哪種休閒活動？",
+    "option_a": "在家追劇打電動",
+    "option_b": "戶外登山與露營"
+  },
+  {
+    "id": 3,
+    "text": "{target_name} 遇到極度尷尬的情況時會？",
+    "option_a": "假裝鎮定冷靜應對",
+    "option_b": "尷尬笑笑迅速逃離現場"
+  },
+  {
+    "id": 4,
+    "text": "如果暴富，{target_name} 第一件事想做什麼？",
+    "option_a": "環遊世界開派對",
+    "option_b": "買豪宅投資躺平"
+  }
+]

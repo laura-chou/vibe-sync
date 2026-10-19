@@ -1,7 +1,7 @@
 import pytest
 import json
 from fastapi.testclient import TestClient
-from backend.main import app, generate_room_code, rooms
+from main import app, generate_room_code, rooms
 
 @pytest.fixture(autouse=True)
 def clear_rooms():
@@ -76,8 +76,6 @@ def test_websocket_full_game_flow():
         # Step 2: Join room
         player_ws.send_json({"type": "JOIN_ROOM", "room_code": room_code, "player_name": "Bob"})
 
-        # When player joins, broadcast PLAYER_JOINED is sent to everyone in room.
-        # So player_ws receives ROOM_JOINED first, then PLAYER_JOINED broadcast.
         player_joined = player_ws.receive_json() # ROOM_JOINED
         player_id = player_joined["player_id"]
 
@@ -101,13 +99,24 @@ def test_websocket_full_game_flow():
         host_ws.send_json({"type": "START_GAME"})
         start_host = host_ws.receive_json()
         start_player = player_ws.receive_json()
-        assert start_host["type"] == "GAME_STARTED"
+        assert start_host["type"] == "QUESTION_START"
         assert start_host["room_state"]["status"] == "playing"
+        assert start_host["room_state"]["current_question"] is not None
 
-        # Step 5: Submit answers
+        # Step 5: Submit answers (both host and player submit)
         player_ws.send_json({"type": "SUBMIT_ANSWER", "choice": "A"})
         ans_player_ws = player_ws.receive_json()
         ans_host_ws = host_ws.receive_json()
         assert ans_player_ws["type"] == "ANSWER_SUBMITTED"
         assert ans_player_ws["choice"] == "A"
-        assert ans_player_ws["room_state"]["answers"][player_id] == "A"
+
+        # Host submits answer as target user
+        host_ws.send_json({"type": "SUBMIT_ANSWER", "choice": "A"})
+        _host_sub = host_ws.receive_json()
+        _player_sub = player_ws.receive_json()
+
+        # Both answered -> QUESTION_RESULT received
+        q_res_host = host_ws.receive_json()
+        q_res_player = player_ws.receive_json()
+        assert q_res_host["type"] == "QUESTION_RESULT"
+        assert q_res_host["correct_choice"] == "A"
