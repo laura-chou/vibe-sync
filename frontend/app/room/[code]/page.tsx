@@ -583,9 +583,6 @@ function RoomLobbyContent({
       {roomState?.status === "question_result" && lastQuestionResult && (
         <div className="space-y-5 animate-fadeIn">
           <div className="bg-slate-950 p-5 rounded-2xl border border-amber-500/30 text-center space-y-3">
-            <div className="text-xs font-bold text-amber-400 uppercase">
-              本題結算公佈
-            </div>
             <h3 className="text-base font-bold text-slate-200">
               目標頻率{" "}
               <span className="text-amber-400">
@@ -593,8 +590,16 @@ function RoomLobbyContent({
               </span>{" "}
               選擇的正解為：
             </h3>
-            <div className="inline-block bg-gradient-to-r from-amber-500/20 to-indigo-500/20 border border-amber-500/40 px-6 py-3 rounded-xl text-xl font-extrabold text-amber-300">
-              選項 {lastQuestionResult.correct_choice}
+            <div className="inline-block bg-gradient-to-r from-amber-500/20 to-indigo-500/20 border border-amber-500/40 px-6 py-3 rounded-xl text-lg sm:text-xl font-extrabold text-amber-300">
+              {lastQuestionResult.correct_option_text ||
+                (lastQuestionResult.correct_choice === "A"
+                  ? roomState?.current_question?.option_a
+                  : lastQuestionResult.correct_choice === "B"
+                  ? roomState?.current_question?.option_b
+                  : lastQuestionResult.correct_choice === "C"
+                  ? roomState?.current_question?.option_c
+                  : "") ||
+                `選項 ${lastQuestionResult.correct_choice || "未選擇"}`}
             </div>
           </div>
 

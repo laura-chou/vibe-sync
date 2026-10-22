@@ -112,6 +112,17 @@ async def evaluate_and_advance_question(room_code: str):
     # Determine correct answer from target user's choice
     correct_choice = target_answer
 
+    current_q_idx = room["question_index"]
+    correct_option_text = ""
+    if current_q_idx < len(room["questions"]) and correct_choice:
+        q_info = room["questions"][current_q_idx]
+        if correct_choice == "A":
+            correct_option_text = q_info.get("option_a", "")
+        elif correct_choice == "B":
+            correct_option_text = q_info.get("option_b", "")
+        elif correct_choice == "C":
+            correct_option_text = q_info.get("option_c", "")
+
     results = []
     for p_id in room["players"]:
         p_ans = room["answers"].get(p_id)
@@ -136,8 +147,9 @@ async def evaluate_and_advance_question(room_code: str):
     await broadcast_to_room(room_code, {
         "type": "QUESTION_RESULT",
         "correct_choice": correct_choice,
+        "correct_option_text": correct_option_text,
         "target_user_id": target_id,
-        "target_user_name": room["players"].get(target_id, {}).get("name", "目標人物"),
+        "target_user_name": room["players"].get(target_id, {}).get("name", "目標頻率"),
         "results": results,
         "room_state": get_room_state(room_code)
     })

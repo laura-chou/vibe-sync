@@ -47,7 +47,7 @@ export default function Home() {
         {/* Header */}
         <div className="text-center space-y-2 flex flex-col items-center">
           <img
-            src="/icon.png"
+            src="/android-chrome-192x192.png"
             alt="頻率同步中 Vibe Sync"
             className="w-16 h-16 rounded-2xl mb-2 object-cover border border-indigo-500/30 shadow-lg"
           />
