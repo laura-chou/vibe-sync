@@ -54,6 +54,7 @@ function RoomLobbyContent({
 
   // WebSocket & State
   const [isConnected, setIsConnected] = useState(false);
+  const [hasConnected, setHasConnected] = useState(false);
   const [playerId, setPlayerId] = useState<string | null>(null);
   const [roomState, setRoomState] = useState<RoomState | null>(null);
   const [lastQuestionResult, setLastQuestionResult] = useState<any>(null);
@@ -72,6 +73,7 @@ function RoomLobbyContent({
 
     ws.onopen = () => {
       setIsConnected(true);
+      setHasConnected(true);
       setErrorMsg(null);
 
       if (isHostParam) {
@@ -251,6 +253,25 @@ function RoomLobbyContent({
 
   return (
     <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-5 sm:p-8 space-y-6">
+      {/* Full-Screen Disconnect Overlay Modal */}
+      {hasConnected && !isConnected && (
+        <div className="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-sm w-full text-center space-y-4">
+            <div className="text-4xl animate-bounce">⚠️</div>
+            <h2 className="text-lg font-bold text-slate-100">連線已中斷</h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              與伺服器連線已中斷，請重新加入房間。
+            </p>
+            <button
+              onClick={() => router.push("/")}
+              className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg transition-all text-sm"
+            >
+              返回首頁
+            </button>
+          </div>
+        </div>
+      )}
+
       {errorMsg && (
         <div className="bg-rose-500/10 border border-rose-500/30 text-rose-300 p-3 rounded-xl text-xs text-center font-medium">
           ⚠️ {errorMsg}
