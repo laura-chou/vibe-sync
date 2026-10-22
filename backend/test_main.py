@@ -128,3 +128,35 @@ def test_websocket_full_game_flow():
         room_state = q_res_host["room_state"]
         assert room_state["scores"][host_id] == 1
         assert room_state["scores"][player_id] == 0
+
+def test_room_max_players_limit():
+    client = TestClient(app)
+    with client.websocket_connect("/ws") as host_ws:
+        host_ws.send_json({"type": "CREATE_ROOM", "player_name": "Host"})
+        host_res = host_ws.receive_json()
+        room_code = host_res["room_code"]
+
+        # Directly populate room with 10 players total (1 host + 9 dummy players)
+        room = rooms[room_code]
+        for i in range(9):
+            p_id = f"p_{i}"
+            room["players"][p_id] = {
+                "id": p_id,
+                "name": f"Player {i}",
+                "is_host": False,
+                "avatar": "🦊",
+                "websocket": None
+            }
+
+        assert len(room["players"]) == 10
+
+        # Attempt to join 11th player
+        with client.websocket_connect("/ws") as extra_ws:
+            extra_ws.send_json({
+                "type": "JOIN_ROOM",
+                "room_code": room_code,
+                "player_name": "Extra Player"
+            })
+            res = extra_ws.receive_json()
+            assert res["type"] == "ERROR"
+            assert res["message"] == "房間人數已達 10 人上限"

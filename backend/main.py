@@ -268,6 +268,13 @@ async def websocket_endpoint(websocket: WebSocket):
                     continue
 
                 room = rooms[room_code]
+                if len(room["players"]) >= 10:
+                    await websocket.send_text(json.dumps({
+                        "type": "ERROR",
+                        "message": "房間人數已達 10 人上限"
+                    }))
+                    continue
+
                 player_id = str(uuid.uuid4())[:8]
 
                 room["players"][player_id] = {

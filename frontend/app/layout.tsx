@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "頻率同步中 Vibe Sync",
   description: "雙人/多人即時線上對戰與猜謎大廳",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

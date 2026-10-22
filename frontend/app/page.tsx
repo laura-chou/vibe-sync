@@ -11,25 +11,28 @@ export default function Home() {
   const [relationship, setRelationship] = useState("friends"); // 'friends' | 'new_friends' | 'family'
   const [error, setError] = useState("");
 
+  const trimmedName = playerName.trim();
+  const isNameValid = trimmedName.length > 0;
+
   // Generate 6-digit room code
   const handleCreateRoom = () => {
+    if (!isNameValid) return;
     const code = Math.floor(100000 + Math.random() * 900000).toString();
-    const name = playerName.trim() || "房主玩家";
     router.push(
       `/room/${code}?isHost=true&name=${encodeURIComponent(
-        name
+        trimmedName
       )}&relationship=${encodeURIComponent(relationship)}`
     );
   };
 
   const handleJoinRoom = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isNameValid) return;
     if (roomCode.length !== 6 || !/^\d{6}$/.test(roomCode)) {
       setError("請輸入正確的 6 位數字房號");
       return;
     }
-    const name = playerName.trim() || "玩家 " + Math.floor(100 + Math.random() * 900);
-    router.push(`/room/${roomCode}?name=${encodeURIComponent(name)}`);
+    router.push(`/room/${roomCode}?name=${encodeURIComponent(trimmedName)}`);
   };
 
   return (
@@ -45,24 +48,29 @@ export default function Home() {
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             頻率同步中 Vibe Sync
           </h1>
-          <p className="text-xs sm:text-sm text-slate-400">
-            雙人/多人即時線上對戰與猜謎大廳
-          </p>
         </div>
 
         {/* Player Name Input */}
         <div className="space-y-1.5">
           <label className="block text-xs font-semibold text-slate-300">
-            玩家暱稱
+            玩家暱稱 <span className="text-rose-400">*</span>
           </label>
           <input
             type="text"
             value={playerName}
-            onChange={(e) => setPlayerName(e.target.value)}
-            placeholder="請輸入暱稱（預設隨機名稱）"
+            onChange={(e) => {
+              setPlayerName(e.target.value);
+              setError("");
+            }}
+            placeholder="請輸入暱稱"
             maxLength={12}
             className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition-colors"
           />
+          {!isNameValid && (
+            <p className="text-[11px] text-amber-400/90 font-medium">
+              請先輸入玩家暱稱才能進行遊戲
+            </p>
+          )}
         </div>
 
         {!showJoinInput && (
@@ -118,7 +126,8 @@ export default function Home() {
           <div className="space-y-3.5">
             <button
               onClick={handleCreateRoom}
-              className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-600/20 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2"
+              disabled={!isNameValid}
+              className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:from-indigo-600 disabled:hover:to-indigo-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-600/20 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2"
             >
               <span>🏠</span>
               <span>創建房間</span>
@@ -126,10 +135,12 @@ export default function Home() {
 
             <button
               onClick={() => {
+                if (!isNameValid) return;
                 setShowJoinInput(true);
                 setError("");
               }}
-              className="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-3.5 px-6 rounded-xl border border-slate-700 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2"
+              disabled={!isNameValid}
+              className="w-full bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-800 text-slate-200 font-bold py-3.5 px-6 rounded-xl border border-slate-700 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2"
             >
               <span>🚪</span>
               <span>加入房間</span>
@@ -175,20 +186,13 @@ export default function Home() {
 
             <button
               type="submit"
-              disabled={roomCode.length !== 6}
+              disabled={!isNameValid || roomCode.length !== 6}
               className="w-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all transform active:scale-[0.99]"
             >
               進入房間
             </button>
           </form>
         )}
-
-        {/* Footer info */}
-        <div className="text-center pt-2">
-          <p className="text-xs text-slate-500">
-            支援手機與電腦版對戰 • 即時互動體驗
-          </p>
-        </div>
       </div>
     </main>
   );

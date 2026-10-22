@@ -57,7 +57,6 @@ function RoomLobbyContent({
   const [lastQuestionResult, setLastQuestionResult] = useState<any>(null);
   const [leaderboard, setLeaderboard] = useState<any[]>([]);
   const [copied, setCopied] = useState(false);
-  const [copiedShareText, setCopiedShareText] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -179,7 +178,7 @@ function RoomLobbyContent({
     );
   };
 
-  // Image Download & Share Functions
+  // Image Download Function
   const handleDownloadCard = async () => {
     if (!cardRef.current) return;
     try {
@@ -195,36 +194,6 @@ function RoomLobbyContent({
     } finally {
       setIsDownloading(false);
     }
-  };
-
-  const handleShareResult = async () => {
-    const myPlayer = roomState?.players.find((p) => p.id === playerId);
-    const targetP = roomState?.players.find(
-      (p) => p.id === roomState.target_user_id
-    );
-    const totalQ = roomState?.current_question?.total_questions || 4;
-    const myScore = myPlayer?.score || 0;
-    const rel = roomState?.relationship || "friends";
-    const evalData = evaluateChemistry(myScore, totalQ, rel);
-
-    const shareText = `📡【頻率同步中 Vibe Sync】頻率同步結果公佈！\n我在對【${targetP?.name || "目標人物"}】的默契拷問中獲得了 ${evalData.percentage}% 的同步率！\n🏅 獲得稱號：${evalData.badge} ${evalData.title}\n💬 評語：“${evalData.comment}”\n\n快來測測看你跟【${targetP?.name || "目標人物"}】的腦波有沒有在同個頻道上！`;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "頻率同步結果",
-          text: shareText,
-          url: window.location.href,
-        });
-        return;
-      } catch (e) {
-        // Fallback to text copy
-      }
-    }
-
-    navigator.clipboard.writeText(shareText);
-    setCopiedShareText(true);
-    setTimeout(() => setCopiedShareText(false), 2000);
   };
 
   const isHost = roomState ? roomState.host_id === playerId : isHostParam;
@@ -248,19 +217,9 @@ function RoomLobbyContent({
 
   return (
     <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-5 sm:p-8 space-y-6">
-      {/* Status & Connection Bar */}
-      <div className="bg-slate-950/80 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs">
-        <div className="flex items-center gap-2">
-          <span
-            className={`w-2.5 h-2.5 rounded-full ${
-              isConnected ? "bg-emerald-500 animate-pulse" : "bg-rose-500"
-            }`}
-          />
-          <span className="text-slate-300 font-medium">
-            {isConnected ? "即時 WebSocket 已連線" : "未連線 / 連線中..."}
-          </span>
-        </div>
-        <span className="text-slate-400">
+      {/* Role Badge Centered at Top */}
+      <div className="text-center text-xs font-semibold text-slate-400">
+        <span className="bg-slate-950 px-4 py-1.5 rounded-full border border-slate-800 inline-block shadow-sm">
           身份:{" "}
           <strong className="text-indigo-400">
             {isHost ? "👑 房主" : "🎮 玩家"}
@@ -274,58 +233,60 @@ function RoomLobbyContent({
         </div>
       )}
 
-      {/* Room Header */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400 uppercase font-semibold">
-              房間號碼
-            </span>
-            <span
-              className={`text-[10px] px-2 py-0.5 rounded-full font-bold border ${
-                roomState?.status === "playing"
-                  ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                  : "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-              }`}
-            >
-              {roomState?.status === "playing" ? "遊戲作答中" : "大廳狀態"}
-            </span>
-            {currentRelationship === "friends" && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-                🍻 好友
+      {/* Room Header - Hidden in game_over state */}
+      {roomState?.status !== "game_over" && (
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-slate-400 uppercase font-semibold">
+                房間號碼
               </span>
-            )}
-            {currentRelationship === "new_friends" && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20">
-                🆕 新朋友
+              <span
+                className={`text-[10px] px-2 py-0.5 rounded-full font-bold border ${
+                  roomState?.status === "playing"
+                    ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                    : "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                }`}
+              >
+                {roomState?.status === "playing" ? "遊戲作答中" : "大廳狀態"}
               </span>
-            )}
-            {currentRelationship === "family" && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
-                ❤️ 家人
-              </span>
-            )}
+              {currentRelationship === "friends" && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                  🍻 好友
+                </span>
+              )}
+              {currentRelationship === "new_friends" && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20">
+                  🆕 新朋友
+                </span>
+              )}
+              {currentRelationship === "family" && (
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                  ❤️ 家人
+                </span>
+              )}
+            </div>
+            <div className="text-3xl font-mono font-extrabold text-indigo-400 tracking-widest mt-0.5">
+              {roomCode}
+            </div>
           </div>
-          <div className="text-3xl font-mono font-extrabold text-indigo-400 tracking-widest mt-0.5">
-            {roomCode}
-          </div>
-        </div>
 
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <button
-            onClick={handleCopyCode}
-            className="flex-1 sm:flex-none bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-4 py-2.5 rounded-lg border border-slate-700 transition-colors flex items-center justify-center gap-1.5"
-          >
-            <span>{copied ? "✓ 已複製" : "📋 複製房號"}</span>
-          </button>
-          <button
-            onClick={() => router.push("/")}
-            className="flex-1 sm:flex-none bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 text-xs font-semibold px-4 py-2.5 rounded-lg border border-rose-800/40 transition-colors flex items-center justify-center gap-1.5"
-          >
-            <span>離開</span>
-          </button>
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <button
+              onClick={handleCopyCode}
+              className="flex-1 sm:flex-none bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-4 py-2.5 rounded-lg border border-slate-700 transition-colors flex items-center justify-center gap-1.5"
+            >
+              <span>{copied ? "✓ 已複製" : "📋 複製房號"}</span>
+            </button>
+            <button
+              onClick={() => router.push("/")}
+              className="flex-1 sm:flex-none bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 text-xs font-semibold px-4 py-2.5 rounded-lg border border-rose-800/40 transition-colors flex items-center justify-center gap-1.5"
+            >
+              <span>離開</span>
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* STATE 1: LOBBY WAITING */}
       {roomState?.status === "waiting" && (
@@ -609,8 +570,8 @@ function RoomLobbyContent({
               {/* Leaderboard for Target User */}
               <div className="space-y-3 text-left">
                 <h4 className="text-xs font-bold text-amber-400 flex items-center gap-1.5">
-                  <span>🏆</span>
-                  <span>最了解你的親友排行榜</span>
+                  <span>📊</span>
+                  <span>排行榜</span>
                 </h4>
                 <div className="space-y-2">
                   {leaderboard
@@ -667,7 +628,7 @@ function RoomLobbyContent({
               {/* Header Badge */}
               <div className="flex justify-between items-center text-xs text-indigo-400 border-b border-indigo-500/20 pb-3">
                 <span className="font-extrabold tracking-wider uppercase">
-                  📡 頻率同步結果卡片
+                  📡 頻率同步結果
                 </span>
                 <span className="font-mono">房號 #{roomCode}</span>
               </div>
@@ -676,9 +637,9 @@ function RoomLobbyContent({
               <div className="space-y-2 py-2">
                 <div className="text-5xl my-2">{myEvaluation.badge}</div>
                 <div className="text-xs font-bold text-slate-400">
-                  與主角{" "}
+                  與{" "}
                   <span className="text-amber-400 font-extrabold">
-                    {targetPlayer?.name || "目標人物"}
+                    {targetPlayer?.name || "主角"}
                   </span>{" "}
                   的默契指數
                 </div>
@@ -697,8 +658,9 @@ function RoomLobbyContent({
 
               {/* Leaderboard Section in Card */}
               <div className="space-y-2">
-                <h4 className="text-xs font-bold text-slate-400 text-left">
-                  🏆 房間最終總排行榜
+                <h4 className="text-xs font-bold text-slate-400 text-left flex items-center gap-1.5">
+                  <span>📊</span>
+                  <span>排行榜</span>
                 </h4>
                 <div className="space-y-2">
                   {leaderboard.map((item: any, rank: number) => {
@@ -745,32 +707,24 @@ function RoomLobbyContent({
             </div>
           )}
 
-          {/* Action Buttons: Download & Share */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          {/* Action Buttons */}
+          <div className="space-y-3 pt-2">
             <button
               onClick={handleDownloadCard}
               disabled={isDownloading}
-              className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
+              className="w-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
             >
               <span>📸</span>
-              <span>{isDownloading ? "導出中..." : "下載頻率同步結果 (PNG)"}</span>
+              <span>{isDownloading ? "導出中..." : "下載結果"}</span>
             </button>
 
             <button
-              onClick={handleShareResult}
-              className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
+              onClick={() => router.push("/")}
+              className="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 px-6 rounded-xl border border-slate-700 transition-colors text-sm"
             >
-              <span>📲</span>
-              <span>{copiedShareText ? "✓ 戰績已複製" : "分享戰績"}</span>
+              離開
             </button>
           </div>
-
-          <button
-            onClick={() => router.push("/")}
-            className="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 px-6 rounded-xl border border-slate-700 transition-colors text-sm"
-          >
-            返回首頁 / 重新開局
-          </button>
         </div>
       )}
     </div>
