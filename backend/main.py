@@ -114,14 +114,19 @@ async def evaluate_and_advance_question(room_code: str):
     results = []
     for p_id in room["players"]:
         p_ans = room["answers"].get(p_id)
-        is_correct = (p_ans == correct_choice) if correct_choice else False
-        if is_correct:
+        is_target = (p_id == target_id)
+        is_correct = (p_ans == correct_choice) if (correct_choice and not is_target) else False
+
+        # Target user provides standard answers, so they do not accumulate guessing scores
+        if is_correct and not is_target:
             room["scores"][p_id] = room["scores"].get(p_id, 0) + 1
+
         results.append({
             "player_id": p_id,
             "player_name": room["players"][p_id]["name"],
             "answer": p_ans,
-            "is_correct": is_correct
+            "is_correct": is_correct,
+            "is_target": is_target
         })
 
     room["status"] = "question_result"
@@ -149,19 +154,27 @@ async def evaluate_and_advance_question(room_code: str):
     if room["question_index"] >= len(room["questions"]):
         # Game Over
         room["status"] = "game_over"
-        leaderboard = sorted(
-            [
-                {
-                    "player_id": p_id,
-                    "name": p_info["name"],
-                    "avatar": p_info["avatar"],
-                    "score": room["scores"].get(p_id, 0)
-                }
-                for p_id, p_info in room["players"].items()
-            ],
-            key=lambda x: x["score"],
-            reverse=True
-        )
+
+        # Build leaderboard excluding target user from rank score sorting
+        guessers = []
+        target_item = None
+
+        for p_id, p_info in room["players"].items():
+            item = {
+                "player_id": p_id,
+                "name": p_info["name"],
+                "avatar": p_info["avatar"],
+                "score": room["scores"].get(p_id, 0),
+                "is_target": (p_id == target_id)
+            }
+            if p_id == target_id:
+                target_item = item
+            else:
+                guessers.append(item)
+
+        guessers_sorted = sorted(guessers, key=lambda x: x["score"], reverse=True)
+        leaderboard = ([target_item] if target_item else []) + guessers_sorted
+
         await broadcast_to_room(room_code, {
             "type": "GAME_OVER",
             "leaderboard": leaderboard,

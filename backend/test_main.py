@@ -123,3 +123,8 @@ def test_websocket_full_game_flow():
         q_res_player = player_ws.receive_json()
         assert q_res_host["type"] == "QUESTION_RESULT"
         assert q_res_host["correct_choice"] == "A"
+
+        # Verify host (not target) gets +1 score, while player (target) score remains 0
+        room_state = q_res_host["room_state"]
+        assert room_state["scores"][host_id] == 1
+        assert room_state["scores"][player_id] == 0

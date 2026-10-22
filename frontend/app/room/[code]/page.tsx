@@ -703,12 +703,15 @@ function RoomLobbyContent({
                 <div className="space-y-2">
                   {leaderboard.map((item: any, rank: number) => {
                     const isMe = item.player_id === playerId;
+                    const isItemTarget = item.player_id === roomState.target_user_id || item.is_target;
                     return (
                       <div
                         key={item.player_id}
                         className={`p-3 rounded-xl border flex items-center justify-between text-xs ${
-                          rank === 0
-                            ? "bg-amber-500/10 border-amber-500/40 text-amber-200"
+                          isItemTarget
+                            ? "bg-amber-500/10 border-amber-500/40 text-amber-200 font-bold"
+                            : rank === (leaderboard.some(x => x.is_target || x.player_id === roomState.target_user_id) ? 1 : 0)
+                            ? "bg-emerald-500/10 border-emerald-500/40 text-emerald-200"
                             : isMe
                             ? "bg-indigo-600/20 border-indigo-500/40 text-indigo-200 font-bold"
                             : "bg-slate-900/80 border-slate-800 text-slate-300"
@@ -716,18 +719,23 @@ function RoomLobbyContent({
                       >
                         <div className="flex items-center gap-2.5">
                           <span className="font-extrabold w-4 text-slate-400">
-                            #{rank + 1}
+                            {isItemTarget ? "🎯" : `#${rank}`}
                           </span>
                           <span className="text-lg">{item.avatar}</span>
                           <span>{item.name}</span>
-                          {isMe && (
+                          {isItemTarget && (
+                            <span className="bg-amber-500/30 text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-bold">
+                              活動主角
+                            </span>
+                          )}
+                          {isMe && !isItemTarget && (
                             <span className="bg-indigo-500/30 text-indigo-300 text-[10px] px-1.5 py-0.5 rounded">
                               我
                             </span>
                           )}
                         </div>
                         <span className="font-mono font-bold text-indigo-400">
-                          {item.score} / {totalQuestionsCount} 分
+                          {isItemTarget ? "標準答案提供者" : `${item.score} / ${totalQuestionsCount} 分`}
                         </span>
                       </div>
                     );
