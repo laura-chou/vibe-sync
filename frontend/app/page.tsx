@@ -8,13 +8,18 @@ export default function Home() {
   const [showJoinInput, setShowJoinInput] = useState(false);
   const [roomCode, setRoomCode] = useState("");
   const [playerName, setPlayerName] = useState("");
+  const [relationship, setRelationship] = useState("friends"); // 'friends' | 'couple' | 'family'
   const [error, setError] = useState("");
 
   // Generate 6-digit room code
   const handleCreateRoom = () => {
     const code = Math.floor(100000 + Math.random() * 900000).toString();
     const name = playerName.trim() || "房主玩家";
-    router.push(`/room/${code}?isHost=true&name=${encodeURIComponent(name)}`);
+    router.push(
+      `/room/${code}?isHost=true&name=${encodeURIComponent(
+        name
+      )}&relationship=${encodeURIComponent(relationship)}`
+    );
   };
 
   const handleJoinRoom = (e: React.FormEvent) => {
@@ -36,7 +41,7 @@ export default function Home() {
             🎮
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            即時派對派對遊戲
+            即時派對遊戲
           </h1>
           <p className="text-xs sm:text-sm text-slate-400">
             雙人/多人即時線上對戰與猜謎大廳
@@ -57,6 +62,52 @@ export default function Home() {
             className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition-colors"
           />
         </div>
+
+        {!showJoinInput && (
+          <div className="space-y-2">
+            <label className="block text-xs font-semibold text-slate-300">
+              選擇關係類型
+            </label>
+            <div className="grid grid-cols-3 gap-2">
+              <button
+                type="button"
+                onClick={() => setRelationship("friends")}
+                className={`py-2 px-3 rounded-xl border text-xs font-medium transition-all flex flex-col items-center gap-1 ${
+                  relationship === "friends"
+                    ? "bg-indigo-600/20 border-indigo-500 text-indigo-300"
+                    : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                }`}
+              >
+                <span className="text-base">🎉</span>
+                <span>朋友派對</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setRelationship("couple")}
+                className={`py-2 px-3 rounded-xl border text-xs font-medium transition-all flex flex-col items-center gap-1 ${
+                  relationship === "couple"
+                    ? "bg-pink-600/20 border-pink-500 text-pink-300"
+                    : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                }`}
+              >
+                <span className="text-base">👩‍❤️‍👨</span>
+                <span>情侶默契</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setRelationship("family")}
+                className={`py-2 px-3 rounded-xl border text-xs font-medium transition-all flex flex-col items-center gap-1 ${
+                  relationship === "family"
+                    ? "bg-amber-600/20 border-amber-500 text-amber-300"
+                    : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                }`}
+              >
+                <span className="text-base">🏡</span>
+                <span>家庭日常</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         <hr className="border-slate-800" />
 

@@ -26,6 +26,7 @@ interface RoomState {
   code: string;
   host_id: string;
   status: "waiting" | "playing" | "question_result" | "game_over";
+  relationship?: string;
   target_user_id: string | null;
   question_index: number;
   current_question: Question | null;
@@ -47,6 +48,7 @@ function RoomLobbyContent({
 
   const isHostParam = searchParams.get("isHost") === "true";
   const currentUserName = searchParams.get("name") || "玩家";
+  const relationshipParam = searchParams.get("relationship") || "friends";
 
   // WebSocket & State
   const [isConnected, setIsConnected] = useState(false);
@@ -77,6 +79,7 @@ function RoomLobbyContent({
             type: "CREATE_ROOM",
             room_code: roomCode,
             player_name: currentUserName,
+            relationship: relationshipParam,
             avatar: "👑",
           })
         );
@@ -136,7 +139,7 @@ function RoomLobbyContent({
     return () => {
       ws.close();
     };
-  }, [roomCode, isHostParam, currentUserName]);
+  }, [roomCode, isHostParam, currentUserName, relationshipParam]);
 
   // Actions
   const handleCopyCode = () => {
@@ -201,7 +204,8 @@ function RoomLobbyContent({
     );
     const totalQ = roomState?.current_question?.total_questions || 4;
     const myScore = myPlayer?.score || 0;
-    const evalData = evaluateChemistry(myScore, totalQ);
+    const rel = roomState?.relationship || "friends";
+    const evalData = evaluateChemistry(myScore, totalQ, rel);
 
     const shareText = `🎮 即時派對對戰戰績！\n我在【${targetP?.name || "目標人物"}】的默契問答中考取了 ${evalData.percentage}% 的默契度！\n評語：${evalData.title} ${evalData.comment}`;
 
@@ -232,9 +236,14 @@ function RoomLobbyContent({
   const totalPlayers = roomState?.players.length || 0;
   const answeredCount = roomState ? Object.keys(roomState.answers).length : 0;
   const totalQuestionsCount = roomState?.current_question?.total_questions || 4;
+
+  const currentRelationship = roomState?.relationship || "friends";
+  const isTargetUser = playerId === roomState?.target_user_id;
+
   const myEvaluation = evaluateChemistry(
     myPlayer?.score || 0,
-    totalQuestionsCount
+    totalQuestionsCount,
+    currentRelationship
   );
 
   return (
@@ -281,6 +290,21 @@ function RoomLobbyContent({
             >
               {roomState?.status === "playing" ? "遊戲作答中" : "大廳狀態"}
             </span>
+            {currentRelationship === "couple" && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-pink-500/10 text-pink-300 border border-pink-500/20">
+                👩‍❤️‍👨 情侶默契
+              </span>
+            )}
+            {currentRelationship === "family" && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                🏡 家庭日常
+              </span>
+            )}
+            {currentRelationship === "friends" && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                🎉 朋友派對
+              </span>
+            )}
           </div>
           <div className="text-3xl font-mono font-extrabold text-indigo-400 tracking-widest mt-0.5">
             {roomCode}
@@ -557,82 +581,161 @@ function RoomLobbyContent({
       {/* STATE 4: GAME OVER (LEADERBOARD & SHARE CARD) */}
       {roomState?.status === "game_over" && (
         <div className="space-y-6 text-center animate-fadeIn">
-          {/* BEAUTIFUL SHARE CARD DOM FOR PNG DOWNLOAD */}
-          <div
-            ref={cardRef}
-            className="bg-gradient-to-b from-slate-900 via-slate-950 to-indigo-950 p-6 sm:p-8 rounded-3xl border border-indigo-500/40 text-center space-y-5 shadow-2xl"
-          >
-            {/* Header Badge */}
-            <div className="flex justify-between items-center text-xs text-indigo-400 border-b border-indigo-500/20 pb-3">
-              <span className="font-extrabold tracking-wider uppercase">
-                🎮 即時派對對戰卡片
-              </span>
-              <span className="font-mono">房號 #{roomCode}</span>
+          {/* Target User Screen (你是本場主角) vs Guessing Player Screen */}
+          {isTargetUser ? (
+            <div
+              ref={cardRef}
+              className="bg-gradient-to-b from-amber-950/40 via-slate-950 to-indigo-950 p-6 sm:p-8 rounded-3xl border border-amber-500/40 text-center space-y-6 shadow-2xl"
+            >
+              <div className="flex justify-between items-center text-xs text-amber-400 border-b border-amber-500/20 pb-3">
+                <span className="font-extrabold tracking-wider uppercase flex items-center gap-1">
+                  <span>👑 本場主角專屬結算</span>
+                </span>
+                <span className="font-mono">房號 #{roomCode}</span>
+              </div>
+
+              <div className="space-y-3 py-2">
+                <div className="text-5xl my-2">🎉</div>
+                <h2 className="text-2xl font-black text-amber-300">
+                  感謝你擔任本場主角！
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
+                  你分享的喜好與選擇讓遊戲充滿驚喜！快看看下面誰才是最了解你的親密好友吧！
+                </p>
+              </div>
+
+              <hr className="border-slate-800/80" />
+
+              {/* Leaderboard for Target User */}
+              <div className="space-y-3 text-left">
+                <h4 className="text-xs font-bold text-amber-400 flex items-center gap-1.5">
+                  <span>🏆</span>
+                  <span>最了解你的親友排行榜</span>
+                </h4>
+                <div className="space-y-2">
+                  {leaderboard
+                    .filter((item: any) => item.player_id !== roomState.target_user_id)
+                    .map((item: any, rank: number) => {
+                      const evalResult = evaluateChemistry(
+                        item.score,
+                        totalQuestionsCount,
+                        currentRelationship
+                      );
+                      return (
+                        <div
+                          key={item.player_id}
+                          className={`p-3.5 rounded-xl border flex items-center justify-between text-xs ${
+                            rank === 0
+                              ? "bg-amber-500/10 border-amber-500/40 text-amber-200"
+                              : "bg-slate-900/80 border-slate-800 text-slate-300"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className="font-extrabold text-sm w-4 text-slate-400">
+                              #{rank + 1}
+                            </span>
+                            <span className="text-xl">{item.avatar}</span>
+                            <div>
+                              <div className="font-bold text-slate-200">
+                                {item.name}
+                              </div>
+                              <div className="text-[10px] text-indigo-300 font-medium">
+                                {evalResult.badge} {evalResult.title}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right font-mono">
+                            <div className="font-black text-amber-400 text-sm">
+                              {evalResult.percentage}% 默契
+                            </div>
+                            <div className="text-[10px] text-slate-500">
+                              答對 {item.score} / {totalQuestionsCount} 題
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
             </div>
-
-            {/* Chemistry Evaluation Main Banner */}
-            <div className="space-y-2 py-2">
-              <div className="text-5xl my-2">{myEvaluation.badge}</div>
-              <div className="text-xs font-bold text-slate-400">
-                與主角{" "}
-                <span className="text-amber-400 font-extrabold">
-                  {targetPlayer?.name || "目標人物"}
-                </span>{" "}
-                的默契指數
+          ) : (
+            /* Guessing Player Share Card */
+            <div
+              ref={cardRef}
+              className="bg-gradient-to-b from-slate-900 via-slate-950 to-indigo-950 p-6 sm:p-8 rounded-3xl border border-indigo-500/40 text-center space-y-5 shadow-2xl"
+            >
+              {/* Header Badge */}
+              <div className="flex justify-between items-center text-xs text-indigo-400 border-b border-indigo-500/20 pb-3">
+                <span className="font-extrabold tracking-wider uppercase">
+                  🎮 即時派對對戰卡片
+                </span>
+                <span className="font-mono">房號 #{roomCode}</span>
               </div>
-              <div className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-amber-300 via-indigo-300 to-pink-300 bg-clip-text text-transparent">
-                {myEvaluation.percentage}%
-              </div>
-              <div className="inline-block bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold px-3 py-1 rounded-full">
-                {myEvaluation.title}
-              </div>
-              <p className="text-xs text-slate-300 px-4 pt-1 italic">
-                “{myEvaluation.comment}”
-              </p>
-            </div>
 
-            <hr className="border-slate-800/80" />
+              {/* Chemistry Evaluation Main Banner */}
+              <div className="space-y-2 py-2">
+                <div className="text-5xl my-2">{myEvaluation.badge}</div>
+                <div className="text-xs font-bold text-slate-400">
+                  與主角{" "}
+                  <span className="text-amber-400 font-extrabold">
+                    {targetPlayer?.name || "目標人物"}
+                  </span>{" "}
+                  的默契指數
+                </div>
+                <div className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-amber-300 via-indigo-300 to-pink-300 bg-clip-text text-transparent">
+                  {myEvaluation.percentage}%
+                </div>
+                <div className="inline-block bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold px-3 py-1 rounded-full">
+                  {myEvaluation.title}
+                </div>
+                <p className="text-xs text-slate-300 px-4 pt-1 italic">
+                  “{myEvaluation.comment}”
+                </p>
+              </div>
 
-            {/* Leaderboard Section in Card */}
-            <div className="space-y-2">
-              <h4 className="text-xs font-bold text-slate-400 text-left">
-                🏆 房間最終總排行榜
-              </h4>
+              <hr className="border-slate-800/80" />
+
+              {/* Leaderboard Section in Card */}
               <div className="space-y-2">
-                {leaderboard.map((item: any, rank: number) => {
-                  const isMe = item.player_id === playerId;
-                  return (
-                    <div
-                      key={item.player_id}
-                      className={`p-3 rounded-xl border flex items-center justify-between text-xs ${
-                        rank === 0
-                          ? "bg-amber-500/10 border-amber-500/40 text-amber-200"
-                          : isMe
-                          ? "bg-indigo-600/20 border-indigo-500/40 text-indigo-200 font-bold"
-                          : "bg-slate-900/80 border-slate-800 text-slate-300"
-                      }`}
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <span className="font-extrabold w-4 text-slate-400">
-                          #{rank + 1}
-                        </span>
-                        <span className="text-lg">{item.avatar}</span>
-                        <span>{item.name}</span>
-                        {isMe && (
-                          <span className="bg-indigo-500/30 text-indigo-300 text-[10px] px-1.5 py-0.5 rounded">
-                            我
+                <h4 className="text-xs font-bold text-slate-400 text-left">
+                  🏆 房間最終總排行榜
+                </h4>
+                <div className="space-y-2">
+                  {leaderboard.map((item: any, rank: number) => {
+                    const isMe = item.player_id === playerId;
+                    return (
+                      <div
+                        key={item.player_id}
+                        className={`p-3 rounded-xl border flex items-center justify-between text-xs ${
+                          rank === 0
+                            ? "bg-amber-500/10 border-amber-500/40 text-amber-200"
+                            : isMe
+                            ? "bg-indigo-600/20 border-indigo-500/40 text-indigo-200 font-bold"
+                            : "bg-slate-900/80 border-slate-800 text-slate-300"
+                        }`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <span className="font-extrabold w-4 text-slate-400">
+                            #{rank + 1}
                           </span>
-                        )}
+                          <span className="text-lg">{item.avatar}</span>
+                          <span>{item.name}</span>
+                          {isMe && (
+                            <span className="bg-indigo-500/30 text-indigo-300 text-[10px] px-1.5 py-0.5 rounded">
+                              我
+                            </span>
+                          )}
+                        </div>
+                        <span className="font-mono font-bold text-indigo-400">
+                          {item.score} / {totalQuestionsCount} 分
+                        </span>
                       </div>
-                      <span className="font-mono font-bold text-indigo-400">
-                        {item.score} / {totalQuestionsCount} 分
-                      </span>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Action Buttons: Download & Share */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">

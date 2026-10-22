@@ -79,6 +79,7 @@ def get_room_state(room_code: str) -> Optional[Dict[str, Any]]:
         "code": room["code"],
         "host_id": room["host_id"],
         "status": room["status"],
+        "relationship": room.get("relationship", "friends"),
         "target_user_id": room["target_user_id"],
         "question_index": room["question_index"],
         "current_question": current_q,
@@ -200,6 +201,10 @@ async def websocket_endpoint(websocket: WebSocket):
             if event_type == "CREATE_ROOM":
                 player_name = data.get("player_name", "房主玩家")
                 avatar = data.get("avatar", "👑")
+                relationship = data.get("relationship", "friends")
+                if relationship not in ["friends", "couple", "family"]:
+                    relationship = "friends"
+
                 player_id = str(uuid.uuid4())[:8]
 
                 requested_code = str(data.get("room_code", "")).strip()
@@ -209,6 +214,7 @@ async def websocket_endpoint(websocket: WebSocket):
                     "code": room_code,
                     "host_id": player_id,
                     "status": "waiting",
+                    "relationship": relationship,
                     "target_user_id": None,
                     "question_index": 0,
                     "questions": [],
