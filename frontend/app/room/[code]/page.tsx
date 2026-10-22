@@ -207,12 +207,12 @@ function RoomLobbyContent({
     const rel = roomState?.relationship || "friends";
     const evalData = evaluateChemistry(myScore, totalQ, rel);
 
-    const shareText = `🎮 即時派對對戰戰績！\n我在【${targetP?.name || "目標人物"}】的默契問答中考取了 ${evalData.percentage}% 的默契度！\n評語：${evalData.title} ${evalData.comment}`;
+    const shareText = `📡【頻率同步中 Vibe Sync】頻率同步結果公佈！\n我在對【${targetP?.name || "目標人物"}】的默契拷問中獲得了 ${evalData.percentage}% 的同步率！\n🏅 獲得稱號：${evalData.badge} ${evalData.title}\n💬 評語：“${evalData.comment}”\n\n快來測測看你跟【${targetP?.name || "目標人物"}】的腦波有沒有在同個頻道上！`;
 
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "遊戲默契戰績",
+          title: "頻率同步結果",
           text: shareText,
           url: window.location.href,
         });
@@ -290,19 +290,19 @@ function RoomLobbyContent({
             >
               {roomState?.status === "playing" ? "遊戲作答中" : "大廳狀態"}
             </span>
-            {currentRelationship === "couple" && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-pink-500/10 text-pink-300 border border-pink-500/20">
-                👩‍❤️‍👨 情侶默契
+            {currentRelationship === "friends" && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                🍻 好友
+              </span>
+            )}
+            {currentRelationship === "new_friends" && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20">
+                🆕 新朋友
               </span>
             )}
             {currentRelationship === "family" && (
               <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
-                🏡 家庭日常
-              </span>
-            )}
-            {currentRelationship === "friends" && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-                🎉 朋友派對
+                ❤️ 家人
               </span>
             )}
           </div>
@@ -667,7 +667,7 @@ function RoomLobbyContent({
               {/* Header Badge */}
               <div className="flex justify-between items-center text-xs text-indigo-400 border-b border-indigo-500/20 pb-3">
                 <span className="font-extrabold tracking-wider uppercase">
-                  🎮 即時派對對戰卡片
+                  📡 頻率同步結果卡片
                 </span>
                 <span className="font-mono">房號 #{roomCode}</span>
               </div>
@@ -753,7 +753,7 @@ function RoomLobbyContent({
               className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
             >
               <span>📸</span>
-              <span>{isDownloading ? "導出中..." : "下載戰績卡片 (PNG)"}</span>
+              <span>{isDownloading ? "導出中..." : "下載頻率同步結果 (PNG)"}</span>
             </button>
 
             <button

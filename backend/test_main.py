@@ -27,7 +27,7 @@ def test_websocket_create_room():
             "type": "CREATE_ROOM",
             "player_name": "房主 Alice",
             "avatar": "👑",
-            "relationship": "couple"
+            "relationship": "new_friends"
         })
         data = websocket.receive_json()
         assert data["type"] == "ROOM_CREATED"
@@ -35,8 +35,8 @@ def test_websocket_create_room():
         assert len(room_code) == 6
         assert room_code in rooms
         assert rooms[room_code]["status"] == "waiting"
-        assert rooms[room_code]["relationship"] == "couple"
-        assert data["room_state"]["relationship"] == "couple"
+        assert rooms[room_code]["relationship"] == "new_friends"
+        assert data["room_state"]["relationship"] == "new_friends"
 
 def test_websocket_join_room():
     client = TestClient(app)

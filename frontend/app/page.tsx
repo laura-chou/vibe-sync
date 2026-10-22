@@ -8,7 +8,7 @@ export default function Home() {
   const [showJoinInput, setShowJoinInput] = useState(false);
   const [roomCode, setRoomCode] = useState("");
   const [playerName, setPlayerName] = useState("");
-  const [relationship, setRelationship] = useState("friends"); // 'friends' | 'couple' | 'family'
+  const [relationship, setRelationship] = useState("friends"); // 'friends' | 'new_friends' | 'family'
   const [error, setError] = useState("");
 
   // Generate 6-digit room code
@@ -36,12 +36,14 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-4 sm:p-6">
       <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 space-y-6">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-600/20 text-indigo-400 mb-2 border border-indigo-500/30">
-            🎮
-          </div>
+        <div className="text-center space-y-2 flex flex-col items-center">
+          <img
+            src="/icon.png"
+            alt="頻率同步中 Vibe Sync"
+            className="w-16 h-16 rounded-2xl mb-2 object-cover border border-indigo-500/30 shadow-lg"
+          />
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            即時派對遊戲
+            頻率同步中 Vibe Sync
           </h1>
           <p className="text-xs sm:text-sm text-slate-400">
             雙人/多人即時線上對戰與猜謎大廳
@@ -78,20 +80,20 @@ export default function Home() {
                     : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
                 }`}
               >
-                <span className="text-base">🎉</span>
-                <span>朋友派對</span>
+                <span className="text-base">🍻</span>
+                <span>好友</span>
               </button>
               <button
                 type="button"
-                onClick={() => setRelationship("couple")}
+                onClick={() => setRelationship("new_friends")}
                 className={`py-2 px-3 rounded-xl border text-xs font-medium transition-all flex flex-col items-center gap-1 ${
-                  relationship === "couple"
-                    ? "bg-pink-600/20 border-pink-500 text-pink-300"
+                  relationship === "new_friends"
+                    ? "bg-teal-600/20 border-teal-500 text-teal-300"
                     : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
                 }`}
               >
-                <span className="text-base">👩‍❤️‍👨</span>
-                <span>情侶默契</span>
+                <span className="text-base">🆕</span>
+                <span>新朋友</span>
               </button>
               <button
                 type="button"
@@ -102,8 +104,8 @@ export default function Home() {
                     : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
                 }`}
               >
-                <span className="text-base">🏡</span>
-                <span>家庭日常</span>
+                <span className="text-base">❤️</span>
+                <span>家人</span>
               </button>
             </div>
           </div>

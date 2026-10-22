@@ -215,7 +215,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 player_name = data.get("player_name", "房主玩家")
                 avatar = data.get("avatar", "👑")
                 relationship = data.get("relationship", "friends")
-                if relationship not in ["friends", "couple", "family"]:
+                if relationship not in ["friends", "new_friends", "family"]:
                     relationship = "friends"
 
                 player_id = str(uuid.uuid4())[:8]

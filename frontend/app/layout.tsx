@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "即時互動遊戲",
+  title: "頻率同步中 Vibe Sync",
   description: "雙人/多人即時線上對戰與猜謎大廳",
 };
 
