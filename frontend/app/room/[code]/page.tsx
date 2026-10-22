@@ -126,8 +126,22 @@ function RoomLobbyContent({
           setRoomState(data.room_state);
           setLeaderboard(data.leaderboard);
         } else if (type === "ERROR") {
-          setErrorMsg(data.message);
-          setTimeout(() => setErrorMsg(null), 3000);
+          const msg = data.message || "發生錯誤";
+          setErrorMsg(msg);
+
+          const isFatal =
+            msg.includes("人數已達 10 人上限") ||
+            msg.includes("房間不存在") ||
+            msg.includes("不存在") ||
+            msg.includes("已達 10 人");
+
+          if (isFatal) {
+            setTimeout(() => {
+              router.push("/");
+            }, 2000);
+          } else {
+            setTimeout(() => setErrorMsg(null), 3000);
+          }
         }
       } catch (err) {
         console.error("Failed to parse websocket message:", err);
