@@ -71,6 +71,7 @@ def get_room_state(room_code: str) -> Optional[Dict[str, Any]]:
                 "text": raw_q["text"].replace("{target_name}", target_name),
                 "option_a": raw_q["option_a"],
                 "option_b": raw_q["option_b"],
+                "option_c": raw_q.get("option_c"),
                 "total_questions": len(room["questions"]),
                 "current_index": idx + 1
             }
@@ -326,6 +327,28 @@ async def websocket_endpoint(websocket: WebSocket):
                     "room_state": get_room_state(current_room_code)
                 })
 
+            # EVENT: UPDATE_RELATIONSHIP
+            elif event_type == "UPDATE_RELATIONSHIP":
+                if not current_room_code or current_room_code not in rooms:
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "未處於有效房間中"}))
+                    continue
+
+                room = rooms[current_room_code]
+                if room["host_id"] != current_player_id:
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "僅房主可切換關係類型"}))
+                    continue
+
+                rel = data.get("relationship", "friends")
+                if rel not in ["friends", "new_friends", "family"]:
+                    rel = "friends"
+
+                room["relationship"] = rel
+                await broadcast_to_room(current_room_code, {
+                    "type": "RELATIONSHIP_UPDATED",
+                    "relationship": rel,
+                    "room_state": get_room_state(current_room_code)
+                })
+
             # EVENT: START_GAME
             elif event_type == "START_GAME":
                 if not current_room_code or current_room_code not in rooms:
@@ -338,12 +361,13 @@ async def websocket_endpoint(websocket: WebSocket):
                     continue
 
                 if not room["target_user_id"]:
-                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "請先指定目標人物再開始遊戲"}))
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "請先指定目標頻率再開始遊戲"}))
                     continue
 
                 room["status"] = "playing"
                 room["question_index"] = 0
-                room["questions"] = questions_db
+                num_q = min(10, len(questions_db))
+                room["questions"] = random.sample(questions_db, num_q)
                 room["answers"] = {}
                 for p_id in room["players"]:
                     room["scores"][p_id] = 0
@@ -364,9 +388,9 @@ async def websocket_endpoint(websocket: WebSocket):
                     await websocket.send_text(json.dumps({"type": "ERROR", "message": "遊戲尚未開始或處於結算狀態"}))
                     continue
 
-                choice = data.get("choice")  # "A" or "B"
-                if choice not in ["A", "B"]:
-                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "答案選項格式不符 (需為 A 或 B)"}))
+                choice = data.get("choice")  # "A", "B", or "C"
+                if choice not in ["A", "B", "C"]:
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "答案選項格式不符 (需為 A, B 或 C)"}))
                     continue
 
                 room["answers"][current_player_id] = choice

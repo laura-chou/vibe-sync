@@ -3,24 +3,77 @@
     "id": 1,
     "text": "{target_name} 最喜歡吃哪種宵夜？",
     "option_a": "炸雞與波霸奶茶",
-    "option_b": "健康水果與優格"
+    "option_b": "健康水果與優格",
+    "option_c": "熱騰騰的麻辣燙"
   },
   {
     "id": 2,
     "text": "{target_name} 假日更傾向哪種休閒活動？",
     "option_a": "在家追劇打電動",
-    "option_b": "戶外登山與露營"
+    "option_b": "戶外登山與露營",
+    "option_c": "逛街踩點文青咖啡廳"
   },
   {
     "id": 3,
     "text": "{target_name} 遇到極度尷尬的情況時會？",
     "option_a": "假裝鎮定冷靜應對",
-    "option_b": "尷尬笑笑迅速逃離現場"
+    "option_b": "尷尬笑笑迅速逃離現場",
+    "option_c": "講個冷笑話轉移注意力"
   },
   {
     "id": 4,
     "text": "如果暴富，{target_name} 第一件事想做什麼？",
     "option_a": "環遊世界開派對",
-    "option_b": "買豪宅投資躺平"
+    "option_b": "買豪宅投資躺平",
+    "option_c": "立刻遞辭呈離職"
+  },
+  {
+    "id": 5,
+    "text": "{target_name} 最喜歡哪種寵物？",
+    "option_a": "高冷傲嬌貓咪",
+    "option_b": "熱情忠誠狗狗",
+    "option_c": "其他或不養寵物"
+  },
+  {
+    "id": 6,
+    "text": "遇到壓力大時，{target_name} 的紓壓管道是？",
+    "option_a": "狂吃美食甜點",
+    "option_b": "瘋狂運動發洩",
+    "option_c": "睡一大覺放空"
+  },
+  {
+    "id": 7,
+    "text": "{target_name} 傳訊息時最常使用哪種風格？",
+    "option_a": "大量 Emoji 與表情包",
+    "option_b": "簡短精確只傳重點",
+    "option_c": "喜歡直接語音通話"
+  },
+  {
+    "id": 8,
+    "text": "去KTV唱歌時，{target_name} 通常是？",
+    "option_a": "搶麥麥霸全場開唱",
+    "option_b": "默默吃東西鼓掌分擔包廂費",
+    "option_c": "專門點嗨歌帶動氣氛"
+  },
+  {
+    "id": 9,
+    "text": "{target_name} 買東西時的消費風格？",
+    "option_a": "衝動購物看到喜歡就買",
+    "option_b": "貨比三家精打細算",
+    "option_c": "猶豫不決最後放棄"
+  },
+  {
+    "id": 10,
+    "text": "{target_name} 理想的度假方式？",
+    "option_a": "行程塞滿滿的觀光行程",
+    "option_b": "飯店躺平放空渡假",
+    "option_c": "去海島潛水玩水"
+  },
+  {
+    "id": 11,
+    "text": "{target_name} 最受不了對方的哪種缺點？",
+    "option_a": "遲到不守時",
+    "option_b": "訊息不讀不回",
+    "option_c": "做事拖拖拉拉"
   }
 ]

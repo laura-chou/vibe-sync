@@ -18,6 +18,7 @@ interface Question {
   text: string;
   option_a: string;
   option_b: string;
+  option_c?: string | null;
   total_questions: number;
   current_index: number;
 }
@@ -48,6 +49,7 @@ function RoomLobbyContent({
 
   const isHostParam = searchParams.get("isHost") === "true";
   const currentUserName = searchParams.get("name") || "玩家";
+  const currentUserAvatar = searchParams.get("avatar") || "🦊";
   const relationshipParam = searchParams.get("relationship") || "friends";
 
   // WebSocket & State
@@ -79,7 +81,7 @@ function RoomLobbyContent({
             room_code: roomCode,
             player_name: currentUserName,
             relationship: relationshipParam,
-            avatar: "👑",
+            avatar: currentUserAvatar,
           })
         );
       } else {
@@ -88,7 +90,7 @@ function RoomLobbyContent({
             type: "JOIN_ROOM",
             room_code: roomCode,
             player_name: currentUserName,
-            avatar: "🦊",
+            avatar: currentUserAvatar,
           })
         );
       }
@@ -108,7 +110,8 @@ function RoomLobbyContent({
         } else if (
           type === "PLAYER_JOINED" ||
           type === "TARGET_SELECTED" ||
-          type === "PLAYER_LEFT"
+          type === "PLAYER_LEFT" ||
+          type === "RELATIONSHIP_UPDATED"
         ) {
           setRoomState(data.room_state);
         } else if (type === "QUESTION_START") {
@@ -138,13 +141,25 @@ function RoomLobbyContent({
     return () => {
       ws.close();
     };
-  }, [roomCode, isHostParam, currentUserName, relationshipParam]);
+  }, [roomCode, isHostParam, currentUserName, currentUserAvatar, relationshipParam]);
 
   // Actions
   const handleCopyCode = () => {
     navigator.clipboard.writeText(roomCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleSelectRelationship = (rel: string) => {
+    if (!socketRef.current || !roomState) return;
+    if (roomState.host_id !== playerId) return;
+
+    socketRef.current.send(
+      JSON.stringify({
+        type: "UPDATE_RELATIONSHIP",
+        relationship: rel,
+      })
+    );
   };
 
   const handleSelectTarget = (targetId: string) => {
@@ -168,7 +183,7 @@ function RoomLobbyContent({
     );
   };
 
-  const handleSubmitAnswer = (choice: "A" | "B") => {
+  const handleSubmitAnswer = (choice: "A" | "B" | "C") => {
     if (!socketRef.current) return;
     socketRef.current.send(
       JSON.stringify({
@@ -204,7 +219,7 @@ function RoomLobbyContent({
   const myAnswer = roomState?.answers[playerId || ""];
   const totalPlayers = roomState?.players.length || 0;
   const answeredCount = roomState ? Object.keys(roomState.answers).length : 0;
-  const totalQuestionsCount = roomState?.current_question?.total_questions || 4;
+  const totalQuestionsCount = roomState?.current_question?.total_questions || 10;
 
   const currentRelationship = roomState?.relationship || "friends";
   const isTargetUser = playerId === roomState?.target_user_id;
@@ -215,18 +230,13 @@ function RoomLobbyContent({
     currentRelationship
   );
 
+  const canLeave =
+    roomState?.status === "waiting" ||
+    roomState?.status === "game_over" ||
+    !roomState;
+
   return (
     <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-5 sm:p-8 space-y-6">
-      {/* Role Badge Centered at Top */}
-      <div className="text-center text-xs font-semibold text-slate-400">
-        <span className="bg-slate-950 px-4 py-1.5 rounded-full border border-slate-800 inline-block shadow-sm">
-          身份:{" "}
-          <strong className="text-indigo-400">
-            {isHost ? "👑 房主" : "🎮 玩家"}
-          </strong>
-        </span>
-      </div>
-
       {errorMsg && (
         <div className="bg-rose-500/10 border border-rose-500/30 text-rose-300 p-3 rounded-xl text-xs text-center font-medium">
           ⚠️ {errorMsg}
@@ -278,12 +288,22 @@ function RoomLobbyContent({
             >
               <span>{copied ? "✓ 已複製" : "📋 複製房號"}</span>
             </button>
-            <button
-              onClick={() => router.push("/")}
-              className="flex-1 sm:flex-none bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 text-xs font-semibold px-4 py-2.5 rounded-lg border border-rose-800/40 transition-colors flex items-center justify-center gap-1.5"
-            >
-              <span>離開</span>
-            </button>
+            {canLeave ? (
+              <button
+                onClick={() => router.push("/")}
+                className="flex-1 sm:flex-none bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 text-xs font-semibold px-4 py-2.5 rounded-lg border border-rose-800/40 transition-colors flex items-center justify-center gap-1.5"
+              >
+                <span>離開</span>
+              </button>
+            ) : (
+              <button
+                disabled
+                title="遊戲進行中，無法離開"
+                className="flex-1 sm:flex-none bg-slate-800/40 text-slate-600 text-xs font-semibold px-4 py-2.5 rounded-lg border border-slate-800 cursor-not-allowed opacity-50 flex items-center justify-center gap-1.5"
+              >
+                <span>遊戲中</span>
+              </button>
+            )}
           </div>
         </div>
       )}
@@ -291,6 +311,53 @@ function RoomLobbyContent({
       {/* STATE 1: LOBBY WAITING */}
       {roomState?.status === "waiting" && (
         <div className="space-y-5">
+          {/* Host Relationship Selection in Lobby */}
+          {isHost && (
+            <div className="space-y-2 bg-slate-950/40 p-3.5 rounded-xl border border-slate-800">
+              <label className="block text-xs font-semibold text-slate-300">
+                設定房間關係類型
+              </label>
+              <div className="grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  onClick={() => handleSelectRelationship("friends")}
+                  className={`py-2 px-2 rounded-xl border text-xs font-medium transition-all flex items-center justify-center gap-1.5 ${
+                    currentRelationship === "friends"
+                      ? "bg-indigo-600/20 border-indigo-500 text-indigo-300 font-bold"
+                      : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                  }`}
+                >
+                  <span>🍻</span>
+                  <span>好友</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleSelectRelationship("new_friends")}
+                  className={`py-2 px-2 rounded-xl border text-xs font-medium transition-all flex items-center justify-center gap-1.5 ${
+                    currentRelationship === "new_friends"
+                      ? "bg-teal-600/20 border-teal-500 text-teal-300 font-bold"
+                      : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                  }`}
+                >
+                  <span>🆕</span>
+                  <span>新朋友</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleSelectRelationship("family")}
+                  className={`py-2 px-2 rounded-xl border text-xs font-medium transition-all flex items-center justify-center gap-1.5 ${
+                    currentRelationship === "family"
+                      ? "bg-amber-600/20 border-amber-500 text-amber-300 font-bold"
+                      : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                  }`}
+                >
+                  <span>❤️</span>
+                  <span>家人</span>
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Players List */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -302,7 +369,7 @@ function RoomLobbyContent({
               </h2>
               {isHost && (
                 <span className="text-xs text-amber-400/90 font-medium">
-                  💡 點擊玩家設為目標人物
+                  💡 點擊玩家設為目標頻率
                 </span>
               )}
             </div>
@@ -340,7 +407,7 @@ function RoomLobbyContent({
                       {isSelected && (
                         <div className="text-[11px] font-bold text-amber-400 mt-0.5 flex items-center gap-1">
                           <span>🎯</span>
-                          <span>本次目標人物</span>
+                          <span>目標頻率</span>
                         </div>
                       )}
                     </div>
@@ -367,8 +434,8 @@ function RoomLobbyContent({
                 </span>
                 <span className="text-xs text-slate-400">
                   {targetPlayer
-                    ? `已選擇目標: ${targetPlayer.name}`
-                    : "請從上方點選一人設定為目標"}
+                    ? `已選擇目標頻率: ${targetPlayer.name}`
+                    : "請點選一位玩家作為目標頻率"}
                 </span>
               </div>
 
@@ -390,7 +457,7 @@ function RoomLobbyContent({
                 等待房主開始遊戲...
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                房主正在挑選本次目標人物，請做好作答準備！
+                房主正在挑選目標頻率，請做好作答準備！
               </p>
             </div>
           )}
@@ -407,7 +474,7 @@ function RoomLobbyContent({
               {roomState.current_question.total_questions} 題
             </span>
             <span className="text-xs text-slate-400">
-              目標人物:{" "}
+              目標頻率:{" "}
               <strong className="text-amber-400">
                 {targetPlayer?.avatar} {targetPlayer?.name}
               </strong>
@@ -424,13 +491,11 @@ function RoomLobbyContent({
           {/* Options */}
           <div className="grid grid-cols-1 gap-3.5">
             <button
+              type="button"
               onClick={() => handleSubmitAnswer("A")}
-              disabled={!!myAnswer}
               className={`p-4 rounded-xl border text-left font-bold transition-all flex items-center justify-between ${
                 myAnswer === "A"
                   ? "bg-indigo-600/30 border-indigo-500 text-indigo-200 ring-2 ring-indigo-500/50"
-                  : myAnswer
-                  ? "bg-slate-950/40 border-slate-800/60 text-slate-500 cursor-not-allowed"
                   : "bg-slate-950 hover:bg-slate-800 border-slate-800 hover:border-indigo-500 text-slate-200 active:scale-[0.99]"
               }`}
             >
@@ -450,13 +515,11 @@ function RoomLobbyContent({
             </button>
 
             <button
+              type="button"
               onClick={() => handleSubmitAnswer("B")}
-              disabled={!!myAnswer}
               className={`p-4 rounded-xl border text-left font-bold transition-all flex items-center justify-between ${
                 myAnswer === "B"
-                  ? "bg-indigo-600/30 border-indigo-500 text-indigo-200 ring-2 ring-indigo-500/50"
-                  : myAnswer
-                  ? "bg-slate-950/40 border-slate-800/60 text-slate-500 cursor-not-allowed"
+                  ? "bg-purple-600/30 border-purple-500 text-purple-200 ring-2 ring-purple-500/50"
                   : "bg-slate-950 hover:bg-slate-800 border-slate-800 hover:border-indigo-500 text-slate-200 active:scale-[0.99]"
               }`}
             >
@@ -474,12 +537,40 @@ function RoomLobbyContent({
                 </span>
               )}
             </button>
+
+            {roomState.current_question.option_c && (
+              <button
+                type="button"
+                onClick={() => handleSubmitAnswer("C")}
+                className={`p-4 rounded-xl border text-left font-bold transition-all flex items-center justify-between ${
+                  myAnswer === "C"
+                    ? "bg-teal-600/30 border-teal-500 text-teal-200 ring-2 ring-teal-500/50"
+                    : "bg-slate-950 hover:bg-slate-800 border-slate-800 hover:border-indigo-500 text-slate-200 active:scale-[0.99]"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 font-mono font-black flex items-center justify-center">
+                    C
+                  </span>
+                  <span className="text-sm sm:text-base">
+                    {roomState.current_question.option_c}
+                  </span>
+                </div>
+                {myAnswer === "C" && (
+                  <span className="text-xs text-teal-400 font-bold">
+                    已選擇 ✓
+                  </span>
+                )}
+              </button>
+            )}
           </div>
 
           {/* Submission Status Footer */}
           <div className="bg-slate-950/50 p-3.5 rounded-xl border border-slate-800/80 flex items-center justify-between text-xs">
             <span className="text-slate-400">
-              {myAnswer ? "已完成提交，請等待其他人..." : "請點擊上方選項完成作答"}
+              {myAnswer
+                ? "已選擇答案，倒數結束前可自由切換選項"
+                : "請點擊上方選項完成作答"}
             </span>
             <span className="font-mono text-indigo-400 font-bold">
               作答進度: {answeredCount} / {totalPlayers}
@@ -496,7 +587,7 @@ function RoomLobbyContent({
               本題結算公佈
             </div>
             <h3 className="text-base font-bold text-slate-200">
-              目標人物{" "}
+              目標頻率{" "}
               <span className="text-amber-400">
                 {lastQuestionResult.target_user_name}
               </span>{" "}
@@ -539,10 +630,10 @@ function RoomLobbyContent({
         </div>
       )}
 
-      {/* STATE 4: GAME OVER (LEADERBOARD & SHARE CARD) */}
+      {/* STATE 4: GAME OVER (LEADERBOARD & RESULT CARD) */}
       {roomState?.status === "game_over" && (
         <div className="space-y-6 text-center animate-fadeIn">
-          {/* Target User Screen (你是本場主角) vs Guessing Player Screen */}
+          {/* Target User Screen (你是目標頻率) vs Guessing Player Screen */}
           {isTargetUser ? (
             <div
               ref={cardRef}
@@ -550,18 +641,15 @@ function RoomLobbyContent({
             >
               <div className="flex justify-between items-center text-xs text-amber-400 border-b border-amber-500/20 pb-3">
                 <span className="font-extrabold tracking-wider uppercase flex items-center gap-1">
-                  <span>👑 本場主角專屬結算</span>
+                  <span>📡 頻率同步結果</span>
                 </span>
                 <span className="font-mono">房號 #{roomCode}</span>
               </div>
 
               <div className="space-y-3 py-2">
                 <div className="text-5xl my-2">🎉</div>
-                <h2 className="text-2xl font-black text-amber-300">
-                  感謝你擔任本場主角！
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
-                  你分享的喜好與選擇讓遊戲充滿驚喜！快看看下面誰才是最了解你的親密好友吧！
+                <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto leading-relaxed font-medium">
+                  感謝你擔任本場的「目標頻率」！你分享的獨特信號讓這局遊戲充滿驚喜！快來看看是誰成功接收、成為與你頻率最同步的人吧！
                 </p>
               </div>
 
@@ -639,7 +727,7 @@ function RoomLobbyContent({
                 <div className="text-xs font-bold text-slate-400">
                   與{" "}
                   <span className="text-amber-400 font-extrabold">
-                    {targetPlayer?.name || "主角"}
+                    {targetPlayer?.name || "目標頻率"}
                   </span>{" "}
                   的默契指數
                 </div>
@@ -687,7 +775,7 @@ function RoomLobbyContent({
                           <span>{item.name}</span>
                           {isItemTarget && (
                             <span className="bg-amber-500/30 text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-bold">
-                              活動主角
+                              目標頻率
                             </span>
                           )}
                           {isMe && !isItemTarget && (

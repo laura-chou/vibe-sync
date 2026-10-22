@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+const AVATARS = ["🦊", "🦝", "🦄", "🐨", "🐼", "🐔", "🐲", "🐯", "🐰", "🐻"];
+
 export default function Home() {
   const router = useRouter();
   const [showJoinInput, setShowJoinInput] = useState(false);
   const [roomCode, setRoomCode] = useState("");
   const [playerName, setPlayerName] = useState("");
-  const [relationship, setRelationship] = useState("friends"); // 'friends' | 'new_friends' | 'family'
+  const [selectedAvatar, setSelectedAvatar] = useState(AVATARS[0]);
   const [error, setError] = useState("");
 
   const trimmedName = playerName.trim();
@@ -21,7 +23,7 @@ export default function Home() {
     router.push(
       `/room/${code}?isHost=true&name=${encodeURIComponent(
         trimmedName
-      )}&relationship=${encodeURIComponent(relationship)}`
+      )}&avatar=${encodeURIComponent(selectedAvatar)}`
     );
   };
 
@@ -32,7 +34,11 @@ export default function Home() {
       setError("請輸入正確的 6 位數字房號");
       return;
     }
-    router.push(`/room/${roomCode}?name=${encodeURIComponent(trimmedName)}`);
+    router.push(
+      `/room/${roomCode}?name=${encodeURIComponent(
+        trimmedName
+      )}&avatar=${encodeURIComponent(selectedAvatar)}`
+    );
   };
 
   return (
@@ -73,51 +79,28 @@ export default function Home() {
           )}
         </div>
 
-        {!showJoinInput && (
-          <div className="space-y-2">
-            <label className="block text-xs font-semibold text-slate-300">
-              選擇關係類型
-            </label>
-            <div className="grid grid-cols-3 gap-2">
+        {/* Avatar Selection */}
+        <div className="space-y-2">
+          <label className="block text-xs font-semibold text-slate-300">
+            選擇玩家頭像
+          </label>
+          <div className="grid grid-cols-5 gap-2">
+            {AVATARS.map((emoji) => (
               <button
+                key={emoji}
                 type="button"
-                onClick={() => setRelationship("friends")}
-                className={`py-2 px-3 rounded-xl border text-xs font-medium transition-all flex flex-col items-center gap-1 ${
-                  relationship === "friends"
-                    ? "bg-indigo-600/20 border-indigo-500 text-indigo-300"
-                    : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
+                onClick={() => setSelectedAvatar(emoji)}
+                className={`py-2 text-2xl rounded-xl border transition-all flex items-center justify-center ${
+                  selectedAvatar === emoji
+                    ? "bg-indigo-600/30 border-indigo-500 ring-2 ring-indigo-500/50 scale-105"
+                    : "bg-slate-950 border-slate-800 hover:border-slate-700 opacity-70 hover:opacity-100"
                 }`}
               >
-                <span className="text-base">🍻</span>
-                <span>好友</span>
+                {emoji}
               </button>
-              <button
-                type="button"
-                onClick={() => setRelationship("new_friends")}
-                className={`py-2 px-3 rounded-xl border text-xs font-medium transition-all flex flex-col items-center gap-1 ${
-                  relationship === "new_friends"
-                    ? "bg-teal-600/20 border-teal-500 text-teal-300"
-                    : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
-                }`}
-              >
-                <span className="text-base">🆕</span>
-                <span>新朋友</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setRelationship("family")}
-                className={`py-2 px-3 rounded-xl border text-xs font-medium transition-all flex flex-col items-center gap-1 ${
-                  relationship === "family"
-                    ? "bg-amber-600/20 border-amber-500 text-amber-300"
-                    : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700"
-                }`}
-              >
-                <span className="text-base">❤️</span>
-                <span>家人</span>
-              </button>
-            </div>
+            ))}
           </div>
-        )}
+        </div>
 
         <hr className="border-slate-800" />
 

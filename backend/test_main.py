@@ -160,3 +160,25 @@ def test_room_max_players_limit():
             res = extra_ws.receive_json()
             assert res["type"] == "ERROR"
             assert res["message"] == "房間人數已達 10 人上限"
+
+def test_update_relationship():
+    client = TestClient(app)
+    with client.websocket_connect("/ws") as host_ws:
+        host_ws.send_json({
+            "type": "CREATE_ROOM",
+            "player_name": "Host",
+            "relationship": "friends"
+        })
+        res1 = host_ws.receive_json()
+        room_code = res1["room_code"]
+        assert res1["room_state"]["relationship"] == "friends"
+
+        # Host updates relationship to family
+        host_ws.send_json({
+            "type": "UPDATE_RELATIONSHIP",
+            "relationship": "family"
+        })
+        res2 = host_ws.receive_json()
+        assert res2["type"] == "RELATIONSHIP_UPDATED"
+        assert res2["relationship"] == "family"
+        assert res2["room_state"]["relationship"] == "family"
