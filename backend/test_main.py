@@ -193,6 +193,63 @@ def test_room_max_players_limit():
             assert res["type"] == "ERROR"
             assert res["message"] == "房間人數已達 10 人上限"
 
+def test_questions_by_category_cache():
+    from main import questions_by_category, get_questions_for_category
+
+    assert "friends" in questions_by_category
+    assert "new_friends" in questions_by_category
+    assert "family" in questions_by_category
+
+    assert len(questions_by_category["friends"]) > 0
+    assert len(questions_by_category["new_friends"]) > 0
+    assert len(questions_by_category["family"]) > 0
+
+    # Test category question fetching
+    family_questions = get_questions_for_category("family")
+    assert len(family_questions) == len(questions_by_category["family"])
+    assert all(q.get("category") == "family" for q in family_questions)
+
+    # Test invalid category fallback
+    fallback_questions = get_questions_for_category("non_existent_category")
+    assert len(fallback_questions) > 0
+
+def test_start_game_with_category():
+    client = TestClient(app)
+
+    with client.websocket_connect("/ws") as host_ws, client.websocket_connect("/ws") as player_ws:
+        # Create room with relationship='family'
+        host_ws.send_json({
+            "type": "CREATE_ROOM",
+            "player_name": "Host",
+            "relationship": "family"
+        })
+        host_created = host_ws.receive_json()
+        room_code = host_created["room_code"]
+
+        player_ws.send_json({"type": "JOIN_ROOM", "room_code": room_code, "player_name": "Bob"})
+        p_res = player_ws.receive_json()
+        player_id = p_res["player_id"]
+
+        _p_joined_bcast = player_ws.receive_json()
+        _h_joined_bcast = host_ws.receive_json()
+
+        # Host selects player as target
+        host_ws.send_json({"type": "SELECT_TARGET", "target_user_id": player_id})
+        _t_host = host_ws.receive_json()
+        _t_p = player_ws.receive_json()
+
+        # Host starts game
+        host_ws.send_json({"type": "START_GAME"})
+        start_host = host_ws.receive_json()
+        start_p = player_ws.receive_json()
+
+        assert start_host["type"] == "QUESTION_START"
+        # Room questions in backend state should all be from 'family' category pool
+        from main import rooms
+        room = rooms[room_code]
+        assert len(room["questions"]) == 10
+        assert all(q.get("category") == "family" for q in room["questions"])
+
 def test_update_relationship():
     client = TestClient(app)
     with client.websocket_connect("/ws") as host_ws:

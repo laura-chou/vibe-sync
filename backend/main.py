@@ -34,6 +34,28 @@ def load_questions() -> List[Dict[str, Any]]:
 
 questions_db = load_questions()
 
+def build_questions_by_category(questions: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
+    """Build a cached dictionary of questions categorized by their category field."""
+    cache: Dict[str, List[Dict[str, Any]]] = {}
+    for q in questions:
+        cat = q.get("category", "friends")
+        if cat not in cache:
+            cache[cat] = []
+        cache[cat].append(q)
+    return cache
+
+questions_by_category = build_questions_by_category(questions_db)
+
+def get_questions_for_category(category: str) -> List[Dict[str, Any]]:
+    """Retrieve question pool for specified category with fallback mechanism."""
+    pool = questions_by_category.get(category)
+    if pool:
+        return pool
+    # Fallback to 'friends' pool or full questions_db if category is empty/missing
+    if "friends" in questions_by_category and questions_by_category["friends"]:
+        return questions_by_category["friends"]
+    return questions_db
+
 # In-memory data store
 rooms: Dict[str, Dict[str, Any]] = {}
 
@@ -483,8 +505,10 @@ async def websocket_endpoint(websocket: WebSocket):
 
                 room["status"] = "playing"
                 room["question_index"] = 0
-                num_q = min(10, len(questions_db))
-                room["questions"] = random.sample(questions_db, num_q)
+                rel = room.get("relationship", "friends")
+                category_pool = get_questions_for_category(rel)
+                num_q = min(10, len(category_pool))
+                room["questions"] = random.sample(category_pool, num_q)
                 room["question_history"] = []
                 room["analysis_summary"] = None
                 room["answers"] = {}
