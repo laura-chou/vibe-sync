@@ -169,13 +169,6 @@ function AnalysisSummarySection({ summary }: { summary: AnalysisSummary | null }
               {perfect_sync.question_order ? `第 ${perfect_sync.question_order} 題：` : ""}{perfect_sync.text}
             </p>
 
-            <div className="bg-slate-950/80 p-2.5 rounded-xl border border-emerald-500/20 text-xs">
-              <span className="text-slate-400 font-medium">主頻率標準答案：</span>
-              <span className="font-black text-emerald-300 ml-1">
-                {perfect_sync.target_choice_text}
-              </span>
-            </div>
-
             {renderOptionsDistribution(perfect_sync)}
           </div>
         )}
@@ -196,13 +189,6 @@ function AnalysisSummarySection({ summary }: { summary: AnalysisSummary | null }
             <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed">
               {signal_drop.question_order ? `第 ${signal_drop.question_order} 題：` : ""}{signal_drop.text}
             </p>
-
-            <div className="bg-slate-950/80 p-2.5 rounded-xl border border-rose-500/20 text-xs">
-              <span className="text-slate-400 font-medium">主頻率標準答案：</span>
-              <span className="font-black text-rose-300 ml-1">
-                {signal_drop.target_choice_text}
-              </span>
-            </div>
 
             {renderOptionsDistribution(signal_drop)}
           </div>
@@ -312,20 +298,6 @@ function RoomLobbyContent({
         } else if (type === "ERROR") {
           const msg = data.message || "發生錯誤";
           setErrorMsg(msg);
-
-          const isFatal =
-            msg.includes("人數已達 10 人上限") ||
-            msg.includes("房間不存在") ||
-            msg.includes("不存在") ||
-            msg.includes("已達 10 人");
-
-          if (isFatal) {
-            setTimeout(() => {
-              router.push("/");
-            }, 2000);
-          } else {
-            setTimeout(() => setErrorMsg(null), 3000);
-          }
         }
       } catch (err) {
         console.error("Failed to parse websocket message:", err);
@@ -456,9 +428,22 @@ function RoomLobbyContent({
         </div>
       )}
 
+      {/* Custom Error Modal Overlay */}
       {errorMsg && (
-        <div className="bg-rose-500/10 border border-rose-500/30 text-rose-300 p-3 rounded-xl text-xs text-center font-medium">
-          ⚠️ {errorMsg}
+        <div className="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-sm w-full text-center space-y-4">
+            <div className="text-4xl animate-bounce">⚠️</div>
+            <h2 className="text-lg font-bold text-slate-100">提示資訊</h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              {errorMsg}
+            </p>
+            <button
+              onClick={() => setErrorMsg(null)}
+              className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg transition-all text-sm"
+            >
+              確定
+            </button>
+          </div>
         </div>
       )}
 
