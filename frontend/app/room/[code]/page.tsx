@@ -402,6 +402,24 @@ function RoomLobbyContent({
 
   const activeAnalysisSummary = analysisSummary || roomState?.analysis_summary || null;
 
+  // Prevent accidental page leave / reload during active game
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (
+        roomState?.status === "playing" ||
+        roomState?.status === "question_result"
+      ) {
+        e.preventDefault();
+        (e as unknown as { returnValue: string }).returnValue = "";
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [roomState?.status]);
+
   const canLeave =
     roomState?.status === "waiting" ||
     roomState?.status === "game_over" ||
@@ -438,7 +456,10 @@ function RoomLobbyContent({
               {errorMsg}
             </p>
             <button
-              onClick={() => setErrorMsg(null)}
+              onClick={() => {
+                setErrorMsg(null);
+                router.push("/");
+              }}
               className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg transition-all text-sm"
             >
               確定
