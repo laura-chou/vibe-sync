@@ -52,7 +52,7 @@ def analyze_game_results(room: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         return {"perfect_sync": None, "signal_drop": None}
 
     target_p = room["players"].get(target_id, {})
-    target_name = target_p.get("name", "目標人物")
+    target_name = target_p.get("name", "主頻率")
 
     evaluated_questions = []
 
@@ -147,7 +147,7 @@ def get_room_state(room_code: str) -> Optional[Dict[str, Any]]:
         if idx < len(room["questions"]):
             raw_q = room["questions"][idx]
             target_p = room["players"].get(room["target_user_id"], {})
-            target_name = target_p.get("name", "目標人物")
+            target_name = target_p.get("name", "主頻率")
             current_q = {
                 "id": raw_q["id"],
                 "text": raw_q["text"].replace("{target_name}", target_name),
@@ -241,7 +241,7 @@ async def evaluate_and_advance_question(room_code: str):
         "correct_choice": correct_choice,
         "correct_option_text": correct_option_text,
         "target_user_id": target_id,
-        "target_user_name": room["players"].get(target_id, {}).get("name", "目標頻率"),
+        "target_user_name": room["players"].get(target_id, {}).get("name", "主頻率"),
         "results": results,
         "room_state": get_room_state(room_code)
     })
@@ -422,12 +422,12 @@ async def websocket_endpoint(websocket: WebSocket):
 
                 room = rooms[current_room_code]
                 if room["host_id"] != current_player_id:
-                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "僅房主可指定目標人物"}))
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "僅房主可指定主頻率"}))
                     continue
 
                 target_id = data.get("target_user_id")
                 if target_id and target_id not in room["players"]:
-                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "該目標人物不在房間內"}))
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "該主頻率不在房間內"}))
                     continue
 
                 room["target_user_id"] = target_id
@@ -471,7 +471,7 @@ async def websocket_endpoint(websocket: WebSocket):
                     continue
 
                 if not room["target_user_id"]:
-                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "請先指定目標頻率再開始遊戲"}))
+                    await websocket.send_text(json.dumps({"type": "ERROR", "message": "請先指定主頻率再開始遊戲"}))
                     continue
 
                 room["status"] = "playing"

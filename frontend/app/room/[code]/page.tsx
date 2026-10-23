@@ -140,7 +140,7 @@ function AnalysisSummarySection({ summary }: { summary: AnalysisSummary | null }
             </p>
 
             <div className="bg-slate-950/80 p-2.5 rounded-xl border border-emerald-500/20 text-xs">
-              <span className="text-slate-400 font-medium">目標標準答案：</span>
+              <span className="text-slate-400 font-medium">主頻率標準答案：</span>
               <span className="font-black text-emerald-300 ml-1">
                 {perfect_sync.target_choice_text}
               </span>
@@ -168,7 +168,7 @@ function AnalysisSummarySection({ summary }: { summary: AnalysisSummary | null }
             </p>
 
             <div className="bg-slate-950/80 p-2.5 rounded-xl border border-rose-500/20 text-xs">
-              <span className="text-slate-400 font-medium">目標標準答案：</span>
+              <span className="text-slate-400 font-medium">主頻率標準答案：</span>
               <span className="font-black text-rose-300 ml-1">
                 {signal_drop.target_choice_text}
               </span>
@@ -558,7 +558,7 @@ function RoomLobbyContent({
               </h2>
               {isHost && (
                 <span className="text-xs text-amber-400/90 font-medium">
-                  💡 點擊玩家設為目標頻率
+                  💡 點擊玩家設為主頻率
                 </span>
               )}
             </div>
@@ -596,7 +596,7 @@ function RoomLobbyContent({
                       {isSelected && (
                         <div className="text-[11px] font-bold text-amber-400 mt-0.5 flex items-center gap-1">
                           <span>🎯</span>
-                          <span>目標頻率</span>
+                          <span>主頻率</span>
                         </div>
                       )}
                     </div>
@@ -623,8 +623,8 @@ function RoomLobbyContent({
                 </span>
                 <span className="text-xs text-slate-400">
                   {targetPlayer
-                    ? `已選擇目標頻率: ${targetPlayer.name}`
-                    : "請點選一位玩家作為目標頻率"}
+                    ? `已選擇主頻率: ${targetPlayer.name}`
+                    : "請點選一位玩家作為主頻率"}
                 </span>
               </div>
 
@@ -646,7 +646,7 @@ function RoomLobbyContent({
                 等待房主開始遊戲...
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                房主正在挑選目標頻率，請做好作答準備！
+                房主正在挑選主頻率，請做好作答準備！
               </p>
             </div>
           )}
@@ -663,7 +663,7 @@ function RoomLobbyContent({
               {roomState.current_question.total_questions} 題
             </span>
             <span className="text-xs text-slate-400">
-              目標頻率:{" "}
+              主頻率:{" "}
               <strong className="text-amber-400">
                 {targetPlayer?.avatar} {targetPlayer?.name}
               </strong>
@@ -773,7 +773,7 @@ function RoomLobbyContent({
         <div className="space-y-5 animate-fadeIn">
           <div className="bg-slate-950 p-5 rounded-2xl border border-amber-500/30 text-center space-y-3">
             <h3 className="text-base font-bold text-slate-200">
-              目標頻率{" "}
+              主頻率{" "}
               <span className="text-amber-400">
                 {lastQuestionResult.target_user_name}
               </span>{" "}
@@ -795,30 +795,50 @@ function RoomLobbyContent({
           <div className="space-y-2">
             <h4 className="text-xs font-bold text-slate-400">玩家作答比對：</h4>
             <div className="space-y-2 max-h-48 overflow-y-auto">
-              {lastQuestionResult.results.map((res: any) => (
-                <div
-                  key={res.player_id}
-                  className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs"
-                >
-                  <span className="font-semibold text-slate-200">
-                    {res.player_name}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-slate-400">
-                      選擇: {res.answer || "未作答"}
-                    </span>
-                    <span
-                      className={`font-bold px-2 py-0.5 rounded ${
-                        res.is_correct
-                          ? "bg-emerald-500/20 text-emerald-300"
-                          : "bg-rose-500/20 text-rose-300"
-                      }`}
-                    >
-                      {res.is_correct ? "猜對 +1" : "猜錯"}
-                    </span>
+              {lastQuestionResult.results.map((res: any) => {
+                const isTarget = res.is_target || res.player_id === lastQuestionResult.target_user_id;
+                return (
+                  <div
+                    key={res.player_id}
+                    className={`p-3 rounded-xl border flex items-center justify-between text-xs ${
+                      isTarget
+                        ? "bg-amber-500/10 border-amber-500/40"
+                        : "bg-slate-950 border-slate-800"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-slate-200">
+                        {res.player_name}
+                      </span>
+                      {isTarget && (
+                        <span className="bg-amber-500/30 text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-bold">
+                          主頻率
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-slate-400">
+                        選擇: {res.answer || "未作答"}
+                      </span>
+                      {isTarget ? (
+                        <span className="font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">
+                          標準答案提供者
+                        </span>
+                      ) : (
+                        <span
+                          className={`font-bold px-2 py-0.5 rounded ${
+                            res.is_correct
+                              ? "bg-emerald-500/20 text-emerald-300"
+                              : "bg-rose-500/20 text-rose-300"
+                          }`}
+                        >
+                          {res.is_correct ? "猜對" : "猜錯"}
+                        </span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -827,7 +847,7 @@ function RoomLobbyContent({
       {/* STATE 4: GAME OVER (LEADERBOARD & RESULT CARD) */}
       {roomState?.status === "game_over" && (
         <div className="space-y-6 text-center animate-fadeIn">
-          {/* Target User Screen (你是目標頻率) vs Guessing Player Screen */}
+          {/* Target User Screen (你是主頻率) vs Guessing Player Screen */}
           {isTargetUser ? (
             <div
               ref={cardRef}
@@ -843,7 +863,7 @@ function RoomLobbyContent({
               <div className="space-y-3 py-2">
                 <div className="text-5xl my-2">🎉</div>
                 <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto leading-relaxed font-medium">
-                  感謝你擔任本場的「目標頻率」！你分享的獨特信號讓這局遊戲充滿驚喜！快來看看是誰成功接收、成為與你頻率最同步的人吧！
+                  感謝你擔任本場的「主頻率」！你分享的獨特信號讓這局遊戲充滿驚喜！快來看看是誰成功接收、成為與你頻率最同步的人吧！
                 </p>
               </div>
 
@@ -924,7 +944,7 @@ function RoomLobbyContent({
                 <div className="text-xs font-bold text-slate-400">
                   與{" "}
                   <span className="text-amber-400 font-extrabold">
-                    {targetPlayer?.name || "目標頻率"}
+                    {targetPlayer?.name || "主頻率"}
                   </span>{" "}
                   的默契指數
                 </div>
@@ -972,7 +992,7 @@ function RoomLobbyContent({
                           <span>{item.name}</span>
                           {isItemTarget && (
                             <span className="bg-amber-500/30 text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-bold">
-                              目標頻率
+                              主頻率
                             </span>
                           )}
                           {isMe && !isItemTarget && (
