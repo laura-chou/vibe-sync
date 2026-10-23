@@ -5,7 +5,7 @@
     "option_a": "先拆成小步驟列清單",
     "option_b": "先處理最困難的部分",
     "option_c": "和相關的人討論方向",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "option_a": "看題材和預告片",
     "option_b": "先查評分和觀眾評論",
     "option_c": "喜歡先看第一集再判斷",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "option_a": "坦白說不太想再提這件事",
     "option_b": "把話題轉回更有趣的事情",
     "option_c": "邀請當事人也分享趣事",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "option_a": "專挑大家都會唱的歌",
     "option_b": "負責點歌和排歌單",
     "option_c": "唱副歌其他時間當聽眾",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "option_a": "先收藏地圖景點再現場挑",
     "option_b": "把決策工作分給旅伴",
     "option_c": "直接參考成熟旅行路線",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 6,
@@ -45,14 +45,14 @@
     "option_a": "便利商店飯糰與豆漿",
     "option_b": "吐司夾蛋快速外帶",
     "option_c": "買香蕉或優格帶走",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 7,
     "text": "遇到「家中某樣日用品用完了」時，{target_name}購買日常用品時最接近哪種風格？",
     "option_a": "先確認評價與實測",
     "option_b": "支持在地或重視永續的品牌",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 8,
@@ -60,7 +60,7 @@
     "option_a": "安排一趟短旅行",
     "option_b": "在家輕鬆吃蛋糕",
     "option_c": "不特別慶祝照常過日子",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 9,
@@ -68,14 +68,14 @@
     "option_a": "去附近走走探索新地方",
     "option_b": "在家補眠看影集",
     "option_c": "整理房間和生活用品",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 10,
     "text": "在「半夜走進浴室看見蟲」的情境下，你覺得{target_name}會用哪種方式處理突然出現的昆蟲？",
     "option_a": "隔著距離觀察種類",
     "option_b": "聯絡專業除蟲人員",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 11,
@@ -83,7 +83,7 @@
     "option_a": "穩定收入和安全感",
     "option_b": "與重要的人保持連結",
     "option_c": "能做有意義的工作",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 12,
@@ -91,7 +91,7 @@
     "option_a": "理解原因並另外安排時間",
     "option_b": "想知道是否需要幫忙",
     "option_c": "若常發生會坦白溝通",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 13,
@@ -99,21 +99,21 @@
     "option_a": "先觀察聊天氣氛",
     "option_b": "幫忙處理現場的小事情",
     "option_c": "找一位看起來也不熟的人交流",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 14,
     "text": "遇到「想像未來家裡有一位動物夥伴」時，{target_name}最想和哪一種動物長期相處？",
     "option_a": "安靜觀察型的鳥類",
     "option_b": "聰明好奇的兔子",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 15,
     "text": "如果碰上「重新整理自己的房間」，你猜{target_name}理想房間最接近哪種樣子？",
     "option_a": "實用收納優先的機能風",
     "option_b": "工作休息區域分得清楚",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 16,
@@ -121,7 +121,7 @@
     "option_a": "寵物或家人照片",
     "option_b": "抽象藝術和幾何圖形",
     "option_c": "自己拍攝的日常照片",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 17,
@@ -129,14 +129,14 @@
     "option_a": "讀心術理解他人想法",
     "option_b": "治癒能力幫助他人恢復",
     "option_c": "隱形自由探索世界",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 18,
     "text": "如果碰上「想替生活增加一個新目標」，你猜{target_name}會先從哪個方向開始培養新興趣？",
     "option_a": "烘焙或料理實驗",
     "option_b": "程式工具或數位創作",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 19,
@@ -144,21 +144,21 @@
     "option_a": "加很多表情符號",
     "option_b": "常傳迷因或貼圖",
     "option_c": "習慣先問對方是否方便",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 20,
     "text": "遇到「一群朋友第一次一起吃飯」時，{target_name}會把票投給哪一種主餐？",
     "option_a": "義大利麵或燉飯",
     "option_b": "地中海烤蔬菜碗",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 21,
     "text": "在「兩個選項都有明顯優缺點」的情境下，你覺得{target_name}面對沒有標準答案的選擇會怎麼做？",
     "option_a": "試做小規模版本再決定",
     "option_b": "先列出不想接受的底線",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 22,
@@ -166,7 +166,7 @@
     "option_a": "逛展覽或美術館",
     "option_b": "去遊樂園玩設施",
     "option_c": "安排一趟小旅行",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 23,
@@ -174,21 +174,21 @@
     "option_a": "規劃一趟期待已久的旅行",
     "option_b": "改善住家或生活設備",
     "option_c": "捐給認同的公益方向",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 24,
     "text": "在「下午想買杯飲料提神」的情境下，你覺得{target_name}最常選哪種飲品基底？",
     "option_a": "清香烏龍茶",
     "option_b": "無糖豆漿",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 25,
     "text": "如果碰上「火鍋聚餐時有人把私人筷子伸進共食盤」，你猜{target_name}會採取哪種餐桌衛生應對方式？",
     "option_a": "先確認大家對公筷的共識",
     "option_b": "請服務人員協助更換餐具",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 26,
@@ -196,7 +196,7 @@
     "option_a": "熱帶海島與珊瑚海",
     "option_b": "台灣小鎮與在地文化",
     "option_c": "大型都會與博物館",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 27,
@@ -204,7 +204,7 @@
     "option_a": "直接提醒並約定歸還時間",
     "option_b": "下次借出前先談清楚期限",
     "option_c": "如果不貴就不再追究",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 28,
@@ -212,7 +212,7 @@
     "option_a": "在家補眠看影集",
     "option_b": "運動或上健身課",
     "option_c": "臨時買票看展或電影",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 29,
@@ -220,7 +220,7 @@
     "option_a": "隔著距離觀察種類",
     "option_b": "用容器安全移到室外",
     "option_c": "等牠離開再進浴室",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 30,
@@ -228,14 +228,14 @@
     "option_a": "物品少而整齊的極簡風",
     "option_b": "書籍和收藏品各有位置",
     "option_c": "工作休息區域分得清楚",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 31,
     "text": "當「交往紀念日想安排一天」時，{target_name}理想約會最想安排哪種活動？",
     "option_a": "去遊樂園玩設施",
     "option_b": "安排一趟小旅行",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 32,
@@ -243,7 +243,7 @@
     "option_a": "理解原因並另外安排時間",
     "option_b": "有點失望但自己找事做",
     "option_c": "想知道是否需要幫忙",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 33,
@@ -251,7 +251,7 @@
     "option_a": "當場溫和提醒",
     "option_b": "私下提醒對方",
     "option_c": "先確認大家對公筷的共識",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 34,
@@ -259,7 +259,7 @@
     "option_a": "蒐集資料再做比較",
     "option_b": "請信任的人提供觀點",
     "option_c": "先列出不想接受的底線",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 35,
@@ -267,14 +267,14 @@
     "option_a": "先問對方是否還需要使用",
     "option_b": "下次借出前先談清楚期限",
     "option_c": "請對方以合適方式補償損壞",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 36,
     "text": "面對「包廂氣氛一開始有點冷」，你猜{target_name}去 KTV 最可能擔任哪種角色？",
     "option_a": "唱副歌其他時間當聽眾",
     "option_b": "專唱冷門歌分享品味",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 37,
@@ -282,14 +282,14 @@
     "option_a": "買香蕉或優格帶走",
     "option_b": "到公司再找東西吃",
     "option_c": "早起五分鐘吃熱食",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 38,
     "text": "當「朋友想看你的手機介面」時，{target_name}最可能選哪種手機桌布風格？",
     "option_a": "抽象藝術和幾何圖形",
     "option_b": "手寫提醒與目標",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 39,
@@ -297,7 +297,7 @@
     "option_a": "優先選耐用可靠的產品",
     "option_b": "看到新品就想試試",
     "option_c": "挑容易維修或補充的款式",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 40,
@@ -305,7 +305,7 @@
     "option_a": "沙漠或特殊地貌",
     "option_b": "台灣小鎮與在地文化",
     "option_c": "大型都會與博物館",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 41,
@@ -313,14 +313,14 @@
     "option_a": "逐時列出完整行程表",
     "option_b": "只買必要門票其他隨興",
     "option_c": "直接參考成熟旅行路線",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 42,
     "text": "遇到「報告期限還有兩週」時，{target_name}會怎麼啟動一項大型任務？",
     "option_a": "和相關的人討論方向",
     "option_b": "安排固定時段專心處理",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 43,
@@ -328,7 +328,7 @@
     "option_a": "清香烏龍茶",
     "option_b": "鮮奶紅茶",
     "option_c": "無糖豆漿",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 44,
@@ -336,7 +336,7 @@
     "option_a": "樂器或音樂製作",
     "option_b": "登山健行或戶外探索",
     "option_c": "繪畫插畫或設計",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 45,
@@ -344,7 +344,7 @@
     "option_a": "短句直說重點",
     "option_b": "寫完整句子交代清楚",
     "option_c": "常傳迷因或貼圖",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 46,
@@ -352,7 +352,7 @@
     "option_a": "把話題轉回更有趣的事情",
     "option_b": "笑笑聽過不特別回應",
     "option_c": "私下提醒朋友注意場合",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 47,
@@ -360,7 +360,7 @@
     "option_a": "穩定收入和安全感",
     "option_b": "與重要的人保持連結",
     "option_c": "有機會持續學習成長",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 48,
@@ -368,7 +368,7 @@
     "option_a": "聰明好奇的兔子",
     "option_b": "活潑的小型哺乳動物",
     "option_c": "能欣賞水下生態的魚類",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 49,
@@ -376,14 +376,14 @@
     "option_a": "先觀察聊天氣氛",
     "option_b": "主動和旁邊的人打招呼",
     "option_c": "先專心聽大家聊什麼",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 50,
     "text": "面對「意外中得樂透頭獎」，你猜{target_name}會怎麼安排一筆額外可用的資金？",
     "option_a": "投資長期目標",
     "option_b": "改善住家或生活設備",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 51,
@@ -391,7 +391,7 @@
     "option_a": "安排一趟短旅行",
     "option_b": "做一件平常沒時間做的事",
     "option_c": "收到真誠手寫卡片",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 52,
@@ -399,7 +399,7 @@
     "option_a": "日式定食與味噌湯",
     "option_b": "義大利麵或燉飯",
     "option_c": "韓式烤肉拌飯",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 53,
@@ -407,21 +407,21 @@
     "option_a": "治癒能力幫助他人恢復",
     "option_b": "和動物溝通",
     "option_c": "預知短期未來做準備",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 54,
     "text": "遇到「朋友說某部作品必看」時，{target_name}開始一部新影集前會怎麼挑？",
     "option_a": "只看喜歡演員的作品",
     "option_b": "喜歡先看第一集再判斷",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 55,
     "text": "如果碰上「下午意外沒有任何安排」，你猜{target_name}突然多出半天自由時間會怎麼安排？",
     "option_a": "去附近走走探索新地方",
     "option_b": "約朋友吃飯聊天",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 56,
@@ -429,21 +429,21 @@
     "option_a": "優先選耐用可靠的產品",
     "option_b": "看到新品就想試試",
     "option_c": "支持在地或重視永續的品牌",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 57,
     "text": "在「今年生日剛好是工作日」的情境下，你覺得{target_name}最喜歡哪種生日慶祝方式？",
     "option_a": "收到真誠手寫卡片",
     "option_b": "和家人一起用餐",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 58,
     "text": "當「到陌生公司的活動場合」時，{target_name}在不熟悉的團體裡會先做什麼？",
     "option_a": "先觀察聊天氣氛",
     "option_b": "主動和旁邊的人打招呼",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 59,
@@ -451,7 +451,7 @@
     "option_a": "自由安排時間的彈性",
     "option_b": "穩定收入和安全感",
     "option_c": "住在喜歡的環境",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 60,
@@ -459,14 +459,14 @@
     "option_a": "蛋餅加起司",
     "option_b": "買香蕉或優格帶走",
     "option_c": "早起五分鐘吃熱食",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 61,
     "text": "在「原本的多人活動只剩兩個人」的情境下，你覺得{target_name}最可能出現哪種反應？",
     "option_a": "有點失望但自己找事做",
     "option_b": "趁機休息享受獨處",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 62,
@@ -474,7 +474,7 @@
     "option_a": "參加戶外或運動活動",
     "option_b": "去遊樂園玩設施",
     "option_c": "逛市集挑小物",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 63,
@@ -482,7 +482,7 @@
     "option_a": "第一個拿麥克風暖場",
     "option_b": "負責合唱炒熱氣氛",
     "option_c": "專唱冷門歌分享品味",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 64,
@@ -490,14 +490,14 @@
     "option_a": "另外拿乾淨餐具繼續用餐",
     "option_b": "私下提醒對方",
     "option_c": "請服務人員協助更換餐具",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 65,
     "text": "當「目的地景點分散需要交通規劃」時，{target_name}會採用哪一種規劃方式？",
     "option_a": "把決策工作分給旅伴",
     "option_b": "預留備案應付天氣變化",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 66,
@@ -505,7 +505,7 @@
     "option_a": "抽象藝術和幾何圖形",
     "option_b": "喜歡的角色或偶像",
     "option_c": "手寫提醒與目標",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 67,
@@ -513,7 +513,7 @@
     "option_a": "物品少而整齊的極簡風",
     "option_b": "植物與自然材質很多",
     "option_c": "實用收納優先的機能風",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 68,
@@ -521,7 +521,7 @@
     "option_a": "烘焙或料理實驗",
     "option_b": "語言與文化學習",
     "option_c": "樂器或音樂製作",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 69,
@@ -529,28 +529,28 @@
     "option_a": "親人又愛互動的狗",
     "option_b": "活潑的小型哺乳動物",
     "option_c": "偏愛爬蟲類的獨特魅力",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 70,
     "text": "當「同事借用物品後忘記歸還」時，{target_name}會怎麼提醒對方歸還物品？",
     "option_a": "先問對方是否還需要使用",
     "option_b": "請對方以合適方式補償損壞",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 71,
     "text": "在「第一次規劃跨國自助旅行」的情境下，你覺得{target_name}最想先探索哪一類目的地？",
     "option_a": "高山湖泊與森林",
     "option_b": "沙漠或特殊地貌",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 72,
     "text": "如果碰上「新認識的人傳訊息給你」，你猜{target_name}平常最常用哪種傳訊息風格？",
     "option_a": "短句直說重點",
     "option_b": "習慣先問對方是否方便",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 73,
@@ -558,7 +558,7 @@
     "option_a": "蒐集資料再做比較",
     "option_b": "請信任的人提供觀點",
     "option_c": "試做小規模版本再決定",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 74,
@@ -566,7 +566,7 @@
     "option_a": "先處理最困難的部分",
     "option_b": "先找資料和範例",
     "option_c": "先做初稿再逐步修正",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 75,
@@ -574,14 +574,14 @@
     "option_a": "看題材和預告片",
     "option_b": "先查評分和觀眾評論",
     "option_c": "偏好有完整結局的作品",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 76,
     "text": "如果碰上「必須在一天內決定自己的能力」，你猜{target_name}如果只能選一種超能力會選哪個方向？",
     "option_a": "時間暫停安排自己的節奏",
     "option_b": "預知短期未來做準備",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 77,
@@ -589,7 +589,7 @@
     "option_a": "坦白說不太想再提這件事",
     "option_b": "把話題轉回更有趣的事情",
     "option_c": "笑笑聽過不特別回應",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 78,
@@ -597,7 +597,7 @@
     "option_a": "義大利麵或燉飯",
     "option_b": "韓式烤肉拌飯",
     "option_c": "越式河粉與春捲",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 79,
@@ -605,7 +605,7 @@
     "option_a": "清香烏龍茶",
     "option_b": "焙火鐵觀音",
     "option_c": "茉莉綠茶",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 80,
@@ -613,7 +613,7 @@
     "option_a": "請家人或室友幫忙",
     "option_b": "聯絡專業除蟲人員",
     "option_c": "等牠離開再進浴室",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 81,
@@ -621,7 +621,7 @@
     "option_a": "償還貸款或欠款",
     "option_b": "投資長期目標",
     "option_c": "改善住家或生活設備",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 82,
@@ -629,7 +629,7 @@
     "option_a": "吉他為主的獨立搖滾",
     "option_b": "節奏強烈的電子舞曲",
     "option_c": "有故事感的民謠",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 83,
@@ -637,7 +637,7 @@
     "option_a": "先詢問飼主能否接近",
     "option_b": "只遠遠欣賞不碰觸",
     "option_c": "避免突然伸手或大動作",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 84,
@@ -645,7 +645,7 @@
     "option_a": "無糖去冰",
     "option_b": "熱飲不加糖",
     "option_c": "依茶底調整甜度",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 85,
@@ -653,14 +653,14 @@
     "option_a": "劇情選擇影響結局",
     "option_b": "探索開放世界收集物品",
     "option_c": "策略規劃慢慢取勝",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 86,
     "text": "遇到「遇到能回到過去的機器」時，{target_name}如果能回到人生某個階段會怎麼做？",
     "option_a": "回到學生時期多嘗試興趣",
     "option_b": "回去提醒自己照顧身心",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 87,
@@ -668,7 +668,7 @@
     "option_a": "私下和對方溝通",
     "option_b": "轉換話題避免場面升高",
     "option_c": "請在場可信任的人協助",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 88,
@@ -676,7 +676,7 @@
     "option_a": "先離開頁面冷靜一下",
     "option_b": "比較其他通路的價格",
     "option_c": "和朋友確認自己是否真的會用",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 89,
@@ -684,7 +684,7 @@
     "option_a": "圖書館或共享工作空間",
     "option_b": "咖啡館有人聲但不必交談",
     "option_c": "在戶外空氣流通的地方",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 90,
@@ -692,7 +692,7 @@
     "option_a": "鳳梨甜鹹搭配派",
     "option_b": "純起司經典派",
     "option_c": "海鮮白醬派",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 91,
@@ -700,7 +700,7 @@
     "option_a": "坦白拒絕並說明原因",
     "option_b": "提供非金錢的其他協助",
     "option_c": "視關係和過往紀錄判斷",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 92,
@@ -708,7 +708,7 @@
     "option_a": "黑暗中突然有人叫名字",
     "option_b": "高處突然失去穩定感",
     "option_c": "被不熟的人突然貼近",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 93,
@@ -716,7 +716,7 @@
     "option_a": "尋找資源或工具",
     "option_b": "鼓勵大家保持動力",
     "option_c": "先確認誰最適合主導",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 94,
@@ -724,28 +724,28 @@
     "option_a": "立刻切換畫面或停止投影",
     "option_b": "先道歉再恢復原本內容",
     "option_c": "事後重新檢查隱私設定",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 95,
     "text": "如果碰上「群組討論晚餐聊了半小時」，你猜{target_name}團體一直選不出餐廳時會怎麼做？",
     "option_a": "隨機挑一家避免耗時",
     "option_b": "分成小組各自覓食再會合",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 96,
     "text": "面對「凌晨追劇看到一半」，你猜{target_name}深夜突然嘴饞時會選哪種點心？",
     "option_a": "水果切盤",
     "option_b": "吐司或小三明治",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 97,
     "text": "如果碰上「朋友準備了一份禮物給你」，你猜{target_name}收到禮物時最容易被哪一點打動？",
     "option_a": "能一起體驗的活動",
     "option_b": "附有真誠文字的卡片",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 98,
@@ -753,28 +753,28 @@
     "option_a": "整理隔天待辦清單",
     "option_b": "做伸展或簡單呼吸",
     "option_c": "和朋友傳訊息聊天",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 99,
     "text": "遇到「期待很久的假日一早下雨」時，{target_name}放假一早遇上大雨會怎麼改計畫？",
     "option_a": "在家整理照片和檔案",
     "option_b": "改成約朋友線上玩遊戲",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 100,
     "text": "遇到「需要快速確認集合地點」時，{target_name}遇到急事時偏好哪種聯絡方式？",
     "option_a": "傳語音快速講清楚",
     "option_b": "請共同聯絡人協助",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 101,
     "text": "如果碰上「訂住宿時需要在幾家間做決定」，你猜{target_name}住宿時最在意哪個條件？",
     "option_a": "交通方便靠近車站",
     "option_b": "價格實惠且乾淨",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 102,
@@ -782,7 +782,7 @@
     "option_a": "清爽鮮甜",
     "option_b": "鹹香下飯",
     "option_c": "香草與香料層次",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 103,
@@ -790,7 +790,7 @@
     "option_a": "大量嘗試的自由",
     "option_b": "好的工具和材料",
     "option_c": "先完成草稿再修細節",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 104,
@@ -798,7 +798,7 @@
     "option_a": "主動分擔對方的工作",
     "option_b": "在對方需要時給予陪伴",
     "option_c": "分享日常讓對方參與生活",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 105,
@@ -806,14 +806,14 @@
     "option_a": "吃一頓喜歡的食物",
     "option_b": "整理環境重新找回掌控感",
     "option_c": "完成一件小事恢復動力",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 106,
     "text": "面對「有機會搬到另一座城市」，你猜{target_name}會優先考慮居住地的哪個條件？",
     "option_a": "房租或房價負擔",
     "option_b": "社區安全和安靜程度",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 107,
@@ -821,14 +821,14 @@
     "option_a": "立刻找替代交通方案",
     "option_b": "評估是否取消部分行程",
     "option_c": "趁空檔吃飯或休息",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 108,
     "text": "面對「在聚會上叫錯新朋友名字」，你猜{target_name}不小心叫錯別人名字會怎麼補救？",
     "option_a": "輕鬆承認自己記錯",
     "option_b": "確認正確稱呼後記下來",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 109,
@@ -836,7 +836,7 @@
     "option_a": "交通方便靠近車站",
     "option_b": "有浴缸或完整浴室設備",
     "option_c": "早餐好吃而且選擇多",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 110,
@@ -844,7 +844,7 @@
     "option_a": "在家做飯追劇",
     "option_b": "找室內運動或攀岩",
     "option_c": "改成約朋友線上玩遊戲",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 111,
@@ -852,14 +852,14 @@
     "option_a": "交通方便和通勤時間",
     "option_b": "房租或房價負擔",
     "option_c": "社區安全和安靜程度",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 112,
     "text": "在「商場公告全館折扣」的情境下，你覺得{target_name}遇到限時折扣時會怎麼判斷？",
     "option_a": "先離開頁面冷靜一下",
     "option_b": "不想因倒數計時而匆忙決定",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 113,
@@ -867,7 +867,7 @@
     "option_a": "有低音量背景音樂",
     "option_b": "圖書館或共享工作空間",
     "option_c": "在戶外空氣流通的地方",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 114,
@@ -875,14 +875,14 @@
     "option_a": "有故事感的民謠",
     "option_b": "層次豐富的爵士樂",
     "option_c": "電影配樂與交響樂",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 115,
     "text": "在「咖啡店有寵物友善座位」的情境下，你覺得{target_name}在路上遇到親人的陌生狗會怎麼做？",
     "option_a": "只遠遠欣賞不碰觸",
     "option_b": "避免突然伸手或大動作",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 116,
@@ -890,7 +890,7 @@
     "option_a": "當場說明這個玩笑不合適",
     "option_b": "私下和對方溝通",
     "option_c": "轉換話題避免場面升高",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 117,
@@ -898,7 +898,7 @@
     "option_a": "立刻道歉並更正名字",
     "option_b": "請共同朋友協助介紹",
     "option_c": "下次見面主動正確稱呼",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 118,
@@ -906,7 +906,7 @@
     "option_a": "符合日常需求的實用品",
     "option_b": "附有真誠文字的卡片",
     "option_c": "精心挑選的收藏品",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 119,
@@ -914,7 +914,7 @@
     "option_a": "鹽酥雞與地瓜薯條",
     "option_b": "泡麵加蛋",
     "option_c": "水果切盤",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 120,
@@ -922,14 +922,14 @@
     "option_a": "先問大家預算與忌口",
     "option_b": "讓最有想法的人決定",
     "option_c": "分成小組各自覓食再會合",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 121,
     "text": "當「最近作息有點混亂」時，{target_name}睡前最容易形成哪種固定習慣？",
     "option_a": "做伸展或簡單呼吸",
     "option_b": "不特別安排直接睡覺",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 122,
@@ -937,7 +937,7 @@
     "option_a": "關閉通知預覽功能",
     "option_b": "先道歉再恢復原本內容",
     "option_c": "把手機調成勿擾模式",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 123,
@@ -945,21 +945,21 @@
     "option_a": "主動分擔對方的工作",
     "option_b": "用直接言語表達關心",
     "option_c": "準備符合對方喜好的小禮物",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 124,
     "text": "面對「同一款飲料可調整甜度冰量」，你猜{target_name}會怎麼決定甜度與冰量？",
     "option_a": "正常糖少冰",
     "option_b": "固定點一種熟悉搭配",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 125,
     "text": "當「卡在不知道從哪裡下手」時，{target_name}做創作時最需要哪種條件？",
     "option_a": "明確題目和限制",
     "option_b": "把作品拿給別人看後再調整",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 126,
@@ -967,14 +967,14 @@
     "option_a": "先了解用途與還款時間",
     "option_b": "先把借貸條件寫清楚",
     "option_c": "視關係和過往紀錄判斷",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 127,
     "text": "面對「在安靜的房間獨處」，你猜{target_name}最難忍受哪種突如其來的驚嚇？",
     "option_a": "突然爆出的巨大聲響",
     "option_b": "腳邊有東西快速竄過",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 128,
@@ -982,7 +982,7 @@
     "option_a": "通知下一個預約地點",
     "option_b": "先安頓好同行者",
     "option_c": "趁空檔吃飯或休息",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 129,
@@ -990,7 +990,7 @@
     "option_a": "直接打電話",
     "option_b": "用視訊確認現場狀況",
     "option_c": "請共同聯絡人協助",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 130,
@@ -998,21 +998,21 @@
     "option_a": "建造與經營自己的世界",
     "option_b": "探索開放世界收集物品",
     "option_c": "派對遊戲讓大家一起笑",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 131,
     "text": "面對「工作或課業進度超出預期」，你猜{target_name}壓力累積時最需要哪種恢復方式？",
     "option_a": "睡飽並暫停工作",
     "option_b": "接觸自然或去戶外走走",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 132,
     "text": "在「決定今天晚餐的風味」的情境下，你覺得{target_name}最偏好哪種味道走向？",
     "option_a": "微苦成熟風味",
     "option_b": "奶油濃厚口感",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 133,
@@ -1020,7 +1020,7 @@
     "option_a": "重新經歷一個重要相遇",
     "option_b": "修正一個當時不懂的決定",
     "option_c": "回去提醒自己照顧身心",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 134,
@@ -1028,14 +1028,14 @@
     "option_a": "安排時間與分工",
     "option_b": "留意容易被忽略的風險",
     "option_c": "鼓勵大家保持動力",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 135,
     "text": "當「朋友為鳳梨披薩是否合理吵成一團」時，{target_name}對披薩配料爭論最接近哪一派？",
     "option_a": "創意限定口味派",
     "option_b": "厚餅皮豐富餡料派",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 136,
@@ -1043,7 +1043,7 @@
     "option_a": "改去室內展覽或博物館",
     "option_b": "在家做飯追劇",
     "option_c": "乾脆當作休息日補眠",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 137,
@@ -1051,7 +1051,7 @@
     "option_a": "床好睡且隔音佳",
     "option_b": "有浴缸或完整浴室設備",
     "option_c": "能看到山景或海景",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 138,
@@ -1059,7 +1059,7 @@
     "option_a": "保持距離觀察牠的反應",
     "option_b": "只遠遠欣賞不碰觸",
     "option_c": "和飼主聊聊牠的個性",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 139,
@@ -1067,7 +1067,7 @@
     "option_a": "回到學生時期多嘗試興趣",
     "option_b": "重新經歷一個重要相遇",
     "option_c": "重看某段美好日常",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 140,
@@ -1075,7 +1075,7 @@
     "option_a": "當場說明這個玩笑不合適",
     "option_b": "先觀察對方是否意識到問題",
     "option_c": "轉換話題避免場面升高",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 141,
@@ -1083,21 +1083,21 @@
     "option_a": "蒜香濃郁",
     "option_b": "清爽鮮甜",
     "option_c": "奶油濃厚口感",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 142,
     "text": "在「家裡有其他人活動」的情境下，你覺得{target_name}需要專心時最適合哪種環境？",
     "option_a": "圖書館或共享工作空間",
     "option_b": "咖啡館有人聲但不必交談",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 143,
     "text": "遇到「公開展示照片時跳出訊息」時，{target_name}私人通知突然投影到大螢幕時會怎麼做？",
     "option_a": "關閉通知預覽功能",
     "option_b": "簡短帶過並繼續簡報",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 144,
@@ -1105,7 +1105,7 @@
     "option_a": "綠地自然環境",
     "option_b": "靠近家人或重要朋友",
     "option_c": "氣候和生活步調",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 145,
@@ -1113,7 +1113,7 @@
     "option_a": "對方記得你提過的小願望",
     "option_b": "能一起體驗的活動",
     "option_c": "有趣又出乎意料的設計",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 146,
@@ -1121,7 +1121,7 @@
     "option_a": "運動流汗釋放緊繃",
     "option_b": "接觸自然或去戶外走走",
     "option_c": "完成一件小事恢復動力",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 147,
@@ -1129,7 +1129,7 @@
     "option_a": "確認正確稱呼後記下來",
     "option_b": "簡短帶過不做過度解釋",
     "option_c": "下次見面主動正確稱呼",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 148,
@@ -1137,7 +1137,7 @@
     "option_a": "傳語音快速講清楚",
     "option_b": "用視訊確認現場狀況",
     "option_c": "請共同聯絡人協助",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 149,
@@ -1145,7 +1145,7 @@
     "option_a": "先問大家預算與忌口",
     "option_b": "隨機挑一家避免耗時",
     "option_c": "分成小組各自覓食再會合",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 150,
@@ -1153,7 +1153,7 @@
     "option_a": "確認官方最新資訊",
     "option_b": "先安頓好同行者",
     "option_c": "趁空檔吃飯或休息",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 151,
@@ -1161,7 +1161,7 @@
     "option_a": "高處突然失去穩定感",
     "option_b": "突然爆出的巨大聲響",
     "option_c": "電梯意外停在半途",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 152,
@@ -1169,7 +1169,7 @@
     "option_a": "微糖少冰",
     "option_b": "熱飲不加糖",
     "option_c": "先問店員推薦的比例",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 153,
@@ -1177,21 +1177,21 @@
     "option_a": "不被打擾的完整時間",
     "option_b": "有人提供靈感與交流",
     "option_c": "先完成草稿再修細節",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 154,
     "text": "如果碰上「對方沒有說明何時歸還」，你猜{target_name}親友開口借錢時會怎麼回應？",
     "option_a": "坦白拒絕並說明原因",
     "option_b": "先把借貸條件寫清楚",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 155,
     "text": "遇到「重要日子不想只說一句祝福」時，{target_name}表達在乎對方時最自然的方式？",
     "option_a": "主動分擔對方的工作",
     "option_b": "尊重對方獨處與休息的需要",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 156,
@@ -1199,14 +1199,14 @@
     "option_a": "協調不同立場的人",
     "option_b": "留意容易被忽略的風險",
     "option_c": "鼓勵大家保持動力",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 157,
     "text": "如果碰上「進入音樂祭不同舞台」，你猜{target_name}最容易被哪種音樂吸引？",
     "option_a": "旋律抓耳的流行歌",
     "option_b": "電影配樂與交響樂",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 158,
@@ -1214,7 +1214,7 @@
     "option_a": "純起司經典派",
     "option_b": "薄脆簡單配料派",
     "option_c": "厚餅皮豐富餡料派",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 159,
@@ -1222,14 +1222,14 @@
     "option_a": "滑手機直到想睡",
     "option_b": "整理隔天待辦清單",
     "option_c": "和朋友傳訊息聊天",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 160,
     "text": "在「有一小時空檔想放鬆」的情境下，你覺得{target_name}最喜歡哪種遊戲體驗？",
     "option_a": "建造與經營自己的世界",
     "option_b": "派對遊戲讓大家一起笑",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 161,
@@ -1237,7 +1237,7 @@
     "option_a": "先確認原價是否合理",
     "option_b": "計算折扣後是否真的划算",
     "option_c": "比較其他通路的價格",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 162,
@@ -1245,7 +1245,7 @@
     "option_a": "滷味加青菜",
     "option_b": "水果切盤",
     "option_c": "甜湯或豆花",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 163,
@@ -1253,7 +1253,7 @@
     "option_a": "Q彈有嚼勁",
     "option_b": "外脆內軟",
     "option_c": "脆嫩清爽",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 164,
@@ -1261,14 +1261,14 @@
     "option_a": "邀請重要的人一起參與",
     "option_b": "選擇對方一直想去的地方",
     "option_c": "先確認對方真的喜歡驚喜",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 165,
     "text": "遇到「購買演唱會門票時」時，{target_name}看現場演出會優先選哪種位置？",
     "option_a": "靠走道方便進出",
     "option_b": "二樓俯瞰全場",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 166,
@@ -1276,21 +1276,21 @@
     "option_a": "先把衣服分類洗好",
     "option_b": "快速整理地板與灰塵",
     "option_c": "排時間一次集中處理",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 167,
     "text": "遇到「月末發現比預期多存下一筆錢」時，{target_name}每月有剩餘預算時最想花在哪裡？",
     "option_a": "旅行基金",
     "option_b": "和親友聚餐體驗",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 168,
     "text": "面對「出門半天手機只剩百分之二十」，你猜{target_name}手機電量不足時會採用哪種方式？",
     "option_a": "關閉耗電功能延長電量",
     "option_b": "攜帶短線和充電頭",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 169,
@@ -1298,7 +1298,7 @@
     "option_a": "記錄自己的學習筆記",
     "option_b": "找更進階的挑戰",
     "option_c": "先穩定練習不急著分享",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 170,
@@ -1306,7 +1306,7 @@
     "option_a": "主動讓給別人",
     "option_b": "提議切成小份分享",
     "option_c": "用猜拳決定",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 171,
@@ -1314,7 +1314,7 @@
     "option_a": "專心聽完不急著給建議",
     "option_b": "帶對方出去散散心",
     "option_c": "給對方時間整理情緒",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 172,
@@ -1322,7 +1322,7 @@
     "option_a": "再傳一次簡短提醒",
     "option_b": "看訊息內容是否需要立即答覆",
     "option_c": "有點在意但不會直接追問",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 173,
@@ -1330,7 +1330,7 @@
     "option_a": "重新排列優先順序",
     "option_b": "先告知相關人風險",
     "option_c": "延後其他較不急的事",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 174,
@@ -1338,7 +1338,7 @@
     "option_a": "偏好低咖啡因飲品",
     "option_b": "幾乎不喝含咖啡因飲料",
     "option_c": "看當天睡眠狀況決定",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 175,
@@ -1346,7 +1346,7 @@
     "option_a": "先開燈查看周圍",
     "option_b": "請同住者一起確認",
     "option_c": "用手機照明但保持距離",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 176,
@@ -1354,14 +1354,14 @@
     "option_a": "跟熟悉的人一起試",
     "option_b": "從最簡單的版本入門",
     "option_c": "先觀察別人玩再決定",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 177,
     "text": "當「討論開始變成互相指責」時，{target_name}意見衝突升溫時會怎麼處理？",
     "option_a": "把爭論焦點整理成具體問題",
     "option_b": "聽完對方理由再回應",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 178,
@@ -1369,14 +1369,14 @@
     "option_a": "先確認改變原因和影響",
     "option_b": "覺得有機會嘗試別的事",
     "option_c": "和相關的人重新協調",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 179,
     "text": "面對「開始和一個人穩定交往」，你猜{target_name}訊息聯絡頻率最舒服的是哪種？",
     "option_a": "每天固定聊一段時間",
     "option_b": "想到就分享不要求即時回覆",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 180,
@@ -1384,7 +1384,7 @@
     "option_a": "參加在地導覽",
     "option_b": "走訪美術館和歷史建築",
     "option_c": "深入自然景區",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 181,
@@ -1392,7 +1392,7 @@
     "option_a": "登陸月球走一圈",
     "option_b": "參觀太空站日常",
     "option_c": "只從安全的太空旅館遠眺",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 182,
@@ -1400,14 +1400,14 @@
     "option_a": "確認退換貨規則後處理",
     "option_b": "保留經驗下次先試用",
     "option_c": "聯絡客服反映實際問題",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 183,
     "text": "當「收到一場活動邀請」時，{target_name}參加社交活動時最重視哪種收穫？",
     "option_a": "和熟人好好相處",
     "option_b": "了解新的想法或文化",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 184,
@@ -1415,7 +1415,7 @@
     "option_a": "跟外觀特徵有關",
     "option_b": "神話或角色靈感",
     "option_c": "反差感很強的搞笑名字",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 185,
@@ -1423,14 +1423,14 @@
     "option_a": "立刻提醒對方停止",
     "option_b": "用幽默方式帶過",
     "option_c": "以後先看完再加入話題",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 186,
     "text": "當「走出車站後找不到方向」時，{target_name}旅行迷路時最可能怎麼處理？",
     "option_a": "找當地店員問路",
     "option_b": "回到上一個確認過的地標",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 187,
@@ -1438,7 +1438,7 @@
     "option_a": "能按自己的價值做決定",
     "option_b": "把重要的事情完成得很好",
     "option_c": "被信任且能幫助他人",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 188,
@@ -1446,7 +1446,7 @@
     "option_a": "熱騰騰現做的感覺",
     "option_b": "方便邊走邊吃",
     "option_c": "有咖啡或茶提神",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 189,
@@ -1454,7 +1454,7 @@
     "option_a": "承認記錯並補上正確資訊",
     "option_b": "請熟悉該主題的人補充",
     "option_c": "停止延伸不確定的說法",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 190,
@@ -1462,14 +1462,14 @@
     "option_a": "找更進階的挑戰",
     "option_b": "先穩定練習不急著分享",
     "option_c": "整理成果建立作品集",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 191,
     "text": "如果碰上「旅行時要找早餐店」，你猜{target_name}早餐最希望提供哪種滿足感？",
     "option_a": "清爽不會太有負擔",
     "option_b": "熱騰騰現做的感覺",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 192,
@@ -1477,7 +1477,7 @@
     "option_a": "待在安全處聽清楚方向",
     "option_b": "請同住者一起確認",
     "option_c": "查看門窗是否關好",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 193,
@@ -1485,28 +1485,28 @@
     "option_a": "酥脆有聲音",
     "option_b": "Q彈有嚼勁",
     "option_c": "外脆內軟",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 194,
     "text": "當「有人在感情上很困擾」時，{target_name}朋友需要傾訴時你會怎麼陪伴？",
     "option_a": "專心聽完不急著給建議",
     "option_b": "幫忙想下一步可以怎麼做",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 195,
     "text": "如果碰上「思考下一個重要目標」，你猜{target_name}對成功的定義最接近哪一種？",
     "option_a": "有能力照顧自己和家人",
     "option_b": "留下有意義的作品或影響",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 196,
     "text": "在「朋友平常回訊息很快但今天很慢」的情境下，你覺得{target_name}朋友很久沒回訊息時會怎麼想？",
     "option_a": "改用電話確認是否有急事",
     "option_b": "有點在意但不會直接追問",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 197,
@@ -1514,21 +1514,21 @@
     "option_a": "查看大眾運輸路線圖",
     "option_b": "把迷路當成探索小巷的機會",
     "option_c": "和旅伴先約定集合點",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 198,
     "text": "在「社區開了新的體驗課」的情境下，你覺得{target_name}面對完全陌生的休閒活動會怎麼選？",
     "option_a": "跟熟悉的人一起試",
     "option_b": "從最簡單的版本入門",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 199,
     "text": "如果碰上「簡報中發現數字有誤」，你猜{target_name}說話時發現自己講錯內容會怎麼做？",
     "option_a": "承認記錯並補上正確資訊",
     "option_b": "先查證後再回覆",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 200,
@@ -1536,14 +1536,14 @@
     "option_a": "先暫停讓情緒降下來",
     "option_b": "聽完對方理由再回應",
     "option_c": "找雙方都信任的人協調",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 201,
     "text": "當「旅程只剩一天可自由探索」時，{target_name}最想用哪種方式體驗當地生活？",
     "option_a": "騎單車穿過街區",
     "option_b": "參加手作或料理課",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 202,
@@ -1551,7 +1551,7 @@
     "option_a": "想到就分享不要求即時回覆",
     "option_b": "喜歡隨時傳日常照片",
     "option_c": "依彼此當天狀況調整",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 203,
@@ -1559,7 +1559,7 @@
     "option_a": "重新排列優先順序",
     "option_b": "先告知相關人風險",
     "option_c": "縮小非必要工作範圍",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 204,
@@ -1567,7 +1567,7 @@
     "option_a": "學習課程或新技能",
     "option_b": "提升居家舒適度",
     "option_c": "買時間省力的服務",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 205,
@@ -1575,7 +1575,7 @@
     "option_a": "簡短好喊的兩個字",
     "option_b": "有故事或寓意的名字",
     "option_c": "自然元素如雲朵星星",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 206,
@@ -1583,7 +1583,7 @@
     "option_a": "先確認改變原因和影響",
     "option_b": "覺得有機會嘗試別的事",
     "option_c": "需要一點時間調整心情",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 207,
@@ -1591,7 +1591,7 @@
     "option_a": "提早尋找插座充電",
     "option_b": "電量很低才開始處理",
     "option_c": "接受低電量不特別焦慮",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 208,
@@ -1599,7 +1599,7 @@
     "option_a": "靠走道方便進出",
     "option_b": "不挑位置只要能入場",
     "option_c": "離出口近以便散場",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 209,
@@ -1607,14 +1607,14 @@
     "option_a": "確認退換貨規則後處理",
     "option_b": "先試著調整使用方式",
     "option_c": "二手轉售減少浪費",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 210,
     "text": "在「可以挑一個太空體驗項目」的情境下，你覺得{target_name}如果能去太空旅行最想體驗什麼？",
     "option_a": "體驗失重生活",
     "option_b": "研究未知行星",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 211,
@@ -1622,7 +1622,7 @@
     "option_a": "先清空洗碗槽",
     "option_b": "先把衣服分類洗好",
     "option_c": "挑最容易完成的建立動力",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 212,
@@ -1630,7 +1630,7 @@
     "option_a": "下午喝茶就足夠",
     "option_b": "只在熬夜或趕工時喝",
     "option_c": "幾乎不喝含咖啡因飲料",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 213,
@@ -1638,7 +1638,7 @@
     "option_a": "主動讓給別人",
     "option_b": "用猜拳決定",
     "option_c": "改拿其他食物不爭搶",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 214,
@@ -1646,14 +1646,14 @@
     "option_a": "立刻提醒對方停止",
     "option_b": "乾脆把結局也聽完",
     "option_c": "不介意劇透反而想知道",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 215,
     "text": "當「伴侶最近完成重要目標」時，{target_name}準備驚喜時會偏向哪種方式？",
     "option_a": "準備有故事的禮物",
     "option_b": "選擇對方一直想去的地方",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 216,
@@ -1661,7 +1661,7 @@
     "option_a": "認識不同背景的新朋友",
     "option_b": "一起創造有趣回憶",
     "option_c": "了解新的想法或文化",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 217,
@@ -1669,7 +1669,7 @@
     "option_a": "學習課程或新技能",
     "option_b": "提升居家舒適度",
     "option_c": "長期儲蓄或投資",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 218,
@@ -1677,7 +1677,7 @@
     "option_a": "小而貼心的日常安排",
     "option_b": "準備有故事的禮物",
     "option_c": "先確認對方真的喜歡驚喜",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 219,
@@ -1685,14 +1685,14 @@
     "option_a": "認識不同背景的新朋友",
     "option_b": "了解新的想法或文化",
     "option_c": "練習表達和建立信心",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 220,
     "text": "如果碰上「晚上聚會但不想影響睡眠」，你猜{target_name}對咖啡因的需求最接近哪一種？",
     "option_a": "只在熬夜或趕工時喝",
     "option_b": "偏好低咖啡因飲品",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 221,
@@ -1700,21 +1700,21 @@
     "option_a": "把爭論焦點整理成具體問題",
     "option_b": "把無法達成共識的部分先擱置",
     "option_c": "明確說出不能接受的行為",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 222,
     "text": "遇到「聚會的招牌菜被大家搶著夾」時，{target_name}會怎麼分配最後一份共享食物？",
     "option_a": "用猜拳決定",
     "option_b": "改拿其他食物不爭搶",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 223,
     "text": "面對「決定主菜的烹調方式」，你猜{target_name}最在意哪種食物口感？",
     "option_a": "綿密細緻",
     "option_b": "滑順不費力",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 224,
@@ -1722,7 +1722,7 @@
     "option_a": "能按自己的價值做決定",
     "option_b": "有能力照顧自己和家人",
     "option_c": "持續成長而非停在原地",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 225,
@@ -1730,7 +1730,7 @@
     "option_a": "先問對方想被聽還是想找解法",
     "option_b": "分享自己類似的經驗",
     "option_c": "帶對方出去散散心",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 226,
@@ -1738,21 +1738,21 @@
     "option_a": "縮小非必要工作範圍",
     "option_b": "請團隊協助拆分任務",
     "option_c": "延後其他較不急的事",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 227,
     "text": "面對「要替寵物設計名牌」，你猜{target_name}如果要替寵物取名字會偏向哪種風格？",
     "option_a": "有故事或寓意的名字",
     "option_b": "神話或角色靈感",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 228,
     "text": "遇到「週末想把家恢復整潔」時，{target_name}家事堆積時會從哪一項開始？",
     "option_a": "先把衣服分類洗好",
     "option_b": "先完成最花時間的一項",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 229,
@@ -1760,7 +1760,7 @@
     "option_a": "乾脆把結局也聽完",
     "option_b": "不介意劇透反而想知道",
     "option_c": "用幽默方式帶過",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 230,
@@ -1768,14 +1768,14 @@
     "option_a": "先假設對方正在忙",
     "option_b": "等對方方便時再回",
     "option_c": "有點在意但不會直接追問",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 231,
     "text": "如果碰上「大樓走廊出現反覆敲門聲」，你猜{target_name}遇到不明聲音時會怎麼確認？",
     "option_a": "查看門窗是否關好",
     "option_b": "如果懷疑有危險就聯絡協助",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 232,
@@ -1783,14 +1783,14 @@
     "option_a": "逛傳統市場吃小吃",
     "option_b": "走訪美術館和歷史建築",
     "option_c": "深入自然景區",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 233,
     "text": "面對「網購顏色和照片有差距」，你猜{target_name}發現買到不適合的商品會怎麼做？",
     "option_a": "二手轉售減少浪費",
     "option_b": "保留經驗下次先試用",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 234,
@@ -1798,14 +1798,14 @@
     "option_a": "每天固定聊一段時間",
     "option_b": "想到就分享不要求即時回覆",
     "option_c": "重要事情再聯絡",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 235,
     "text": "遇到「朋友問你學到了什麼」時，{target_name}學會一項新技能後會怎麼使用？",
     "option_a": "先穩定練習不急著分享",
     "option_b": "整理成果建立作品集",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 236,
@@ -1813,7 +1813,7 @@
     "option_a": "體驗失重生活",
     "option_b": "拍攝宇宙深空影像",
     "option_c": "研究未知行星",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 237,
@@ -1821,7 +1821,7 @@
     "option_a": "馬上修正避免誤導",
     "option_b": "請熟悉該主題的人補充",
     "option_c": "停止延伸不確定的說法",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 238,
@@ -1829,7 +1829,7 @@
     "option_a": "先找新手體驗課",
     "option_b": "跟熟悉的人一起試",
     "option_c": "直接挑有挑戰性的課程",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 239,
@@ -1837,7 +1837,7 @@
     "option_a": "後方視野完整的位置",
     "option_b": "靠走道方便進出",
     "option_c": "離出口近以便散場",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 240,
@@ -1845,7 +1845,7 @@
     "option_a": "開地圖重新定位",
     "option_b": "查看大眾運輸路線圖",
     "option_c": "和旅伴先約定集合點",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 241,
@@ -1853,7 +1853,7 @@
     "option_a": "關閉耗電功能延長電量",
     "option_b": "借用朋友的充電設備",
     "option_c": "接受低電量不特別焦慮",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 242,
@@ -1861,21 +1861,21 @@
     "option_a": "方便邊走邊吃",
     "option_b": "有咖啡或茶提神",
     "option_c": "能慢慢坐下來吃",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 243,
     "text": "如果碰上「旅行遇到交通問題」，你猜{target_name}臨時改變計畫時通常會怎麼反應？",
     "option_a": "快速重排新的安排",
     "option_b": "覺得有機會嘗試別的事",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 244,
     "text": "在「終於有一部期待已久的新劇上架」的情境下，你覺得{target_name}追劇時最接近哪種觀看習慣？",
     "option_a": "一次連看好幾集",
     "option_b": "週末集中看完整季",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 245,
@@ -1883,21 +1883,21 @@
     "option_a": "改去附近買簡單餐點",
     "option_b": "耐心等待並調整用餐時間",
     "option_c": "取消訂單換另一家",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 246,
     "text": "面對「反覆修改仍不滿意」，你猜{target_name}創作遇到瓶頸時會怎麼找靈感？",
     "option_a": "暫時離開作品去散步",
     "option_b": "找人討論卡住之處",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 247,
     "text": "當「自己設計一份套餐」時，{target_name}會選哪種食材當料理主角？",
     "option_a": "菇類與根莖蔬菜",
     "option_b": "蛋料理與起司",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 248,
@@ -1905,7 +1905,7 @@
     "option_a": "減少非必要加班",
     "option_b": "減少無意義的社群使用",
     "option_c": "重新評估長期職涯方向",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 249,
@@ -1913,21 +1913,21 @@
     "option_a": "先比較多家規格與價格",
     "option_b": "確認是否真的常用",
     "option_c": "設定預算超過就不買",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 250,
     "text": "當「需要買一雙每天通勤的鞋」時，{target_name}挑選一件長期使用的包或鞋會看什麼？",
     "option_a": "舒適度和支撐性",
     "option_b": "收納空間與實用細節",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 251,
     "text": "面對「多人聚餐結帳時」，你猜{target_name}對分帳方式最能接受哪種做法？",
     "option_a": "主揪先付款再逐一收款",
     "option_b": "輪流請客不逐筆計較",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 252,
@@ -1935,14 +1935,14 @@
     "option_a": "海洋中的鯨豚",
     "option_b": "森林裡的野生動物",
     "option_c": "不選動物而選植物",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 253,
     "text": "當「家中鳥類忽然叫得和平常不同」時，{target_name}動物突然發出奇怪聲音時會怎麼反應？",
     "option_a": "保持環境安靜讓牠休息",
     "option_b": "不驚擾牠並留意變化",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 254,
@@ -1950,14 +1950,14 @@
     "option_a": "先完成最重要的承諾",
     "option_b": "坦白道歉不硬撐",
     "option_c": "重新安排自己其他工作",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 255,
     "text": "面對「買了新收納櫃要重新整理」，你猜{target_name}家中物品的收納方式偏向哪一種？",
     "option_a": "放透明盒容易看見內容",
     "option_b": "定期丟掉不需要的東西",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 256,
@@ -1965,7 +1965,7 @@
     "option_a": "查演唱者還有什麼作品",
     "option_b": "問朋友為什麼推薦這首",
     "option_c": "找現場版感受表演",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 257,
@@ -1973,7 +1973,7 @@
     "option_a": "先確認對方具體需要什麼",
     "option_b": "保持適當距離先觀察情況",
     "option_c": "若有明顯危險就聯絡緊急協助",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 258,
@@ -1981,7 +1981,7 @@
     "option_a": "先冷靜並約好何時再談",
     "option_b": "寫下想說的話避免失焦",
     "option_c": "必要時尋求伴侶諮商或第三方協助",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 259,
@@ -1989,7 +1989,7 @@
     "option_a": "只留最常用的第一頁",
     "option_b": "依使用頻率排序",
     "option_c": "讓桌面保持極簡",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 260,
@@ -1997,7 +1997,7 @@
     "option_a": "和有經驗的人討論",
     "option_b": "先做小規模測試",
     "option_c": "不想因害怕錯過而匆忙決定",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 261,
@@ -2005,14 +2005,14 @@
     "option_a": "介紹自己的興趣",
     "option_b": "先問大家想知道什麼",
     "option_c": "準備好的內容照順序說完",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 262,
     "text": "在「主管對你的簡報提出修改」的情境下，你覺得{target_name}收到工作回饋時會怎麼運用？",
     "option_a": "先釐清哪些地方可改善",
     "option_b": "記錄具體可執行的建議",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 263,
@@ -2020,7 +2020,7 @@
     "option_a": "騎單車探索小鎮",
     "option_b": "在草地野餐聊天",
     "option_c": "划船或玩水上活動",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 264,
@@ -2028,7 +2028,7 @@
     "option_a": "單車深入小巷",
     "option_b": "長途巴士控制預算",
     "option_c": "包車讓行程更彈性",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 265,
@@ -2036,7 +2036,7 @@
     "option_a": "待在室內遠離窗戶",
     "option_b": "暫停戶外活動",
     "option_c": "避開樹木與不安全遮蔽物",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 266,
@@ -2044,7 +2044,7 @@
     "option_a": "把戶外景點換成室內活動",
     "option_b": "改去附近咖啡館休息",
     "option_c": "留在住宿附近探索",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 267,
@@ -2052,7 +2052,7 @@
     "option_a": "整理大家的共識",
     "option_b": "提出新點子打開話題",
     "option_c": "只在需要時回覆",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 268,
@@ -2060,7 +2060,7 @@
     "option_a": "只有最親近的幾個人",
     "option_b": "朋友各自帶一道菜分享",
     "option_c": "分成不同小聚避免太擁擠",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 269,
@@ -2068,7 +2068,7 @@
     "option_a": "查交通路線與時間",
     "option_b": "找住宿和訂房",
     "option_c": "整理餐廳及景點清單",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 270,
@@ -2076,7 +2076,7 @@
     "option_a": "如果差異不大就接受",
     "option_b": "先確認自己下單是否有誤",
     "option_c": "不喝並請店家協助處理",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 271,
@@ -2084,7 +2084,7 @@
     "option_a": "舒適度和支撐性",
     "option_b": "重量輕方便攜帶",
     "option_c": "設計有特色不容易撞款",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 272,
@@ -2092,7 +2092,7 @@
     "option_a": "禮貌告知並詢問能否重做",
     "option_b": "如果差異不大就接受",
     "option_c": "下次點單時再特別備註",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 273,
@@ -2100,7 +2100,7 @@
     "option_a": "大型派對認識新朋友",
     "option_b": "線上和遠方的人一起慶祝",
     "option_c": "簡單吃飯不安排太多活動",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 274,
@@ -2108,7 +2108,7 @@
     "option_a": "分享一個有趣的小事",
     "option_b": "先問大家想知道什麼",
     "option_c": "用幽默開場化解緊張",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 275,
@@ -2116,7 +2116,7 @@
     "option_a": "暫時離開作品去散步",
     "option_b": "回到基本功重新練習",
     "option_c": "先接受不完美版本",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 276,
@@ -2124,7 +2124,7 @@
     "option_a": "按使用頻率放置",
     "option_b": "保留常用物品在手邊",
     "option_c": "依房間用途分區收納",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 277,
@@ -2132,7 +2132,7 @@
     "option_a": "騎單車探索小鎮",
     "option_b": "在草地野餐聊天",
     "option_c": "露營看星星",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 278,
@@ -2140,7 +2140,7 @@
     "option_a": "先吃家裡現有的小點心",
     "option_b": "耐心等待並調整用餐時間",
     "option_c": "取消訂單換另一家",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 279,
@@ -2148,21 +2148,21 @@
     "option_a": "先釐清哪些地方可改善",
     "option_b": "記錄具體可執行的建議",
     "option_c": "先消化情緒再評估內容",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 280,
     "text": "遇到「公共場所有人東西掉了一地」時，{target_name}遇到需要幫忙的陌生人會如何判斷？",
     "option_a": "提供自己能安全做到的協助",
     "option_b": "保持適當距離先觀察情況",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 281,
     "text": "遇到「山區天候轉差」時，{target_name}遇到突然變天會如何調整行程？",
     "option_a": "把戶外景點換成室內活動",
     "option_b": "重新安排景點順序",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 282,
@@ -2170,7 +2170,7 @@
     "option_a": "確認門窗是否關妥",
     "option_b": "暫停戶外活動",
     "option_c": "檢查手電筒和行動電源",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 283,
@@ -2178,14 +2178,14 @@
     "option_a": "整理大家的共識",
     "option_b": "負責活絡氣氛",
     "option_c": "私下和相關的人細談",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 284,
     "text": "在「準備購買家具或家電」的情境下，你覺得{target_name}面對高價商品會怎麼做決策？",
     "option_a": "確認是否真的常用",
     "option_b": "設定預算超過就不買",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 285,
@@ -2193,7 +2193,7 @@
     "option_a": "把行程安排得更有界線",
     "option_b": "降低不必要的消費",
     "option_c": "減少無意義的社群使用",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 286,
@@ -2201,7 +2201,7 @@
     "option_a": "找住宿和訂房",
     "option_b": "整理餐廳及景點清單",
     "option_c": "負責氣氛與現場協調",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 287,
@@ -2209,14 +2209,14 @@
     "option_a": "一次連看好幾集",
     "option_b": "看完會找解析或彩蛋",
     "option_c": "不愛追劇偏好單部電影",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 288,
     "text": "在「社群突然流行一段副歌」的情境下，你覺得{target_name}遇到完全沒聽過的歌會怎麼反應？",
     "option_a": "加入清單過幾天再聽",
     "option_b": "看歌曲評價與背景故事",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 289,
@@ -2224,14 +2224,14 @@
     "option_a": "先觀察是否有不舒服",
     "option_b": "查資料辨認聲音原因",
     "option_c": "保持環境安靜讓牠休息",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 290,
     "text": "如果碰上「雙方都覺得自己沒被理解」，你猜{target_name}伴侶發生爭執後你較偏向怎麼修復？",
     "option_a": "透過具體行動表達改變",
     "option_b": "必要時尋求伴侶諮商或第三方協助",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 291,
@@ -2239,14 +2239,14 @@
     "option_a": "大眾運輸省去停車煩惱",
     "option_b": "單車深入小巷",
     "option_c": "國內線節省跨區時間",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 292,
     "text": "遇到「工作期限突然提前」時，{target_name}答應幫忙卻發現自己忙不過來時會怎麼辦？",
     "option_a": "找可信任的人分擔一部分",
     "option_b": "坦白道歉不硬撐",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 293,
@@ -2254,14 +2254,14 @@
     "option_a": "雞肉與香草",
     "option_b": "蛋料理與起司",
     "option_c": "魚肉與清爽醬汁",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 294,
     "text": "如果碰上「換新手機要重新整理」，你猜{target_name}整理手機 App 時會優先採取哪種方式？",
     "option_a": "只留最常用的第一頁",
     "option_b": "依顏色或視覺風格排版",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 295,
@@ -2269,7 +2269,7 @@
     "option_a": "海洋中的鯨豚",
     "option_b": "森林裡的野生動物",
     "option_c": "神話傳說中的生物",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 296,
@@ -2277,7 +2277,7 @@
     "option_a": "願意試但先設定停損點",
     "option_b": "和有經驗的人討論",
     "option_c": "看機會是否符合自己的價值",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 297,
@@ -2285,7 +2285,7 @@
     "option_a": "所有人平均分攤",
     "option_b": "輪流請客不逐筆計較",
     "option_c": "先講好預算再點餐",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 298,
@@ -2293,7 +2293,7 @@
     "option_a": "等待促銷或折扣",
     "option_b": "確認是否真的常用",
     "option_c": "試用後再決定",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 299,
@@ -2301,7 +2301,7 @@
     "option_a": "牛肉與黑胡椒",
     "option_b": "豬肉與蒜香",
     "option_c": "魚肉與清爽醬汁",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 300,
@@ -2309,14 +2309,14 @@
     "option_a": "重量輕方便攜帶",
     "option_b": "價格符合使用頻率",
     "option_c": "設計有特色不容易撞款",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 301,
     "text": "面對「旅行有一天沒有既定安排」，你猜{target_name}戶外活動時最想擁有哪種體驗？",
     "option_a": "走森林步道聽自然聲音",
     "option_b": "看海散步吹風",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 302,
@@ -2324,7 +2324,7 @@
     "option_a": "先釐清哪些地方可改善",
     "option_b": "比較回饋和自己的目標",
     "option_c": "先消化情緒再評估內容",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 303,
@@ -2332,7 +2332,7 @@
     "option_a": "放透明盒容易看見內容",
     "option_b": "分類標籤一目了然",
     "option_c": "保留常用物品在手邊",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 304,
@@ -2340,7 +2340,7 @@
     "option_a": "透過具體行動表達改變",
     "option_b": "寫下想說的話避免失焦",
     "option_c": "必要時尋求伴侶諮商或第三方協助",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 305,
@@ -2348,14 +2348,14 @@
     "option_a": "看不同領域的作品",
     "option_b": "做一個完全不同的小實驗",
     "option_c": "收集素材等新的連結出現",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 306,
     "text": "遇到「同行者對交通方式看法不同」時，{target_name}旅行交通會優先選哪一種？",
     "option_a": "租車行動最自由",
     "option_b": "單車深入小巷",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 307,
@@ -2363,42 +2363,42 @@
     "option_a": "待在室內遠離窗戶",
     "option_b": "確認門窗是否關妥",
     "option_c": "查看官方天氣警報",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 308,
     "text": "遇到「旅行只剩兩週要出發」時，{target_name}安排朋友旅行時會自然接下哪種工作？",
     "option_a": "整理餐廳及景點清單",
     "option_b": "拍照記錄旅程",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 309,
     "text": "當「半夜訂的宵夜一直未送達」時，{target_name}外送比預期晚到時會如何安排？",
     "option_a": "耐心等待並調整用餐時間",
     "option_b": "取消訂單換另一家",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 310,
     "text": "遇到「朋友想一起辦主題派對」時，{target_name}節日聚會會選哪種規模？",
     "option_a": "朋友各自帶一道菜分享",
     "option_b": "戶外野餐或烤肉",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 311,
     "text": "當「新同事加入團隊」時，{target_name}被突然要求自我介紹時會怎麼呈現自己？",
     "option_a": "簡短說明工作或目前在做的事",
     "option_b": "介紹自己的興趣",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 312,
     "text": "面對「聊天話題逐漸偏離重點」，你猜{target_name}在群組討論中最常扮演哪種溝通角色？",
     "option_a": "提出新點子打開話題",
     "option_b": "問大家是否有不同意見",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 313,
@@ -2406,7 +2406,7 @@
     "option_a": "先確認對方具體需要什麼",
     "option_b": "提供自己能安全做到的協助",
     "option_c": "找附近工作人員一起處理",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 314,
@@ -2414,7 +2414,7 @@
     "option_a": "一次連看好幾集",
     "option_b": "每天固定看一集",
     "option_c": "開倍速補完進度",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 315,
@@ -2422,7 +2422,7 @@
     "option_a": "依使用頻率排序",
     "option_b": "刪掉很久沒開的 App",
     "option_c": "保留很多工具以備不時之需",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 316,
@@ -2430,7 +2430,7 @@
     "option_a": "先看最壞結果是否可承受",
     "option_b": "比較長期回報與成本",
     "option_c": "願意試但先設定停損點",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 317,
@@ -2438,14 +2438,14 @@
     "option_a": "找可信任的人分擔一部分",
     "option_b": "先完成最重要的承諾",
     "option_c": "坦白道歉不硬撐",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 318,
     "text": "當「想讓生活有更多私人空間」時，{target_name}工作與生活平衡時最願意調整哪一部分？",
     "option_a": "減少非必要加班",
     "option_b": "降低不必要的消費",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 319,
@@ -2453,7 +2453,7 @@
     "option_a": "所有人平均分攤",
     "option_b": "先講好預算再點餐",
     "option_c": "用共同帳本記錄支出",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 320,
@@ -2461,14 +2461,14 @@
     "option_a": "先觀察是否有不舒服",
     "option_b": "錄下來請專業人士判斷",
     "option_c": "詢問有經驗的飼主",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 321,
     "text": "面對「朋友問你最想問動物什麼」，你猜{target_name}若能和一種生物交談一天會選誰？",
     "option_a": "已滅絕的史前動物",
     "option_b": "神話傳說中的生物",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 322,
@@ -2476,7 +2476,7 @@
     "option_a": "先聽完再決定喜不喜歡",
     "option_b": "看歌詞理解作品",
     "option_c": "查演唱者還有什麼作品",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 323,
@@ -2484,7 +2484,7 @@
     "option_a": "購買簡便雨具繼續走",
     "option_b": "重新安排景點順序",
     "option_c": "留在住宿附近探索",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 324,
@@ -2492,7 +2492,7 @@
     "option_a": "如果差異不大就接受",
     "option_b": "下次點單時再特別備註",
     "option_c": "不喝並請店家協助處理",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 325,
@@ -2500,7 +2500,7 @@
     "option_a": "找手電筒或備用照明",
     "option_b": "檢查重要設備是否安全",
     "option_c": "先讓家人或室友安心",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 326,
@@ -2508,7 +2508,7 @@
     "option_a": "限定預算的趣味小物",
     "option_b": "自己做的手作品",
     "option_c": "盲抽驚喜不提前透露",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 327,
@@ -2516,14 +2516,14 @@
     "option_a": "大家都熟的合唱曲",
     "option_b": "難度高但喜歡的歌",
     "option_c": "近期熱門排行榜歌曲",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 328,
     "text": "當「獲得一次看見未來的機會」時，{target_name}如果能預知未來會怎麼使用？",
     "option_a": "只看重大決策的可能結果",
     "option_b": "只看一個和好奇心有關的答案",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 329,
@@ -2531,14 +2531,14 @@
     "option_a": "禮貌請店員協助更換",
     "option_b": "看起來能吃就接受",
     "option_c": "和同桌交換餐點",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 330,
     "text": "當「連續忙碌一週後終於放假」時，{target_name}想充電時會選哪種休閒步調？",
     "option_a": "安排充滿活動的一整天",
     "option_b": "完全不排任何行程",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 331,
@@ -2546,7 +2546,7 @@
     "option_a": "隔天完整加熱再吃",
     "option_b": "分享給願意吃的家人",
     "option_c": "只留下最想吃的部分",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 332,
@@ -2554,7 +2554,7 @@
     "option_a": "住宿是否真正寵物友善",
     "option_b": "動物能否適應人潮",
     "option_c": "是否要準備牽繩與運輸籠",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 333,
@@ -2562,7 +2562,7 @@
     "option_a": "規劃流程和確認期限",
     "option_b": "負責實際執行與交付",
     "option_c": "照顧團隊氣氛與合作節奏",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 334,
@@ -2570,28 +2570,28 @@
     "option_a": "親手做的禮物或卡片",
     "option_b": "重訪第一次約會的地方",
     "option_c": "旅行或住宿一晚",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 335,
     "text": "在「不用趕時間的週末早晨」的情境下，你覺得{target_name}週末早午餐會偏好哪種組合？",
     "option_a": "班尼迪克蛋與沙拉",
     "option_b": "燻雞三明治與咖啡",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 336,
     "text": "如果碰上「飲料可以自由加料」，你猜{target_name}會為了哪種配料加價？",
     "option_a": "珍珠或粉粿",
     "option_b": "燕麥奶等替代奶",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 337,
     "text": "如果碰上「會議上你的提案沒有被採用」，你猜{target_name}意見被否定時會怎麼反應？",
     "option_a": "詢問對方主要疑慮",
     "option_b": "用更多資料補充觀點",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 338,
@@ -2599,7 +2599,7 @@
     "option_a": "換策略或裝備",
     "option_b": "反覆練習同一關",
     "option_c": "降低難度享受劇情",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 339,
@@ -2607,14 +2607,14 @@
     "option_a": "只保留常穿合身的衣物",
     "option_b": "設定一年沒穿就重新評估",
     "option_c": "搭配出新穿法再決定",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 340,
     "text": "在「朋友當眾稱讚你的穿搭」的情境下，你覺得{target_name}收到突如其來的稱讚時會怎麼回應？",
     "option_a": "開玩笑緩和氣氛",
     "option_b": "把功勞分享給一起努力的人",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 341,
@@ -2622,7 +2622,7 @@
     "option_a": "購物或紀念品",
     "option_b": "自然景點和戶外活動",
     "option_c": "把錢留給下一次旅行",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 342,
@@ -2630,7 +2630,7 @@
     "option_a": "搬到喜歡的城市居住",
     "option_b": "學習一直想學的技能",
     "option_c": "參與公益或社區計畫",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 343,
@@ -2638,7 +2638,7 @@
     "option_a": "主動分享自己的作品",
     "option_b": "提出具體問題向人請教",
     "option_c": "先默默學習一段時間",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 344,
@@ -2646,14 +2646,14 @@
     "option_a": "用簡短回答結束話題",
     "option_b": "轉移話題到共同興趣",
     "option_c": "視關係遠近決定透露程度",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 345,
     "text": "當「收到只有一個句點的回覆」時，{target_name}面對語氣模糊的文字會怎麼判讀？",
     "option_a": "直接問對方真正意思",
     "option_b": "依平常相處模式理解",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 346,
@@ -2661,7 +2661,7 @@
     "option_a": "私下問清楚發生什麼事",
     "option_b": "在不升高衝突下提出公平做法",
     "option_c": "若涉及欺負就尋求可信任的人協助",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 347,
@@ -2669,7 +2669,7 @@
     "option_a": "整理好照片再發貼文",
     "option_b": "只留在私人相簿",
     "option_c": "拍很多但最後只挑一張",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 348,
@@ -2677,14 +2677,14 @@
     "option_a": "先蒐集每個人的意見",
     "option_b": "先試行一段時間再評估",
     "option_c": "依專業和實際限制判斷",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 349,
     "text": "如果碰上「大型商場內部動線很複雜」，你猜{target_name}在陌生建築找不到出口時會怎麼做？",
     "option_a": "使用地圖或樓層指引",
     "option_b": "跟隨正式疏散指示而非人群亂跑",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 350,
@@ -2692,14 +2692,14 @@
     "option_a": "按每天穿搭分袋整理",
     "option_b": "用收納袋壓縮體積",
     "option_c": "行李前一晚才一次完成",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 351,
     "text": "在「有機會參與一個社區計畫」的情境下，你覺得{target_name}如果能長期投入一個公共議題會選哪個？",
     "option_a": "食物浪費與資源循環",
     "option_b": "社區照顧和世代交流",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 352,
@@ -2707,7 +2707,7 @@
     "option_a": "親手做的禮物或卡片",
     "option_b": "重訪第一次約會的地方",
     "option_c": "一起完成新的體驗",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 353,
@@ -2715,7 +2715,7 @@
     "option_a": "先接受不同看法",
     "option_b": "暫時停下來重新思考",
     "option_c": "把討論焦點放回共同目標",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 354,
@@ -2723,7 +2723,7 @@
     "option_a": "班尼迪克蛋與沙拉",
     "option_b": "可頌與拿鐵",
     "option_c": "日式飯糰和味噌湯",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 355,
@@ -2731,7 +2731,7 @@
     "option_a": "自己做的手作品",
     "option_b": "不能買全新物品的二手交換",
     "option_c": "依抽到的人喜好挑選",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 356,
@@ -2739,7 +2739,7 @@
     "option_a": "珍珠或粉粿",
     "option_b": "濃縮咖啡加 shot",
     "option_c": "茶凍或仙草",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 357,
@@ -2747,14 +2747,14 @@
     "option_a": "由負責人決定並說明理由",
     "option_b": "提出方案後快速投票",
     "option_c": "依專業和實際限制判斷",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 358,
     "text": "面對「排位賽連續輸好幾場」，你猜{target_name}打遊戲連續失敗時會怎麼做？",
     "option_a": "休息一下再挑戰",
     "option_b": "換策略或裝備",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 359,
@@ -2762,7 +2762,7 @@
     "option_a": "列清單逐項打包",
     "option_b": "按每天穿搭分袋整理",
     "option_c": "用收納袋壓縮體積",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 360,
@@ -2770,7 +2770,7 @@
     "option_a": "大家都熟的合唱曲",
     "option_b": "節奏快能帶動氣氛的歌",
     "option_c": "不用太多高音的安全牌",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 361,
@@ -2778,7 +2778,7 @@
     "option_a": "城市綠地和環境改善",
     "option_b": "動物福利與保育",
     "option_c": "食物浪費與資源循環",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 362,
@@ -2786,7 +2786,7 @@
     "option_a": "用簡短回答結束話題",
     "option_b": "反問對方為什麼想知道",
     "option_c": "視關係遠近決定透露程度",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 363,
@@ -2794,7 +2794,7 @@
     "option_a": "找清楚的逃生指示",
     "option_b": "回到最後確認的路口",
     "option_c": "詢問現場工作人員",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 364,
@@ -2802,7 +2802,7 @@
     "option_a": "高品質住宿",
     "option_b": "門票與特殊體驗",
     "option_c": "留一筆彈性預算",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 365,
@@ -2810,35 +2810,35 @@
     "option_a": "當下就分享限時動態",
     "option_b": "整理好照片再發貼文",
     "option_c": "只留在私人相簿",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 366,
     "text": "如果碰上「飲料甜度做錯但已封膜」，你猜{target_name}會如何和店家協調處理？",
     "option_a": "只反映影響過敏或忌口的問題",
     "option_b": "照付但下次不再光顧",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 367,
     "text": "遇到「換季需要整理衣物」時，{target_name}整理衣櫃時會怎麼做取捨？",
     "option_a": "拍照記錄後再決定",
     "option_b": "整理時一次清掉明顯不合適的",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 368,
     "text": "遇到「外送份量比預期多很多」時，{target_name}最可能用哪種方式處理剩菜？",
     "option_a": "只留下最想吃的部分",
     "option_b": "直接避免點太多",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 369,
     "text": "如果碰上「暴雨後住家停電」，你猜{target_name}突發停電時最可能先做什麼？",
     "option_a": "檢查重要設備是否安全",
     "option_b": "確認冰箱和冷凍庫門關好",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 370,
@@ -2846,7 +2846,7 @@
     "option_a": "謙虛回應也稱讚對方",
     "option_b": "開玩笑緩和氣氛",
     "option_c": "追問對方具體喜歡哪裡",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 371,
@@ -2854,21 +2854,21 @@
     "option_a": "主動邀請對方加入",
     "option_b": "提醒團體別忽略任何人",
     "option_c": "若涉及欺負就尋求可信任的人協助",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 372,
     "text": "如果碰上「第一次參加線下興趣聚會」，你猜{target_name}參加興趣社群時會怎麼融入？",
     "option_a": "參與社群小活動",
     "option_b": "分享資源幫助新加入的人",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 373,
     "text": "遇到「朋友邀你參加寵物友善活動」時，{target_name}規劃寵物友善出遊時會先考慮什麼？",
     "option_a": "交通是否安全方便",
     "option_b": "住宿是否真正寵物友善",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 374,
@@ -2876,14 +2876,14 @@
     "option_a": "一個人安靜待著",
     "option_b": "運動到流汗再休息",
     "option_c": "完全不排任何行程",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 375,
     "text": "面對「課堂要分組完成專案」，你猜{target_name}團隊合作最自然的貢獻方式？",
     "option_a": "提出創意方向",
     "option_b": "檢查品質和容易忽略的細節",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 376,
@@ -2891,7 +2891,7 @@
     "option_a": "直接問對方真正意思",
     "option_b": "依平常相處模式理解",
     "option_c": "用表情符號降低誤解",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 377,
@@ -2899,7 +2899,7 @@
     "option_a": "搬到喜歡的城市居住",
     "option_b": "照顧家人並分擔責任",
     "option_c": "學習一直想學的技能",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 378,
@@ -2907,7 +2907,7 @@
     "option_a": "用來避開明顯的危險",
     "option_b": "只看重大決策的可能結果",
     "option_c": "用來幫助身邊的人做準備",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 379,
@@ -2915,7 +2915,7 @@
     "option_a": "購物或紀念品",
     "option_b": "交通便利與節省時間",
     "option_c": "自然景點和戶外活動",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 380,
@@ -2923,7 +2923,7 @@
     "option_a": "先不往負面方向猜",
     "option_b": "直接問對方真正意思",
     "option_c": "等見面再確認語氣",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 381,
@@ -2931,21 +2931,21 @@
     "option_a": "規劃流程和確認期限",
     "option_b": "向外溝通整合需求",
     "option_c": "照顧團隊氣氛與合作節奏",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 382,
     "text": "當「平常生活很忙很少有完整相處時間」時，{target_name}紀念日最期待哪種安排？",
     "option_a": "不用特別鋪張但有陪伴",
     "option_b": "留下照片或紀念物",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 383,
     "text": "在「每個人意見都很強烈」的情境下，你覺得{target_name}團體做決定時最希望採用哪種流程？",
     "option_a": "讓小組各自比較再回報",
     "option_b": "先試行一段時間再評估",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 384,
@@ -2953,7 +2953,7 @@
     "option_a": "只保留常穿合身的衣物",
     "option_b": "按季節輪換收納",
     "option_c": "搭配出新穿法再決定",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 385,
@@ -2961,7 +2961,7 @@
     "option_a": "找清楚的逃生指示",
     "option_b": "詢問現場工作人員",
     "option_c": "使用地圖或樓層指引",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 386,
@@ -2969,7 +2969,7 @@
     "option_a": "以食物或飲料為主",
     "option_b": "盲抽驚喜不提前透露",
     "option_c": "能讓大家當場一起玩的東西",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 387,
@@ -2977,14 +2977,14 @@
     "option_a": "奶蓋或鮮奶油",
     "option_b": "濃縮咖啡加 shot",
     "option_c": "茶凍或仙草",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 388,
     "text": "面對「終於不需要為薪水選工作」，你猜{target_name}如果財富自由會怎麼改變日常？",
     "option_a": "長期旅行體驗不同文化",
     "option_b": "學習一直想學的技能",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 389,
@@ -2992,7 +2992,7 @@
     "option_a": "先觀察大家的交流方式",
     "option_b": "找一兩位興趣相近的人聊",
     "option_c": "參與社群小活動",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 390,
@@ -3000,7 +3000,7 @@
     "option_a": "主動邀請對方加入",
     "option_b": "私下問清楚發生什麼事",
     "option_c": "提醒團體別忽略任何人",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 391,
@@ -3008,21 +3008,21 @@
     "option_a": "鬆餅配水果",
     "option_b": "燻雞三明治與咖啡",
     "option_c": "粥品配小菜",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 392,
     "text": "在「新朋友詢問家庭隱私」的情境下，你覺得{target_name}有人一直打探你不想公開的事會怎麼做？",
     "option_a": "反問對方為什麼想知道",
     "option_b": "轉移話題到共同興趣",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 393,
     "text": "面對「朋友說要合唱一首」，你猜{target_name}唱歌被點名時最可能選哪類歌曲？",
     "option_a": "難度高但喜歡的歌",
     "option_b": "不用太多高音的安全牌",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 394,
@@ -3030,7 +3030,7 @@
     "option_a": "先讓家人或室友安心",
     "option_b": "趁機休息暫停電子設備",
     "option_c": "確認冰箱和冷凍庫門關好",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 395,
@@ -3038,14 +3038,14 @@
     "option_a": "交通是否安全方便",
     "option_b": "是否要準備牽繩與運輸籠",
     "option_c": "行程長度是否適合牠",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 396,
     "text": "在「要在不同氣候地區移動」的情境下，你覺得{target_name}打包行李時最容易採取哪種策略？",
     "option_a": "只帶必要品到當地再買",
     "option_b": "多帶一套備用衣物",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 397,
@@ -3053,7 +3053,7 @@
     "option_a": "教育資源更公平",
     "option_b": "動物福利與保育",
     "option_c": "社區照顧和世代交流",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 398,
@@ -3061,14 +3061,14 @@
     "option_a": "加進湯裡變成新料理",
     "option_b": "分裝冷凍留到下次",
     "option_c": "直接避免點太多",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 399,
     "text": "當「完成一件值得紀念的事」時，{target_name}在社群發布生活照片時會怎麼選？",
     "option_a": "配上一段文字記錄心情",
     "option_b": "很少發文但會看別人的更新",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 400,
@@ -3076,7 +3076,7 @@
     "option_a": "用更多資料補充觀點",
     "option_b": "先接受不同看法",
     "option_c": "堅持重要原則並清楚說明",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 401,
@@ -3084,7 +3084,7 @@
     "option_a": "用來避開明顯的危險",
     "option_b": "不想知道以免失去驚喜",
     "option_c": "把能力用在探索未知事件",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 402,
@@ -3092,7 +3092,7 @@
     "option_a": "反覆練習同一關",
     "option_b": "降低難度享受劇情",
     "option_c": "暫停遊戲避免情緒上來",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 403,
@@ -3100,7 +3100,7 @@
     "option_a": "和最熟的朋友小聚",
     "option_b": "做重複而療癒的手作",
     "option_c": "完全不排任何行程",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 404,
@@ -3108,7 +3108,7 @@
     "option_a": "直接說謝謝並接受",
     "option_b": "追問對方具體喜歡哪裡",
     "option_c": "把功勞分享給一起努力的人",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 405,
@@ -3116,14 +3116,14 @@
     "option_a": "禮貌請店員協助更換",
     "option_b": "看起來能吃就接受",
     "option_c": "照付但下次不再光顧",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 406,
     "text": "如果碰上「聚餐有一人不停講自己的事」，你猜{target_name}有人在團體裡一直主導話題時會怎麼做？",
     "option_a": "私下提醒對方留些空間",
     "option_b": "順勢讓團體進入更具體的討論",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 407,
@@ -3131,7 +3131,7 @@
     "option_a": "用蛋和冰箱剩菜煮一餐",
     "option_b": "叫外送解決",
     "option_c": "出門採買再回家煮",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 408,
@@ -3139,14 +3139,14 @@
     "option_a": "直接說自己不吃並夾出來",
     "option_b": "和朋友交換各自不吃的配料",
     "option_c": "試著吃一小口再決定",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 409,
     "text": "如果碰上「把朋友的沉默誤認為生氣」，你猜{target_name}發現自己誤會了別人時會怎麼做？",
     "option_a": "先聽對方把事情說清楚",
     "option_b": "承認自己的推測沒有根據",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 410,
@@ -3154,7 +3154,7 @@
     "option_a": "報名有架構的課程",
     "option_b": "找同伴一起學習",
     "option_c": "閱讀原理和理論說明",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 411,
@@ -3162,7 +3162,7 @@
     "option_a": "演奏任何樂器",
     "option_b": "熟練的舞蹈和肢體表現",
     "option_c": "擅長修理任何物品",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 412,
@@ -3170,14 +3170,14 @@
     "option_a": "確認是否有人已經看到",
     "option_b": "私下聯絡受影響的人",
     "option_c": "如果無關緊要就澄清一下",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 413,
     "text": "如果碰上「有人想逛博物館有人只想購物」，你猜{target_name}旅伴意見不同時會如何協調？",
     "option_a": "投票決定主要行程",
     "option_b": "一天由一個人主導",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 414,
@@ -3185,7 +3185,7 @@
     "option_a": "泡茶或準備咖啡",
     "option_b": "伸展身體活動一下",
     "option_c": "再躺五分鐘才起來",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 415,
@@ -3193,21 +3193,21 @@
     "option_a": "立刻通知對方更新抵達時間",
     "option_b": "改搭更可靠的交通工具",
     "option_c": "先確認是否還值得趕去",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 416,
     "text": "遇到「第一次去一個熱門城市」時，{target_name}選旅遊行程時喜歡哪種步調？",
     "option_a": "早出晚歸把景點走滿",
     "option_b": "跟著當地節慶走",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 417,
     "text": "遇到「一場重要聚會結束後」時，{target_name}重要節日最想留下哪種紀念？",
     "option_a": "一起完成的活動",
     "option_b": "旅行或散步的路線紀錄",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 418,
@@ -3215,7 +3215,7 @@
     "option_a": "每週固定一個時段",
     "option_b": "找朋友互相督促",
     "option_c": "跟著課程或挑戰計畫走",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 419,
@@ -3223,14 +3223,14 @@
     "option_a": "安靜有質感的小館",
     "option_b": "可以慢慢聊天的火鍋店",
     "option_c": "設計感強的主題餐廳",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 420,
     "text": "在「收到宣稱有獎品的連結」的情境下，你覺得{target_name}接到陌生連結時會怎麼判斷？",
     "option_a": "先確認發送者身分",
     "option_b": "用官方 App 自行查證",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 421,
@@ -3238,7 +3238,7 @@
     "option_a": "方便就直接接聽",
     "option_b": "先傳訊息詢問什麼事",
     "option_c": "看到熟人來電就接",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 422,
@@ -3246,7 +3246,7 @@
     "option_a": "茶味穩定不苦澀",
     "option_b": "原料與配料新鮮",
     "option_c": "價錢合理份量足",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 423,
@@ -3254,7 +3254,7 @@
     "option_a": "找新人演出挖寶",
     "option_b": "走到哪看到哪",
     "option_c": "只參加晚間重點場次",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 424,
@@ -3262,7 +3262,7 @@
     "option_a": "提供兩三個明確方案",
     "option_b": "等主揪安排好再跟上",
     "option_c": "只參加自己感興趣的部分",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 425,
@@ -3270,7 +3270,7 @@
     "option_a": "運動或散步",
     "option_b": "寫日記整理情緒",
     "option_c": "什麼都不安排直接休息",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 426,
@@ -3278,7 +3278,7 @@
     "option_a": "還款日期是否清楚",
     "option_b": "過往是否守信用",
     "option_c": "是否需要正式寫下約定",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 427,
@@ -3286,7 +3286,7 @@
     "option_a": "先觀察是否有受傷或危險",
     "option_b": "在安全情況下提供乾淨飲水",
     "option_c": "避免冒然抓捕或驚嚇牠",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 428,
@@ -3294,21 +3294,21 @@
     "option_a": "可靠的財務緩衝",
     "option_b": "創作或工作成果",
     "option_c": "可互相支持的社群",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 429,
     "text": "在「第一次參加伴侶的家庭聚會」的情境下，你覺得{target_name}認識伴侶朋友或家人時會怎麼準備？",
     "option_a": "準備自然的聊天話題",
     "option_b": "讓伴侶先介紹熟悉彼此",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 430,
     "text": "遇到「朋友一起辦活動」時，{target_name}分工合作時最重視哪種原則？",
     "option_a": "允許彼此彈性互相支援",
     "option_b": "每個人都能參與重要決策",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 431,
@@ -3316,7 +3316,7 @@
     "option_a": "劇情反轉與懸念",
     "option_b": "音樂與整體氛圍",
     "option_c": "看完後值得討論的議題",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 432,
@@ -3324,7 +3324,7 @@
     "option_a": "先找實際使用者評價",
     "option_b": "借用或試用後再決定",
     "option_c": "等待價格降到預算內",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 433,
@@ -3332,7 +3332,7 @@
     "option_a": "早出晚歸把景點走滿",
     "option_b": "保留空白時間隨興發現",
     "option_c": "跟著當地節慶走",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 434,
@@ -3340,21 +3340,21 @@
     "option_a": "先看完整示範再模仿",
     "option_b": "報名有架構的課程",
     "option_c": "閱讀原理和理論說明",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 435,
     "text": "當「重要約會前鬧鐘沒響」時，{target_name}發現自己快要遲到時會怎麼應對？",
     "option_a": "先確認是否還值得趕去",
     "option_b": "請對方先開始不用等",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 436,
     "text": "當「午休時間很短」時，{target_name}挑選飲料店時最在意哪個條件？",
     "option_a": "出杯速度快",
     "option_b": "離當下位置近",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 437,
@@ -3362,14 +3362,14 @@
     "option_a": "先列出各自最想去的地方",
     "option_b": "投票決定主要行程",
     "option_c": "一天由一個人主導",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 438,
     "text": "遇到「下班後收到工作來電」時，{target_name}接到沒有預告的語音或電話時會怎麼做？",
     "option_a": "方便就直接接聽",
     "option_b": "先傳訊息詢問什麼事",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 439,
@@ -3377,7 +3377,7 @@
     "option_a": "對方是否說明實際用途",
     "option_b": "還款日期是否清楚",
     "option_c": "金額是否在承受範圍",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 440,
@@ -3385,14 +3385,14 @@
     "option_a": "每個舞台都逛一點",
     "option_b": "找新人演出挖寶",
     "option_c": "走到哪看到哪",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 441,
     "text": "面對「開始安排長期目標」，你猜{target_name}未來想累積哪一種人生資產？",
     "option_a": "穩定且健康的關係",
     "option_b": "更多選擇生活方式的自由",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 442,
@@ -3400,7 +3400,7 @@
     "option_a": "劇情反轉與懸念",
     "option_b": "真實事件或歷史背景",
     "option_c": "音樂與整體氛圍",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 443,
@@ -3408,7 +3408,7 @@
     "option_a": "主動道歉並解釋誤會來源",
     "option_b": "承認自己的推測沒有根據",
     "option_c": "不再擴散未確認的說法",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 444,
@@ -3416,7 +3416,7 @@
     "option_a": "先了解基本稱呼和背景",
     "option_b": "保持真誠不刻意表現",
     "option_c": "讓伴侶先介紹熟悉彼此",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 445,
@@ -3424,14 +3424,14 @@
     "option_a": "把材料先放在容易拿到的地方",
     "option_b": "記錄完成進度",
     "option_c": "不設硬期限保持樂趣",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 446,
     "text": "面對「原本打算煮飯卻少了關鍵食材」，你猜{target_name}家裡臨時沒食材時會怎麼辦？",
     "option_a": "用蛋和冰箱剩菜煮一餐",
     "option_b": "翻找冷凍庫存糧",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 447,
@@ -3439,7 +3439,7 @@
     "option_a": "先觀察是否有受傷或危險",
     "option_b": "詢問附近居民是否有人照顧",
     "option_c": "避免冒然抓捕或驚嚇牠",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 448,
@@ -3447,7 +3447,7 @@
     "option_a": "每個人工作量差不多",
     "option_b": "依能力與專長分配",
     "option_c": "設定明確期限和交付內容",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 449,
@@ -3455,7 +3455,7 @@
     "option_a": "先聽完再問不同角度問題",
     "option_b": "順勢讓團體進入更具體的討論",
     "option_c": "如果氣氛不適合就稍後溝通",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 450,
@@ -3463,7 +3463,7 @@
     "option_a": "一封寫下心情的信",
     "option_b": "一頓特別的料理",
     "option_c": "不刻意保存只記在心裡",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 451,
@@ -3471,7 +3471,7 @@
     "option_a": "笑著提醒對方下次先問",
     "option_b": "放到旁邊不特別解釋",
     "option_c": "清楚說明那是自己的飲食界線",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 452,
@@ -3479,14 +3479,14 @@
     "option_a": "熱鬧自在的街邊小店",
     "option_b": "設計感強的主題餐廳",
     "option_c": "燈光溫暖的家庭餐館",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 453,
     "text": "遇到「朋友問你最想省掉哪段學習過程」時，{target_name}如果可以瞬間掌握一項技能會選什麼？",
     "option_a": "高超的料理技術",
     "option_b": "專業級程式設計",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 454,
@@ -3494,21 +3494,21 @@
     "option_a": "先確認發送者身分",
     "option_b": "查看網址與網站來源",
     "option_c": "詢問熟人是否可靠",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 455,
     "text": "遇到「大家都說想見面卻沒人訂計畫」時，{target_name}朋友約活動卻沒有說清楚細節時會怎麼做？",
     "option_a": "提供兩三個明確方案",
     "option_b": "等主揪安排好再跟上",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 456,
     "text": "面對「將內部訊息發到公開頻道」，你猜{target_name}傳錯訊息到不該去的群組時會怎麼做？",
     "option_a": "立刻撤回並簡短說明",
     "option_b": "重新檢查收件人再傳一次",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 457,
@@ -3516,14 +3516,14 @@
     "option_a": "為更好的耐用度多付一些",
     "option_b": "先找實際使用者評價",
     "option_c": "等待價格降到預算內",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 458,
     "text": "當「社交行程結束後回到家」時，{target_name}一個人待著時最常從哪裡獲得能量？",
     "option_a": "看電影或玩遊戲",
     "option_b": "寫日記整理情緒",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 459,
@@ -3531,7 +3531,7 @@
     "option_a": "喝水讓自己清醒",
     "option_b": "先看手機訊息",
     "option_c": "伸展身體活動一下",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 460,
@@ -3539,14 +3539,14 @@
     "option_a": "原料與配料新鮮",
     "option_b": "價錢合理份量足",
     "option_c": "出杯速度快",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 461,
     "text": "如果碰上「要選一部適合多人看的片」，你猜{target_name}選電影時最在意哪個元素？",
     "option_a": "音樂與整體氛圍",
     "option_b": "看完後值得討論的議題",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 462,
@@ -3554,7 +3554,7 @@
     "option_a": "一件有紀念意義的小物",
     "option_b": "一段剪輯好的影片",
     "option_c": "旅行或散步的路線紀錄",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 463,
@@ -3562,14 +3562,14 @@
     "option_a": "直接道歉不要再多解釋",
     "option_b": "確認是否有人已經看到",
     "option_c": "重新檢查收件人再傳一次",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 464,
     "text": "在「住家附近出現沒有項圈的狗」的情境下，你覺得{target_name}看到需要幫助的流浪動物會怎麼做？",
     "option_a": "先觀察是否有受傷或危險",
     "option_b": "避免冒然抓捕或驚嚇牠",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 465,
@@ -3577,7 +3577,7 @@
     "option_a": "早出晚歸把景點走滿",
     "option_b": "跟著當地節慶走",
     "option_c": "只訂必要活動其餘彈性",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 466,
@@ -3585,21 +3585,21 @@
     "option_a": "對方是否說明實際用途",
     "option_b": "雙方是否能坦白溝通",
     "option_c": "是否需要正式寫下約定",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 467,
     "text": "如果碰上「網路上有很多不同教學方法」，你猜{target_name}學習新技能時偏好哪種方法？",
     "option_a": "先看完整示範再模仿",
     "option_b": "透過反覆練習熟悉",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 468,
     "text": "在「便宜款缺少售後服務」的情境下，你覺得{target_name}比較兩個價格不同的產品時會怎麼選？",
     "option_a": "先找實際使用者評價",
     "option_b": "等待價格降到預算內",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 469,
@@ -3607,7 +3607,7 @@
     "option_a": "準備自然的聊天話題",
     "option_b": "帶一份小心意",
     "option_c": "保持真誠不刻意表現",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 470,
@@ -3615,21 +3615,21 @@
     "option_a": "查看網址與網站來源",
     "option_b": "用官方 App 自行查證",
     "option_c": "先不點開也不轉傳",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 471,
     "text": "當「要趕早班交通工具」時，{target_name}早晨起床後最可能先做哪件事？",
     "option_a": "拉開窗簾接觸自然光",
     "option_b": "刷牙洗臉開始準備",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 472,
     "text": "當「想在三個月內看到進步」時，{target_name}想把興趣變成固定習慣會怎麼安排？",
     "option_a": "設定可追蹤的小目標",
     "option_b": "找朋友互相督促",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 473,
@@ -3637,14 +3637,14 @@
     "option_a": "先聽對方把事情說清楚",
     "option_b": "承認自己的推測沒有根據",
     "option_c": "用行動修補受影響的關係",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 474,
     "text": "當「餐桌上有人替你擅自調味」時，{target_name}會怎麼表達自己的飲食界線？",
     "option_a": "笑著提醒對方下次先問",
     "option_b": "放到旁邊不特別解釋",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 475,
@@ -3652,7 +3652,7 @@
     "option_a": "改搭更可靠的交通工具",
     "option_b": "縮短準備流程立即出門",
     "option_c": "重新安排後續行程避免連鎖延誤",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 476,
@@ -3660,7 +3660,7 @@
     "option_a": "精通所有語言",
     "option_b": "快速理解複雜科學",
     "option_c": "能寫出精彩故事",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 477,
@@ -3668,14 +3668,14 @@
     "option_a": "提供兩三個明確方案",
     "option_b": "等主揪安排好再跟上",
     "option_c": "主動查資料做小規劃",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 478,
     "text": "在「週末想換個環境吃飯」的情境下，你覺得{target_name}會優先挑哪種餐廳氛圍？",
     "option_a": "開放式廚房的料理吧",
     "option_b": "燈光溫暖的家庭餐館",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 479,
@@ -3683,7 +3683,7 @@
     "option_a": "投票決定主要行程",
     "option_b": "一天由一個人主導",
     "option_c": "找折衷且交通順路的點",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 480,
@@ -3691,7 +3691,7 @@
     "option_a": "先傳訊息詢問什麼事",
     "option_b": "看到熟人來電就接",
     "option_c": "偏好對方先約時間",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 481,
@@ -3699,7 +3699,7 @@
     "option_a": "可靠的財務緩衝",
     "option_b": "豐富的旅行與生活經驗",
     "option_c": "創作或工作成果",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 482,
@@ -3707,7 +3707,7 @@
     "option_a": "找機會讓其他人也發言",
     "option_b": "直接提出自己想補充的觀點",
     "option_c": "如果氣氛不適合就稍後溝通",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 483,
@@ -3715,7 +3715,7 @@
     "option_a": "用蛋和冰箱剩菜煮一餐",
     "option_b": "翻找冷凍庫存糧",
     "option_c": "出門採買再回家煮",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 484,
@@ -3723,7 +3723,7 @@
     "option_a": "聽音樂讓思緒放鬆",
     "option_b": "準備一頓自己喜歡的飯",
     "option_c": "什麼都不安排直接休息",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 485,
@@ -3731,7 +3731,7 @@
     "option_a": "鎖定最想看的主舞台",
     "option_b": "每個舞台都逛一點",
     "option_c": "只參加晚間重點場次",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 486,
@@ -3739,14 +3739,14 @@
     "option_a": "每個人工作量差不多",
     "option_b": "依能力與專長分配",
     "option_c": "允許彼此彈性互相支援",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 487,
     "text": "如果碰上「看動物相關影片時」，你猜{target_name}哪種動物特質最容易讓你喜歡？",
     "option_a": "安靜自在不黏人",
     "option_b": "外表獨特很有辨識度",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 488,
@@ -3754,7 +3754,7 @@
     "option_a": "拆解問題找出關鍵",
     "option_b": "快速試錯找出可行法",
     "option_c": "整合不同資訊",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 489,
@@ -3762,7 +3762,7 @@
     "option_a": "和常喝的品項比較後選",
     "option_b": "買小杯試味道",
     "option_c": "只選自己熟悉的口味",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 490,
@@ -3770,7 +3770,7 @@
     "option_a": "先肯定對方合理的部分",
     "option_b": "用例子說明自己的想法",
     "option_c": "私下溝通避免當眾對立",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 491,
@@ -3778,7 +3778,7 @@
     "option_a": "先整理公共空間",
     "option_b": "提前告訴大家交通方式",
     "option_c": "讓客人一起參與準備",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 492,
@@ -3786,14 +3786,14 @@
     "option_a": "提早到場熟悉環境",
     "option_b": "保持自然不過度排練",
     "option_c": "準備名片或需要的資料",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 493,
     "text": "面對「看到喜歡的活動公布日期」，你猜{target_name}哪種音樂活動最可能讓你買票？",
     "option_a": "大型流行歌手演唱會",
     "option_b": "戶外音樂祭",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 494,
@@ -3801,7 +3801,7 @@
     "option_a": "聯絡店家或交通單位",
     "option_b": "先停用或掛失相關卡片",
     "option_c": "請同行者幫忙分頭尋找",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 495,
@@ -3809,7 +3809,7 @@
     "option_a": "討論共同可接受的規則",
     "option_b": "輪流配合不同習慣",
     "option_c": "先試行一段時間再調整",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 496,
@@ -3817,7 +3817,7 @@
     "option_a": "實用生活用品",
     "option_b": "送人方便的禮盒",
     "option_c": "不買物品而拍照留念",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 497,
@@ -3825,7 +3825,7 @@
     "option_a": "觀眾是否理解想表達的意思",
     "option_b": "細節品質和完成度",
     "option_c": "分享過程中的學習經驗",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 498,
@@ -3833,7 +3833,7 @@
     "option_a": "只為真正想吃的店排隊",
     "option_b": "寧願找不用排隊的替代店",
     "option_c": "先線上取號再去附近逛",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 499,
@@ -3841,7 +3841,7 @@
     "option_a": "獨處時間整理想法",
     "option_b": "實際試行的機會",
     "option_c": "足夠的財務或時間緩衝",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 500,
@@ -3849,7 +3849,7 @@
     "option_a": "給簡短且不敏感的答案",
     "option_b": "把話題帶回共同話題",
     "option_c": "等私下再決定是否解釋",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 501,
@@ -3857,14 +3857,14 @@
     "option_a": "是否需要大量體力",
     "option_b": "能不能留下作品或紀錄",
     "option_c": "活動是否有新鮮感",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 502,
     "text": "如果碰上「菜單出現從沒聽過的料理」，你猜{target_name}對新奇食物會採取哪種態度？",
     "option_a": "只要不浪費就願意嘗試",
     "option_b": "堅持熟悉的安全牌",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 503,
@@ -3872,7 +3872,7 @@
     "option_a": "提出紀錄或證據釐清",
     "option_b": "暫停談話等雙方冷靜",
     "option_c": "尋求第三方協助判斷",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 504,
@@ -3880,7 +3880,7 @@
     "option_a": "一份炸物、一杯飲料、一份甜點",
     "option_b": "牛排或鐵板主餐",
     "option_c": "每人各買一樣再分享",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 505,
@@ -3888,7 +3888,7 @@
     "option_a": "通知相關人員",
     "option_b": "記錄事件經過方便說明",
     "option_c": "先讓自己和同行者冷靜下來",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 506,
@@ -3896,7 +3896,7 @@
     "option_a": "重要檔案留兩份副本",
     "option_b": "只保留最近版本",
     "option_c": "等設備出問題才處理",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 507,
@@ -3904,7 +3904,7 @@
     "option_a": "偶爾陪一次支持朋友",
     "option_b": "推薦另一個更合適的活動",
     "option_c": "如果太累就禮貌拒絕",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 508,
@@ -3912,28 +3912,28 @@
     "option_a": "可以自由探索的森林",
     "option_b": "運動設施和冒險路線",
     "option_c": "自給自足的農園和工作坊",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 509,
     "text": "如果碰上「朋友生日快到了」，你猜{target_name}買禮物時最看重哪個方向？",
     "option_a": "符合對方日常需求",
     "option_b": "有趣讓人會心一笑",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 510,
     "text": "遇到「影音平台推薦頁出現新創作者」時，{target_name}看到網路創作者的新影片會怎麼選？",
     "option_a": "偏好真實紀錄和生活分享",
     "option_b": "看搞笑剪輯快速放鬆",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 511,
     "text": "遇到「多人正在討論一項決策」時，{target_name}會議或課堂中最常扮演哪種角色？",
     "option_a": "觀察並等適當時機發言",
     "option_b": "負責串連彼此觀點",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 512,
@@ -3941,21 +3941,21 @@
     "option_a": "設計遊戲和活動流程",
     "option_b": "安排音樂燈光與氣氛",
     "option_c": "收尾整理讓場地恢復整潔",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 513,
     "text": "面對「獎金比預期高很多」，你猜{target_name}收到意外收入時會怎麼避免衝動花費？",
     "option_a": "隔幾天再決定買什麼",
     "option_b": "先處理必要支出",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 514,
     "text": "當「下車後才注意到包包不見」時，{target_name}旅行中遺失重要物品會先怎麼做？",
     "option_a": "聯絡店家或交通單位",
     "option_b": "整理證件與聯絡方式備案",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 515,
@@ -3963,21 +3963,21 @@
     "option_a": "看標題與縮圖是否有趣",
     "option_b": "固定追蹤熟悉頻道",
     "option_c": "偏好真實紀錄和生活分享",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 516,
     "text": "在「要帶禮物給多位朋友」的情境下，你覺得{target_name}旅行伴手禮會挑哪一類？",
     "option_a": "明信片或小磁鐵",
     "option_b": "實用生活用品",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 517,
     "text": "面對「整理整潔標準差很多」，你猜{target_name}遇到生活習慣不同會怎麼協調？",
     "option_a": "把個人空間和共用空間分清楚",
     "option_b": "接受不影響彼此的差異",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 518,
@@ -3985,7 +3985,7 @@
     "option_a": "先點小份試吃",
     "option_b": "只要不浪費就願意嘗試",
     "option_c": "聞過或看過再決定",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 519,
@@ -3993,7 +3993,7 @@
     "option_a": "等看到真實評價才買",
     "option_b": "買小杯試味道",
     "option_c": "只選自己熟悉的口味",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 520,
@@ -4001,14 +4001,14 @@
     "option_a": "用幽默方式略過",
     "option_b": "給簡短且不敏感的答案",
     "option_c": "等私下再決定是否解釋",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 521,
     "text": "在「家庭節日需要有人主導」的情境下，你覺得{target_name}舉辦聚會時最自然會負責什麼？",
     "option_a": "設計遊戲和活動流程",
     "option_b": "安排音樂燈光與氣氛",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 522,
@@ -4016,7 +4016,7 @@
     "option_a": "有個人化或手作元素",
     "option_b": "能一起體驗的活動",
     "option_c": "不貴但包裝和心意完整",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 523,
@@ -4024,7 +4024,7 @@
     "option_a": "隔離危險或避免二次事故",
     "option_b": "通知相關人員",
     "option_c": "先讓自己和同行者冷靜下來",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 524,
@@ -4032,7 +4032,7 @@
     "option_a": "有沒有學到新東西",
     "option_b": "能否放鬆不必動腦",
     "option_c": "活動是否有新鮮感",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 525,
@@ -4040,14 +4040,14 @@
     "option_a": "可靠的資訊與專業建議",
     "option_b": "獨處時間整理想法",
     "option_c": "實際試行的機會",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 526,
     "text": "當「家人誤會你沒做好某件事」時，{target_name}被不合理地責怪時會如何回應？",
     "option_a": "提出紀錄或證據釐清",
     "option_b": "拒絕接受不合理的指責",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 527,
@@ -4055,7 +4055,7 @@
     "option_a": "各種料理的美食街",
     "option_b": "可以和朋友聚會的公共空間",
     "option_c": "自給自足的農園和工作坊",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 528,
@@ -4063,7 +4063,7 @@
     "option_a": "小型獨立樂團專場",
     "option_b": "戶外音樂祭",
     "option_c": "地方傳統音樂展演",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 529,
@@ -4071,7 +4071,7 @@
     "option_a": "先把固定比例存起來",
     "option_b": "寫下想買的清單排序",
     "option_c": "找可信任的人一起討論",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 530,
@@ -4079,14 +4079,14 @@
     "option_a": "願意等但有時間上限",
     "option_b": "只為真正想吃的店排隊",
     "option_c": "先線上取號再去附近逛",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 531,
     "text": "當「參加重要的家庭場合」時，{target_name}第一次參加正式場合會怎麼準備？",
     "option_a": "向熟悉的人詢問注意事項",
     "option_b": "提早到場熟悉環境",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 532,
@@ -4094,14 +4094,14 @@
     "option_a": "提出問題釐清重點",
     "option_b": "主動紀錄結論和待辦",
     "option_c": "把討論拉回主題",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 533,
     "text": "面對「累積很多重要工作文件」，你猜{target_name}備份重要數位資料時會怎麼安排？",
     "option_a": "自動同步雲端",
     "option_b": "用相簿分類和標記",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 534,
@@ -4109,7 +4109,7 @@
     "option_a": "聰明能學會新互動",
     "option_b": "外表獨特很有辨識度",
     "option_c": "慢熟但建立信任後親密",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 535,
@@ -4117,7 +4117,7 @@
     "option_a": "快速試錯找出可行法",
     "option_b": "整合不同資訊",
     "option_c": "耐心重複直到掌握",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 536,
@@ -4125,14 +4125,14 @@
     "option_a": "先肯定對方合理的部分",
     "option_b": "用例子說明自己的想法",
     "option_c": "等蒐集更多資訊後再說",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 537,
     "text": "在「大家要參加一場你不感興趣的活動」的情境下，你覺得{target_name}朋友提出你沒興趣的活動時會怎麼回應？",
     "option_a": "先了解活動內容再決定",
     "option_b": "如果太累就禮貌拒絕",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 538,
@@ -4140,7 +4140,7 @@
     "option_a": "確認浴室和洗手用品",
     "option_b": "提前告訴大家交通方式",
     "option_c": "讓客人一起參與準備",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 539,
@@ -4148,7 +4148,7 @@
     "option_a": "海鮮小吃加水果飲品",
     "option_b": "先買最想吃的招牌品",
     "option_c": "每人各買一樣再分享",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 540,
@@ -4156,7 +4156,7 @@
     "option_a": "能否引起情緒共鳴",
     "option_b": "作品能帶給別人實用價值",
     "option_c": "不追求曝光先完成就好",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 541,
@@ -4164,7 +4164,7 @@
     "option_a": "實用生活用品",
     "option_b": "茶葉咖啡或調味料",
     "option_c": "只買自己真正喜歡的東西",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 542,
@@ -4172,7 +4172,7 @@
     "option_a": "安靜自在不黏人",
     "option_b": "外表獨特很有辨識度",
     "option_c": "喜歡用聲音和人交流",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 543,
@@ -4180,7 +4180,7 @@
     "option_a": "先處理必要支出",
     "option_b": "找可信任的人一起討論",
     "option_c": "依原本財務計畫分配",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 544,
@@ -4188,7 +4188,7 @@
     "option_a": "小型獨立樂團專場",
     "option_b": "戶外音樂祭",
     "option_c": "電子音樂派對",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 545,
@@ -4196,7 +4196,7 @@
     "option_a": "安排舒適的座位",
     "option_b": "只做必要清潔不過度準備",
     "option_c": "讓客人一起參與準備",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 546,
@@ -4204,7 +4204,7 @@
     "option_a": "冷靜說明可確認的事實",
     "option_b": "提出紀錄或證據釐清",
     "option_c": "尋求第三方協助判斷",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 547,
@@ -4212,7 +4212,7 @@
     "option_a": "能否引起情緒共鳴",
     "option_b": "保有自己的風格",
     "option_c": "不追求曝光先完成就好",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 548,
@@ -4220,7 +4220,7 @@
     "option_a": "先點小份試吃",
     "option_b": "請朋友先試一口分享心得",
     "option_c": "看店家招牌與做法是否吸引人",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 549,
@@ -4228,7 +4228,7 @@
     "option_a": "設計遊戲和活動流程",
     "option_b": "邀請大家並照顧新朋友",
     "option_c": "控制預算和費用",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 550,
@@ -4236,7 +4236,7 @@
     "option_a": "討論共同可接受的規則",
     "option_b": "把個人空間和共用空間分清楚",
     "option_c": "接受不影響彼此的差異",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 551,
@@ -4244,21 +4244,21 @@
     "option_a": "自動同步雲端",
     "option_b": "重要檔案留兩份副本",
     "option_c": "用相簿分類和標記",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 552,
     "text": "遇到「招牌飲料換成季節版本」時，{target_name}遇到季節限定飲品會怎麼選？",
     "option_a": "買小杯試味道",
     "option_b": "只選自己熟悉的口味",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 553,
     "text": "在「小組決策忽略了一個風險」的情境下，你覺得{target_name}要提出不同意見時會怎麼表達？",
     "option_a": "直接說出自己不同意之處",
     "option_b": "先提出問題確認理解",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 554,
@@ -4266,7 +4266,7 @@
     "option_a": "固定追蹤熟悉頻道",
     "option_b": "點開長篇深度解析",
     "option_c": "先收藏有空再看",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 555,
@@ -4274,7 +4274,7 @@
     "option_a": "坦白說明並提出替代方案",
     "option_b": "只參加自己喜歡的部分",
     "option_c": "先了解活動內容再決定",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 556,
@@ -4282,7 +4282,7 @@
     "option_a": "先看排隊長度再決定",
     "option_b": "只為真正想吃的店排隊",
     "option_c": "把等待當作聊天時間",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 557,
@@ -4290,28 +4290,28 @@
     "option_a": "聯絡店家或交通單位",
     "option_b": "先停用或掛失相關卡片",
     "option_c": "確認安全後再調整行程",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 558,
     "text": "遇到「出門時物品突然摔壞」時，{target_name}小意外發生後會先處理哪件事？",
     "option_a": "通知相關人員",
     "option_b": "記錄事件經過方便說明",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 559,
     "text": "在「團體活動要決定去哪裡」的情境下，你覺得{target_name}選擇室內活動時會先考慮什麼？",
     "option_a": "有沒有學到新東西",
     "option_b": "能否放鬆不必動腦",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 560,
     "text": "在「只能選幾種設施放進島上」的情境下，你覺得{target_name}如果可以設計一個私人小島會放入什麼？",
     "option_a": "安靜海灘與觀星平台",
     "option_b": "可以和朋友聚會的公共空間",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 561,
@@ -4319,14 +4319,14 @@
     "option_a": "符合對方日常需求",
     "option_b": "品質好可以用很久",
     "option_c": "有趣讓人會心一笑",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 562,
     "text": "如果碰上「胃口普通但想嚐多種小吃」，你猜{target_name}夜市只能選三樣時會怎麼搭配？",
     "option_a": "一份炸物、一杯飲料、一份甜點",
     "option_b": "每人各買一樣再分享",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 563,
@@ -4334,28 +4334,28 @@
     "option_a": "先了解流程與服裝要求",
     "option_b": "準備簡短的自我介紹",
     "option_c": "保持自然不過度排練",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 564,
     "text": "如果碰上「同事問起不想公開的私事」，你猜{target_name}在公開場合突然被問私人問題會怎麼回答？",
     "option_a": "禮貌表示不方便回答",
     "option_b": "把話題帶回共同話題",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 565,
     "text": "如果碰上「一個重要機會即將截止」，你猜{target_name}面對重大決定時最想獲得哪種支持？",
     "option_a": "清楚可量化的比較標準",
     "option_b": "知道自己可以改變主意",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 566,
     "text": "遇到「原本有效的方法不再適用」時，{target_name}遇到難題時最先倚賴哪種能力？",
     "option_a": "整合不同資訊",
     "option_b": "先穩住情緒再行動",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 567,
@@ -4363,7 +4363,7 @@
     "option_a": "把討論拉回主題",
     "option_b": "先聽完再整理意見",
     "option_c": "會後再私下補充想法",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 568,
@@ -4371,7 +4371,7 @@
     "option_a": "先安靜一段時間整理想法",
     "option_b": "直接說出不滿的原因",
     "option_c": "用幽默把緊張感降下來",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 569,
@@ -4379,7 +4379,7 @@
     "option_a": "慢慢欣賞城市景色",
     "option_b": "整理思緒做重要決定",
     "option_c": "什麼都不做享受時間靜止",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 570,
@@ -4387,28 +4387,28 @@
     "option_a": "一起唱熟悉的副歌",
     "option_b": "專心聽歌不干擾駕駛",
     "option_c": "分享歌曲背後的小故事",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 571,
     "text": "遇到「聊到自己希望留下的印象」時，{target_name}希望別人多年後記得你什麼？",
     "option_a": "待人真誠而有同理心",
     "option_b": "擁有獨特創意與眼光",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 572,
     "text": "當「好友也想開始同一個興趣」時，{target_name}和朋友一起學興趣最希望怎麼合作？",
     "option_a": "互相示範交換技巧",
     "option_b": "一起報名同一門課",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 573,
     "text": "面對「寄錯一份文件」，你猜{target_name}如何面對自己犯下的小錯？",
     "option_a": "不過度責怪自己繼續前進",
     "option_b": "請人協助檢查修正",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 574,
@@ -4416,7 +4416,7 @@
     "option_a": "負責推理找線索",
     "option_b": "觀察大家表情與行為",
     "option_c": "主動教新手入門",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 575,
@@ -4424,7 +4424,7 @@
     "option_a": "各自點餐不互相干涉",
     "option_b": "由一人統一點滿整桌",
     "option_c": "先點少量不夠再加",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 576,
@@ -4432,7 +4432,7 @@
     "option_a": "吃一頓好料收尾",
     "option_b": "整理隔天需要的事情",
     "option_c": "早點睡讓自己充飽電",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 577,
@@ -4440,7 +4440,7 @@
     "option_a": "直接提醒並確認新的時間",
     "option_b": "覺得影響不大就不計較",
     "option_c": "以後重要安排改用行事曆確認",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 578,
@@ -4448,21 +4448,21 @@
     "option_a": "用一致方式引導正確行為",
     "option_b": "尋求合格訓練師協助",
     "option_c": "避免大聲責罵或懲罰",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 579,
     "text": "遇到「忙到錯過正常午餐時間」時，{target_name}會怎麼重新安排接下來的用餐節奏？",
     "option_a": "帶健康小點心避免太餓",
     "option_b": "準備可快速加熱的餐點",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 580,
     "text": "當「只能改善住家的一個地方」時，{target_name}覺得居家最值得投資哪種改善？",
     "option_a": "更好的床墊與枕頭",
     "option_b": "安靜且舒適的工作角落",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 581,
@@ -4470,7 +4470,7 @@
     "option_a": "能一起笑也能認真談事",
     "option_b": "願意支持彼此成長",
     "option_c": "能在日常中互相照顧",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 582,
@@ -4478,7 +4478,7 @@
     "option_a": "即時讀完並簡短回覆",
     "option_b": "提醒大家集中討論重點",
     "option_c": "退出低相關群組",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 583,
@@ -4486,14 +4486,14 @@
     "option_a": "等人潮稍微散去",
     "option_b": "改成平日或非熱門時段再來",
     "option_c": "乾脆轉去吃在地美食",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 584,
     "text": "面對「站在透明玻璃觀景台上」，你猜{target_name}看到高度令人不安的場景會怎麼選？",
     "option_a": "只看照片或影片",
     "option_b": "由熟悉的人陪同嘗試",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 585,
@@ -4501,7 +4501,7 @@
     "option_a": "先和櫃檯清楚溝通",
     "option_b": "確認問題是否能改善",
     "option_c": "查看訂房平台的處理方式",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 586,
@@ -4509,21 +4509,21 @@
     "option_a": "親手寫一張卡片",
     "option_b": "當面真誠說出感謝",
     "option_c": "在日常中默默幫忙",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 587,
     "text": "面對「走進一家有特色的咖啡館」，你猜{target_name}在咖啡館會選哪種飲用體驗？",
     "option_a": "點手沖咖啡細品風味",
     "option_b": "只買烘焙點心不喝咖啡",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 588,
     "text": "遇到「多人聚會突然安靜」時，{target_name}面對冷場時最可能怎麼讓氣氛恢復？",
     "option_a": "提出輕鬆的二選一話題",
     "option_b": "邀請比較安靜的人說想法",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 589,
@@ -4531,7 +4531,7 @@
     "option_a": "主動分享必要資訊",
     "option_b": "願意承認錯誤並修正",
     "option_c": "不把私人資訊隨便外傳",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 590,
@@ -4539,14 +4539,14 @@
     "option_a": "兒童教育與學習資源",
     "option_b": "長者照護與陪伴",
     "option_c": "弱勢家庭生活支持",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 591,
     "text": "當「聚餐有人不吃肉」時，{target_name}會如何兼顧不同的飲食需求？",
     "option_a": "選可以客製或分開料理的店",
     "option_b": "先把忌口資訊傳給店家",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 592,
@@ -4554,7 +4554,7 @@
     "option_a": "先守住重要的私人承諾",
     "option_b": "尋求支援避免單人硬撐",
     "option_c": "拒絕長期不合理的工作量",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 593,
@@ -4562,7 +4562,7 @@
     "option_a": "直接打電話聽聽聲音",
     "option_b": "分享一個對方會喜歡的東西",
     "option_c": "留空間等對方願意開口",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 594,
@@ -4570,14 +4570,14 @@
     "option_a": "依預算排序",
     "option_b": "看見就記在手機備忘錄",
     "option_c": "只買當下最需要的東西",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 595,
     "text": "當「狗狗散步時容易緊張」時，{target_name}若寵物做出不理想的行為會怎麼處理？",
     "option_a": "用一致方式引導正確行為",
     "option_b": "記錄何時容易發生",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 596,
@@ -4585,7 +4585,7 @@
     "option_a": "情緒穩定且有責任感",
     "option_b": "生活價值觀相近",
     "option_c": "能在日常中互相照顧",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 597,
@@ -4593,14 +4593,14 @@
     "option_a": "讓安靜自然存在一下",
     "option_b": "邀請比較安靜的人說想法",
     "option_c": "用環境或活動當聊天切入點",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 598,
     "text": "當「大家想吃的完全不同」時，{target_name}會怎麼安排一頓多人共食的餐點？",
     "option_a": "先點少量不夠再加",
     "option_b": "選有套餐組合的店家",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 599,
@@ -4608,7 +4608,7 @@
     "option_a": "傳訊息問最近過得如何",
     "option_b": "直接打電話聽聽聲音",
     "option_c": "提供實際幫忙而非只問候",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 600,
@@ -4616,21 +4616,21 @@
     "option_a": "改去附近冷門景點",
     "option_b": "改成平日或非熱門時段再來",
     "option_c": "乾脆轉去吃在地美食",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 601,
     "text": "當「家中常常重複買到同種用品」時，{target_name}購物前會如何管理清單？",
     "option_a": "先列出必要和想要項目",
     "option_b": "依預算排序",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 602,
     "text": "如果碰上「夜間返家路程很長」，你猜{target_name}朋友在車上播放音樂時會怎麼參與？",
     "option_a": "專心聽歌不干擾駕駛",
     "option_b": "接受別人選歌不挑剔",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 603,
@@ -4638,7 +4638,7 @@
     "option_a": "先吃簡單方便的食物",
     "option_b": "帶健康小點心避免太餓",
     "option_c": "當天彈性處理不太計較",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 604,
@@ -4646,14 +4646,14 @@
     "option_a": "遇到問題坦白溝通",
     "option_b": "不把私人資訊隨便外傳",
     "option_c": "公平分配功勞與責任",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 605,
     "text": "在「有新玩家第一次加入」的情境下，你覺得{target_name}多人玩桌遊時會選哪種角色？",
     "option_a": "帶氣氛不太計較輸贏",
     "option_b": "主動教新手入門",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 606,
@@ -4661,7 +4661,7 @@
     "option_a": "覺得影響不大就不計較",
     "option_b": "以後重要安排改用行事曆確認",
     "option_c": "若反覆發生就調整期待",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 607,
@@ -4669,7 +4669,7 @@
     "option_a": "安靜完成拖延很久的事",
     "option_b": "好好休息不受打擾",
     "option_c": "整理思緒做重要決定",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 608,
@@ -4677,7 +4677,7 @@
     "option_a": "看電影或追一集劇",
     "option_b": "和朋友喝飲料聊天",
     "option_c": "早點睡讓自己充飽電",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 609,
@@ -4685,7 +4685,7 @@
     "option_a": "先靜音再固定時間查看",
     "option_b": "退出低相關群組",
     "option_c": "用搜尋功能找關鍵內容",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 610,
@@ -4693,7 +4693,7 @@
     "option_a": "安靜且舒適的工作角落",
     "option_b": "廚房收納與料理設備",
     "option_c": "省時間的清潔家電",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 611,
@@ -4701,7 +4701,7 @@
     "option_a": "遇事可靠值得信任",
     "option_b": "待人真誠而有同理心",
     "option_c": "做事有專業和品質",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 612,
@@ -4709,7 +4709,7 @@
     "option_a": "需要走動或運動釋放情緒",
     "option_b": "先找信任的人談談",
     "option_c": "用幽默把緊張感降下來",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 613,
@@ -4717,7 +4717,7 @@
     "option_a": "親手寫一張卡片",
     "option_b": "安排一段專屬相處時間",
     "option_c": "送小而實用的禮物",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 614,
@@ -4725,7 +4725,7 @@
     "option_a": "坐窗邊慢慢喝拿鐵",
     "option_b": "選無咖啡因飲品聊天",
     "option_c": "帶筆電工作一段時間",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 615,
@@ -4733,7 +4733,7 @@
     "option_a": "確認問題是否能改善",
     "option_b": "若能安全休息就不折騰",
     "option_c": "查看訂房平台的處理方式",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 616,
@@ -4741,7 +4741,7 @@
     "option_a": "先問清楚哪些食材要避開",
     "option_b": "讓對方自行挑安全餐點",
     "option_c": "另點幾道大家都能吃的菜",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 617,
@@ -4749,14 +4749,14 @@
     "option_a": "慢慢適應後再靠近",
     "option_b": "只看照片或影片",
     "option_c": "由熟悉的人陪同嘗試",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 618,
     "text": "在「重要家人活動和工作撞期」的情境下，你覺得{target_name}工作與生活衝突時會怎麼取捨？",
     "option_a": "協商調整工作期限",
     "option_b": "尋求支援避免單人硬撐",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 619,
@@ -4764,7 +4764,7 @@
     "option_a": "先確認影響範圍",
     "option_b": "向受影響的人道歉",
     "option_c": "請人協助檢查修正",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 620,
@@ -4772,21 +4772,21 @@
     "option_a": "互相示範交換技巧",
     "option_b": "各自練習再分享進度",
     "option_c": "安排固定時間一起練",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 621,
     "text": "如果碰上「公司讓員工票選捐款方向」，你猜{target_name}如果要支持一個公益方向會選哪種？",
     "option_a": "動物救援與保育",
     "option_b": "弱勢家庭生活支持",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 622,
     "text": "遇到「餐廳候位時間很長」時，{target_name}遇到景點超出預期擁擠時會怎麼選？",
     "option_a": "改成平日或非熱門時段再來",
     "option_b": "找替代入口或預約方式",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 623,
@@ -4794,14 +4794,14 @@
     "option_a": "協商調整工作期限",
     "option_b": "短期集中完成再安排休息",
     "option_c": "拒絕長期不合理的工作量",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 624,
     "text": "如果碰上「朋友聊天同時開了好幾個話題」，你猜{target_name}面對群組訊息爆量會怎麼管理？",
     "option_a": "只看標記自己的訊息",
     "option_b": "用搜尋功能找關鍵內容",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 625,
@@ -4809,7 +4809,7 @@
     "option_a": "照明和自然採光",
     "option_b": "空氣品質和通風",
     "option_c": "淋浴或浴室設備",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 626,
@@ -4817,7 +4817,7 @@
     "option_a": "依預算排序",
     "option_b": "使用共享清單和家人同步",
     "option_c": "留意家裡庫存避免重買",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 627,
@@ -4825,14 +4825,14 @@
     "option_a": "互相示範交換技巧",
     "option_b": "一起報名同一門課",
     "option_c": "共同完成一個作品",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 628,
     "text": "遇到「有新人要加入已經熟悉的團體」時，{target_name}在一個團體中怎麼建立信任？",
     "option_a": "遇到問題坦白溝通",
     "option_b": "不把私人資訊隨便外傳",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 629,
@@ -4840,7 +4840,7 @@
     "option_a": "先吃簡單方便的食物",
     "option_b": "重新安排固定用餐時間",
     "option_c": "準備可快速加熱的餐點",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 630,
@@ -4848,7 +4848,7 @@
     "option_a": "立即補救並告知相關的人",
     "option_b": "先確認影響範圍",
     "option_c": "先把事情修好再做檢討",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 631,
@@ -4856,14 +4856,14 @@
     "option_a": "退到安全距離觀看",
     "option_b": "找有安全防護的體驗",
     "option_c": "直接跳過不勉強自己",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 632,
     "text": "面對「設備壞了卻無法正常使用」，你猜{target_name}遇上住宿房間不如預期時會怎麼辦？",
     "option_a": "先拍照記錄再反映",
     "option_b": "查看訂房平台的處理方式",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 633,
@@ -4871,7 +4871,7 @@
     "option_a": "負責推理找線索",
     "option_b": "擅長談判和說服",
     "option_c": "專門設局製造反轉",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 634,
@@ -4879,14 +4879,14 @@
     "option_a": "問大家最近有趣的事",
     "option_b": "提出輕鬆的二選一話題",
     "option_c": "邀請比較安靜的人說想法",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 635,
     "text": "遇到「遇到反覆不守承諾的人」時，{target_name}生氣時最可能呈現哪種反應？",
     "option_a": "先安靜一段時間整理想法",
     "option_b": "先找信任的人談談",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 636,
@@ -4894,7 +4894,7 @@
     "option_a": "先問清楚哪些食材要避開",
     "option_b": "選可以客製或分開料理的店",
     "option_c": "先把忌口資訊傳給店家",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 637,
@@ -4902,7 +4902,7 @@
     "option_a": "傳訊息問最近過得如何",
     "option_b": "直接打電話聽聽聲音",
     "option_c": "留空間等對方願意開口",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 638,
@@ -4910,7 +4910,7 @@
     "option_a": "尋求合格訓練師協助",
     "option_b": "調整環境減少誘因",
     "option_c": "記錄何時容易發生",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 639,
@@ -4918,7 +4918,7 @@
     "option_a": "坐窗邊慢慢喝拿鐵",
     "option_b": "點手沖咖啡細品風味",
     "option_c": "只買烘焙點心不喝咖啡",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 640,
@@ -4926,7 +4926,7 @@
     "option_a": "遇事可靠值得信任",
     "option_b": "總能帶來歡笑和活力",
     "option_c": "願意支持需要幫助的人",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 641,
@@ -4934,14 +4934,14 @@
     "option_a": "泡澡或做放鬆保養",
     "option_b": "和朋友喝飲料聊天",
     "option_c": "做一點喜歡的創作",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 642,
     "text": "如果碰上「約會幾次後開始了解彼此」，你猜{target_name}選擇伴侶時最重視哪種特質？",
     "option_a": "能一起笑也能認真談事",
     "option_b": "對未來有共同方向",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 643,
@@ -4949,14 +4949,14 @@
     "option_a": "先點幾道招牌菜共享",
     "option_b": "先確認忌口再決定",
     "option_c": "先點少量不夠再加",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 644,
     "text": "面對「想謝謝一位幫助你的人」，你猜{target_name}如果不想過度鋪張會如何表達心意？",
     "option_a": "陪對方完成想做的事",
     "option_b": "用照片或文字記錄共同回憶",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 645,
@@ -4964,7 +4964,7 @@
     "option_a": "兒童教育與學習資源",
     "option_b": "長者照護與陪伴",
     "option_c": "地方文化與社區營造",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 646,
@@ -4972,7 +4972,7 @@
     "option_a": "安靜完成拖延很久的事",
     "option_b": "好好休息不受打擾",
     "option_c": "練習一項需要專注的技能",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 647,
@@ -4980,14 +4980,14 @@
     "option_a": "一起唱熟悉的副歌",
     "option_b": "提議符合路程氣氛的音樂",
     "option_c": "接受別人選歌不挑剔",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 648,
     "text": "面對「團體預約被忘記確認」，你猜{target_name}朋友忘記重要約定時會怎麼處理？",
     "option_a": "直接提醒並確認新的時間",
     "option_b": "覺得影響不大就不計較",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 649,
@@ -4995,14 +4995,14 @@
     "option_a": "安全性是否足夠",
     "option_b": "選擇是否夠多元",
     "option_c": "是否容易執行",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 650,
     "text": "面對「旅行前一週開始整理行程」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "是否有新鮮感",
     "option_b": "是否容易執行",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 651,
@@ -5010,7 +5010,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "能不能和重要的人分享",
     "option_c": "對環境是否友善",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 652,
@@ -5018,7 +5018,7 @@
     "option_a": "整體是否舒適自在",
     "option_b": "長期是否有價值",
     "option_c": "對環境是否友善",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 653,
@@ -5026,7 +5026,7 @@
     "option_a": "能不能節省時間",
     "option_b": "品質是否穩定可靠",
     "option_c": "能不能和重要的人分享",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 654,
@@ -5034,7 +5034,7 @@
     "option_a": "能不能節省時間",
     "option_b": "是否省心省力",
     "option_c": "選擇是否夠多元",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 655,
@@ -5042,7 +5042,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "是否省心省力",
     "option_c": "長期是否有價值",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 656,
@@ -5050,21 +5050,21 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "能不能和重要的人分享",
     "option_c": "選擇是否夠多元",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 657,
     "text": "當「生日快到了有人問你計畫」時，{target_name}最優先考慮哪個條件？",
     "option_a": "能不能節省時間",
     "option_b": "是否容易執行",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 658,
     "text": "面對「參加一場新朋友聚會」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "價格與預算是否合理",
     "option_b": "對環境是否友善",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 659,
@@ -5072,14 +5072,14 @@
     "option_a": "安全性是否足夠",
     "option_b": "能不能和重要的人分享",
     "option_c": "是否省心省力",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 660,
     "text": "在「原本的會議突然取消」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "安全性是否足夠",
     "option_b": "對環境是否友善",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 661,
@@ -5087,7 +5087,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "品質是否穩定可靠",
     "option_c": "選擇是否夠多元",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 662,
@@ -5095,21 +5095,21 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "整體是否舒適自在",
     "option_c": "是否省心省力",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 663,
     "text": "在「和熟朋友日常聊天」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "選擇是否夠多元",
     "option_b": "有沒有學習或成長機會",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 664,
     "text": "面對「朋友借走你的充電器一直沒還」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "選擇是否夠多元",
     "option_b": "是否能兼顧不同人的需求",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 665,
@@ -5117,7 +5117,7 @@
     "option_a": "是否有新鮮感",
     "option_b": "長期是否有價值",
     "option_c": "對環境是否友善",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 666,
@@ -5125,21 +5125,21 @@
     "option_a": "整體是否舒適自在",
     "option_b": "安全性是否足夠",
     "option_c": "對環境是否友善",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 667,
     "text": "當「期待很久的聚會突然取消」時，{target_name}最優先考慮哪個條件？",
     "option_a": "是否符合個人習慣",
     "option_b": "長期是否有價值",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 668,
     "text": "當「有一週年假可以安排旅行」時，{target_name}最優先考慮哪個條件？",
     "option_a": "是否有新鮮感",
     "option_b": "能否保留彈性與自由",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 669,
@@ -5147,14 +5147,14 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "能否保留彈性與自由",
     "option_c": "是否容易執行",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 670,
     "text": "在「突然獲得一種超能力」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "價格與預算是否合理",
     "option_b": "能不能節省時間",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 671,
@@ -5162,7 +5162,7 @@
     "option_a": "安全性是否足夠",
     "option_b": "選擇是否夠多元",
     "option_c": "有沒有學習或成長機會",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 672,
@@ -5170,7 +5170,7 @@
     "option_a": "安全性是否足夠",
     "option_b": "能否保留彈性與自由",
     "option_c": "選擇是否夠多元",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 673,
@@ -5178,7 +5178,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "品質是否穩定可靠",
     "option_c": "能不能和重要的人分享",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 674,
@@ -5186,7 +5186,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "安全性是否足夠",
     "option_c": "長期是否有價值",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 675,
@@ -5194,7 +5194,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "安全性是否足夠",
     "option_c": "有沒有學習或成長機會",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 676,
@@ -5202,7 +5202,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "整體是否舒適自在",
     "option_c": "選擇是否夠多元",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 677,
@@ -5210,7 +5210,7 @@
     "option_a": "整體是否舒適自在",
     "option_b": "是否容易執行",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 678,
@@ -5218,14 +5218,14 @@
     "option_a": "是否省心省力",
     "option_b": "長期是否有價值",
     "option_c": "是否容易執行",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 679,
     "text": "在「大家正在聊天朋友突然講你的糗事」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "價格與預算是否合理",
     "option_b": "選擇是否夠多元",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 680,
@@ -5233,7 +5233,7 @@
     "option_a": "是否有新鮮感",
     "option_b": "能不能和重要的人分享",
     "option_c": "是否容易執行",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 681,
@@ -5241,14 +5241,14 @@
     "option_a": "價格與預算是否合理",
     "option_b": "安全性是否足夠",
     "option_c": "是否省心省力",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 682,
     "text": "遇到「朋友問你最近想學什麼」時，{target_name}最優先考慮哪個條件？",
     "option_a": "品質是否穩定可靠",
     "option_b": "是否容易執行",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 683,
@@ -5256,7 +5256,7 @@
     "option_a": "能不能和重要的人分享",
     "option_b": "是否容易執行",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 684,
@@ -5264,14 +5264,14 @@
     "option_a": "能不能節省時間",
     "option_b": "品質是否穩定可靠",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 685,
     "text": "遇到「選擇新租屋的房間風格」時，{target_name}最優先考慮哪個條件？",
     "option_a": "整體是否舒適自在",
     "option_b": "安全性是否足夠",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 686,
@@ -5279,7 +5279,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "是否省心省力",
     "option_c": "能否保留彈性與自由",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 687,
@@ -5287,7 +5287,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "能不能和重要的人分享",
     "option_c": "長期是否有價值",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 688,
@@ -5295,14 +5295,14 @@
     "option_a": "價格與預算是否合理",
     "option_b": "有沒有學習或成長機會",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 689,
     "text": "如果碰上「天氣熱到只想喝點清爽的」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "整體是否舒適自在",
     "option_b": "有沒有學習或成長機會",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 690,
@@ -5310,14 +5310,14 @@
     "option_a": "整體是否舒適自在",
     "option_b": "安全性是否足夠",
     "option_c": "能不能和重要的人分享",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 691,
     "text": "遇到「聚會中發現共用餐具被混用」時，{target_name}最優先考慮哪個條件？",
     "option_a": "品質是否穩定可靠",
     "option_b": "有沒有學習或成長機會",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 692,
@@ -5325,14 +5325,14 @@
     "option_a": "能不能節省時間",
     "option_b": "是否有新鮮感",
     "option_c": "對環境是否友善",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 693,
     "text": "如果碰上「洗澡前發現牆上有不明生物」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "是否符合個人習慣",
     "option_b": "是否省心省力",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 694,
@@ -5340,14 +5340,14 @@
     "option_a": "能否保留彈性與自由",
     "option_b": "有沒有學習或成長機會",
     "option_c": "是否容易執行",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 695,
     "text": "在「早上遇到突發塞車」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "價格與預算是否合理",
     "option_b": "是否有新鮮感",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 696,
@@ -5355,7 +5355,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "能不能和重要的人分享",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 697,
@@ -5363,7 +5363,7 @@
     "option_a": "整體是否舒適自在",
     "option_b": "對環境是否友善",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 698,
@@ -5371,7 +5371,7 @@
     "option_a": "能不能節省時間",
     "option_b": "是否有新鮮感",
     "option_c": "是否符合個人習慣",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 699,
@@ -5379,7 +5379,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "是否省心省力",
     "option_c": "是否容易執行",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 700,
@@ -5387,21 +5387,21 @@
     "option_a": "能否保留彈性與自由",
     "option_b": "選擇是否夠多元",
     "option_c": "有沒有學習或成長機會",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 701,
     "text": "在「正在調整工作與私人時間」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "是否符合個人習慣",
     "option_b": "對環境是否友善",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 702,
     "text": "如果碰上「要決定是否開始一項新計畫」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "能不能和重要的人分享",
     "option_b": "是否能兼顧不同人的需求",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 703,
@@ -5409,7 +5409,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "能不能和重要的人分享",
     "option_c": "能否保留彈性與自由",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 704,
@@ -5417,7 +5417,7 @@
     "option_a": "對環境是否友善",
     "option_b": "有沒有學習或成長機會",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 705,
@@ -5425,14 +5425,14 @@
     "option_a": "是否有新鮮感",
     "option_b": "整體是否舒適自在",
     "option_c": "長期是否有價值",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 706,
     "text": "遇到「同類商品價格差距很大」時，{target_name}最優先考慮哪個條件？",
     "option_a": "整體是否舒適自在",
     "option_b": "是否容易執行",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 707,
@@ -5440,14 +5440,14 @@
     "option_a": "是否符合個人習慣",
     "option_b": "長期是否有價值",
     "option_c": "對環境是否友善",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 708,
     "text": "面對「工作內容看起來又大又複雜」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "安全性是否足夠",
     "option_b": "能否保留彈性與自由",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 709,
@@ -5455,7 +5455,7 @@
     "option_a": "能不能節省時間",
     "option_b": "是否符合個人習慣",
     "option_c": "選擇是否夠多元",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 710,
@@ -5463,7 +5463,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "能不能節省時間",
     "option_c": "整體是否舒適自在",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 711,
@@ -5471,14 +5471,14 @@
     "option_a": "是否有新鮮感",
     "option_b": "選擇是否夠多元",
     "option_c": "是否容易執行",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 712,
     "text": "遇到「參觀動物友善空間」時，{target_name}最優先考慮哪個條件？",
     "option_a": "能否保留彈性與自由",
     "option_b": "有沒有學習或成長機會",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 713,
@@ -5486,14 +5486,14 @@
     "option_a": "能不能節省時間",
     "option_b": "安全性是否足夠",
     "option_c": "能否保留彈性與自由",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 714,
     "text": "面對「週末想開始一部新影集」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "價格與預算是否合理",
     "option_b": "整體是否舒適自在",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 715,
@@ -5501,7 +5501,7 @@
     "option_a": "是否有新鮮感",
     "option_b": "安全性是否足夠",
     "option_c": "有沒有學習或成長機會",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 716,
@@ -5509,7 +5509,7 @@
     "option_a": "是否有新鮮感",
     "option_b": "整體是否舒適自在",
     "option_c": "能不能和重要的人分享",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 717,
@@ -5517,7 +5517,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "整體是否舒適自在",
     "option_c": "能否保留彈性與自由",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 718,
@@ -5525,14 +5525,14 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "是否有新鮮感",
     "option_c": "能否保留彈性與自由",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 719,
     "text": "遇到「午餐要吃得滿足又不想太撐」時，{target_name}最優先考慮哪個條件？",
     "option_a": "能不能和重要的人分享",
     "option_b": "有沒有學習或成長機會",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 720,
@@ -5540,7 +5540,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "能不能節省時間",
     "option_c": "是否符合個人習慣",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 721,
@@ -5548,7 +5548,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "能不能節省時間",
     "option_c": "品質是否穩定可靠",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 722,
@@ -5556,7 +5556,7 @@
     "option_a": "是否符合個人習慣",
     "option_b": "對環境是否友善",
     "option_c": "能否保留彈性與自由",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 723,
@@ -5564,7 +5564,7 @@
     "option_a": "整體是否舒適自在",
     "option_b": "長期是否有價值",
     "option_c": "是否容易執行",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 724,
@@ -5572,7 +5572,7 @@
     "option_a": "是否符合個人習慣",
     "option_b": "有沒有學習或成長機會",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 725,
@@ -5580,21 +5580,21 @@
     "option_a": "是否有新鮮感",
     "option_b": "安全性是否足夠",
     "option_c": "能不能和重要的人分享",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 726,
     "text": "當「大家輪流點歌」時，{target_name}最優先考慮哪個條件？",
     "option_a": "長期是否有價值",
     "option_b": "有沒有學習或成長機會",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 727,
     "text": "當「投資獲利高於原本預期」時，{target_name}最優先考慮哪個條件？",
     "option_a": "能不能和重要的人分享",
     "option_b": "是否容易執行",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 728,
@@ -5602,7 +5602,7 @@
     "option_a": "安全性是否足夠",
     "option_b": "能不能和重要的人分享",
     "option_c": "長期是否有價值",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 729,
@@ -5610,14 +5610,14 @@
     "option_a": "能不能和重要的人分享",
     "option_b": "長期是否有價值",
     "option_c": "有沒有學習或成長機會",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 730,
     "text": "在「你自己也快要需要那件物品」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "價格與預算是否合理",
     "option_b": "安全性是否足夠",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 731,
@@ -5625,7 +5625,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "是否符合個人習慣",
     "option_c": "選擇是否夠多元",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 732,
@@ -5633,7 +5633,7 @@
     "option_a": "整體是否舒適自在",
     "option_b": "長期是否有價值",
     "option_c": "有沒有學習或成長機會",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 733,
@@ -5641,7 +5641,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "是否符合個人習慣",
     "option_c": "是否容易執行",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 734,
@@ -5649,7 +5649,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "安全性是否足夠",
     "option_c": "是否容易執行",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 735,
@@ -5657,21 +5657,21 @@
     "option_a": "能不能節省時間",
     "option_b": "整體是否舒適自在",
     "option_c": "是否符合個人習慣",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 736,
     "text": "在「同時有很多想去的店與景點」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "安全性是否足夠",
     "option_b": "有沒有學習或成長機會",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 737,
     "text": "如果碰上「假日計畫臨時空出一天」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "安全性是否足夠",
     "option_b": "是否省心省力",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 738,
@@ -5679,14 +5679,14 @@
     "option_a": "能不能節省時間",
     "option_b": "能不能和重要的人分享",
     "option_c": "能否保留彈性與自由",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 739,
     "text": "當「想讓平常約會換點新鮮感」時，{target_name}最優先考慮哪個條件？",
     "option_a": "安全性是否足夠",
     "option_b": "是否符合個人習慣",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 740,
@@ -5694,7 +5694,7 @@
     "option_a": "品質是否穩定可靠",
     "option_b": "整體是否舒適自在",
     "option_c": "長期是否有價值",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 741,
@@ -5702,7 +5702,7 @@
     "option_a": "是否符合個人習慣",
     "option_b": "能否保留彈性與自由",
     "option_c": "是否容易執行",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 742,
@@ -5710,7 +5710,7 @@
     "option_a": "安全性是否足夠",
     "option_b": "是否符合個人習慣",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 743,
@@ -5718,7 +5718,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "對環境是否友善",
     "option_c": "是否容易執行",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 744,
@@ -5726,7 +5726,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "長期是否有價值",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 745,
@@ -5734,21 +5734,21 @@
     "option_a": "是否符合個人習慣",
     "option_b": "長期是否有價值",
     "option_c": "是否容易執行",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 746,
     "text": "如果碰上「希望慶祝但不想花太多錢」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "品質是否穩定可靠",
     "option_b": "能否保留彈性與自由",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 747,
     "text": "如果碰上「想找個地方遠離熟悉生活」，你猜{target_name}最優先考慮哪個條件？",
     "option_a": "長期是否有價值",
     "option_b": "選擇是否夠多元",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 748,
@@ -5756,7 +5756,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "能不能節省時間",
     "option_c": "是否容易執行",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 749,
@@ -5764,7 +5764,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "安全性是否足夠",
     "option_c": "是否容易執行",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 750,
@@ -5772,7 +5772,7 @@
     "option_a": "價格與預算是否合理",
     "option_b": "整體是否舒適自在",
     "option_c": "是否符合個人習慣",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 751,
@@ -5780,14 +5780,14 @@
     "option_a": "能不能和重要的人分享",
     "option_b": "是否省心省力",
     "option_c": "選擇是否夠多元",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 752,
     "text": "當「換新手機要設定桌布」時，{target_name}最優先考慮哪個條件？",
     "option_a": "能否保留彈性與自由",
     "option_b": "是否容易執行",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 753,
@@ -5795,7 +5795,7 @@
     "option_a": "能不能節省時間",
     "option_b": "整體是否舒適自在",
     "option_c": "是否能兼顧不同人的需求",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 754,
@@ -5803,14 +5803,14 @@
     "option_a": "是否有新鮮感",
     "option_b": "長期是否有價值",
     "option_c": "有沒有學習或成長機會",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 755,
     "text": "在「朋友帶你參加他們的聚會」的情境下，你覺得{target_name}最優先考慮哪個條件？",
     "option_a": "是否省心省力",
     "option_b": "選擇是否夠多元",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 756,
@@ -5818,14 +5818,14 @@
     "option_a": "是否有新鮮感",
     "option_b": "是否符合個人習慣",
     "option_c": "是否省心省力",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 757,
     "text": "如果碰上「手機 App 越裝越多」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "請有經驗的人協助",
     "option_b": "先處理最急迫的部分",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 758,
@@ -5833,7 +5833,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "重新安排後續計畫",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 759,
@@ -5841,7 +5841,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "直接詢問相關的人",
     "option_c": "給自己一點時間觀察",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 760,
@@ -5849,7 +5849,7 @@
     "option_a": "先處理最急迫的部分",
     "option_b": "把問題拆成小步驟",
     "option_c": "先完成能控制的部分",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 761,
@@ -5857,14 +5857,14 @@
     "option_a": "先停下來確認資訊",
     "option_b": "依照既有經驗快速處理",
     "option_c": "承認問題並立即修正",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 762,
     "text": "在「想買一台新筆電」的情境下，你覺得{target_name}最可能採取哪種應對方式？",
     "option_a": "列出選項後再決定",
     "option_b": "承認問題並立即修正",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 763,
@@ -5872,21 +5872,21 @@
     "option_a": "請有經驗的人協助",
     "option_b": "依照既有經驗快速處理",
     "option_c": "承認問題並立即修正",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 764,
     "text": "如果碰上「因小事吵了一架」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "先處理最急迫的部分",
     "option_b": "先完成能控制的部分",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 765,
     "text": "當「主管對你的簡報提出修改」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "直接詢問相關的人",
     "option_b": "先處理最急迫的部分",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 766,
@@ -5894,14 +5894,14 @@
     "option_a": "先停下來確認資訊",
     "option_b": "尋找可行的替代選擇",
     "option_c": "先確認安全與界線",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 767,
     "text": "在「朋友分享一首冷門歌曲」的情境下，你覺得{target_name}最可能採取哪種應對方式？",
     "option_a": "請有經驗的人協助",
     "option_b": "暫停一下整理思緒",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 768,
@@ -5909,7 +5909,7 @@
     "option_a": "暫停一下整理思緒",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "依照既有經驗快速處理",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 769,
@@ -5917,7 +5917,7 @@
     "option_a": "暫停一下整理思緒",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "列出選項後再決定",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 770,
@@ -5925,7 +5925,7 @@
     "option_a": "先確認安全與界線",
     "option_b": "先完成能控制的部分",
     "option_c": "承認問題並立即修正",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 771,
@@ -5933,7 +5933,7 @@
     "option_a": "給自己一點時間觀察",
     "option_b": "先完成能控制的部分",
     "option_c": "承認問題並立即修正",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 772,
@@ -5941,7 +5941,7 @@
     "option_a": "直接詢問相關的人",
     "option_b": "先處理最急迫的部分",
     "option_c": "重新安排後續計畫",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 773,
@@ -5949,14 +5949,14 @@
     "option_a": "先停下來確認資訊",
     "option_b": "尋找可行的替代選擇",
     "option_c": "列出選項後再決定",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 774,
     "text": "當「終於有一部期待已久的新劇上架」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "直接詢問相關的人",
     "option_b": "承認問題並立即修正",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 775,
@@ -5964,7 +5964,7 @@
     "option_a": "先採取風險較低的方案",
     "option_b": "給自己一點時間觀察",
     "option_c": "依照既有經驗快速處理",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 776,
@@ -5972,7 +5972,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "直接詢問相關的人",
     "option_c": "先採取風險較低的方案",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 777,
@@ -5980,7 +5980,7 @@
     "option_a": "直接詢問相關的人",
     "option_b": "暫停一下整理思緒",
     "option_c": "重新安排後續計畫",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 778,
@@ -5988,7 +5988,7 @@
     "option_a": "暫停一下整理思緒",
     "option_b": "列出選項後再決定",
     "option_c": "先完成能控制的部分",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 779,
@@ -5996,7 +5996,7 @@
     "option_a": "依照既有經驗快速處理",
     "option_b": "列出選項後再決定",
     "option_c": "承認問題並立即修正",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 780,
@@ -6004,7 +6004,7 @@
     "option_a": "尋找可行的替代選擇",
     "option_b": "給自己一點時間觀察",
     "option_c": "依照既有經驗快速處理",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 781,
@@ -6012,7 +6012,7 @@
     "option_a": "把問題拆成小步驟",
     "option_b": "列出選項後再決定",
     "option_c": "承認問題並立即修正",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 782,
@@ -6020,7 +6020,7 @@
     "option_a": "先處理最急迫的部分",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "先完成能控制的部分",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 783,
@@ -6028,7 +6028,7 @@
     "option_a": "尋找可行的替代選擇",
     "option_b": "暫停一下整理思緒",
     "option_c": "重新安排後續計畫",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 784,
@@ -6036,7 +6036,7 @@
     "option_a": "請有經驗的人協助",
     "option_b": "先確認安全與界線",
     "option_c": "重新安排後續計畫",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 785,
@@ -6044,7 +6044,7 @@
     "option_a": "先處理最急迫的部分",
     "option_b": "先完成能控制的部分",
     "option_c": "重新安排後續計畫",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 786,
@@ -6052,7 +6052,7 @@
     "option_a": "尋找可行的替代選擇",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "列出選項後再決定",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 787,
@@ -6060,21 +6060,21 @@
     "option_a": "先處理最急迫的部分",
     "option_b": "先確認安全與界線",
     "option_c": "承認問題並立即修正",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 788,
     "text": "遇到「家人討論節日怎麼過」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "尋找可行的替代選擇",
     "option_b": "重新安排後續計畫",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 789,
     "text": "面對「朋友提議規劃一日戶外行程」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "依照既有經驗快速處理",
     "option_b": "承認問題並立即修正",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 790,
@@ -6082,7 +6082,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "把問題拆成小步驟",
     "option_c": "先完成能控制的部分",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 791,
@@ -6090,14 +6090,14 @@
     "option_a": "暫停一下整理思緒",
     "option_b": "先完成能控制的部分",
     "option_c": "承認問題並立即修正",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 792,
     "text": "面對「需要訪問一種生物了解牠的生活」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "先處理最急迫的部分",
     "option_b": "給自己一點時間觀察",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 793,
@@ -6105,7 +6105,7 @@
     "option_a": "暫停一下整理思緒",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "先完成能控制的部分",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 794,
@@ -6113,21 +6113,21 @@
     "option_a": "請有經驗的人協助",
     "option_b": "承認問題並立即修正",
     "option_c": "重新安排後續計畫",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 795,
     "text": "如果碰上「公共場所有人東西掉了一地」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "尋找可行的替代選擇",
     "option_b": "先完成能控制的部分",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 796,
     "text": "遇到「旅行要帶很多行李」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "把問題拆成小步驟",
     "option_b": "依照既有經驗快速處理",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 797,
@@ -6135,7 +6135,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "暫停一下整理思緒",
     "option_c": "承認問題並立即修正",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 798,
@@ -6143,14 +6143,14 @@
     "option_a": "直接詢問相關的人",
     "option_b": "請有經驗的人協助",
     "option_c": "依照既有經驗快速處理",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 799,
     "text": "遇到「大家都說願意幫忙卻還沒分工」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "直接詢問相關的人",
     "option_b": "先確認安全與界線",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 800,
@@ -6158,7 +6158,7 @@
     "option_a": "請有經驗的人協助",
     "option_b": "先確認安全與界線",
     "option_c": "依照既有經驗快速處理",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 801,
@@ -6166,7 +6166,7 @@
     "option_a": "請有經驗的人協助",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "給自己一點時間觀察",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 802,
@@ -6174,7 +6174,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "請有經驗的人協助",
     "option_c": "先完成能控制的部分",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 803,
@@ -6182,14 +6182,14 @@
     "option_a": "先停下來確認資訊",
     "option_b": "先採取風險較低的方案",
     "option_c": "先處理最急迫的部分",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 804,
     "text": "如果碰上「工作期限突然提前」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "先採取風險較低的方案",
     "option_b": "請有經驗的人協助",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 805,
@@ -6197,21 +6197,21 @@
     "option_a": "先處理最急迫的部分",
     "option_b": "把問題拆成小步驟",
     "option_c": "給自己一點時間觀察",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 806,
     "text": "如果碰上「山區天候轉差」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "先停下來確認資訊",
     "option_b": "請有經驗的人協助",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 807,
     "text": "面對「工作群組開始分派任務」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "先採取風險較低的方案",
     "option_b": "先處理最急迫的部分",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 808,
@@ -6219,7 +6219,7 @@
     "option_a": "先採取風險較低的方案",
     "option_b": "列出選項後再決定",
     "option_c": "重新安排後續計畫",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 809,
@@ -6227,7 +6227,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "把問題拆成小步驟",
     "option_c": "重新安排後續計畫",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 810,
@@ -6235,14 +6235,14 @@
     "option_a": "直接詢問相關的人",
     "option_b": "請有經驗的人協助",
     "option_c": "先確認安全與界線",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 811,
     "text": "面對「新同事加入團隊」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "先採取風險較低的方案",
     "option_b": "依照既有經驗快速處理",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 812,
@@ -6250,7 +6250,7 @@
     "option_a": "先處理最急迫的部分",
     "option_b": "把問題拆成小步驟",
     "option_c": "和相關的人討論折衷方案",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 813,
@@ -6258,7 +6258,7 @@
     "option_a": "請有經驗的人協助",
     "option_b": "把問題拆成小步驟",
     "option_c": "依照既有經驗快速處理",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 814,
@@ -6266,7 +6266,7 @@
     "option_a": "給自己一點時間觀察",
     "option_b": "依照既有經驗快速處理",
     "option_c": "列出選項後再決定",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 815,
@@ -6274,7 +6274,7 @@
     "option_a": "依照既有經驗快速處理",
     "option_b": "列出選項後再決定",
     "option_c": "重新安排後續計畫",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 816,
@@ -6282,21 +6282,21 @@
     "option_a": "先停下來確認資訊",
     "option_b": "把問題拆成小步驟",
     "option_c": "承認問題並立即修正",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 817,
     "text": "當「出門前收到強風警報」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "把問題拆成小步驟",
     "option_b": "先確認安全與界線",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 818,
     "text": "在「完成一半後失去方向」的情境下，你覺得{target_name}最可能採取哪種應對方式？",
     "option_a": "先處理最急迫的部分",
     "option_b": "和相關的人討論折衷方案",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 819,
@@ -6304,7 +6304,7 @@
     "option_a": "直接詢問相關的人",
     "option_b": "列出選項後再決定",
     "option_c": "先完成能控制的部分",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 820,
@@ -6312,14 +6312,14 @@
     "option_a": "直接詢問相關的人",
     "option_b": "先確認安全與界線",
     "option_c": "給自己一點時間觀察",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 821,
     "text": "當「想轉換職涯但還不確定」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "尋找可行的替代選擇",
     "option_b": "把問題拆成小步驟",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 822,
@@ -6327,7 +6327,7 @@
     "option_a": "直接詢問相關的人",
     "option_b": "先處理最急迫的部分",
     "option_c": "依照既有經驗快速處理",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 823,
@@ -6335,14 +6335,14 @@
     "option_a": "先採取風險較低的方案",
     "option_b": "暫停一下整理思緒",
     "option_c": "給自己一點時間觀察",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 824,
     "text": "當「外送飲料少了指定配料」時，{target_name}最可能採取哪種應對方式？",
     "option_a": "給自己一點時間觀察",
     "option_b": "承認問題並立即修正",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 825,
@@ -6350,7 +6350,7 @@
     "option_a": "先停下來確認資訊",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "先完成能控制的部分",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 826,
@@ -6358,7 +6358,7 @@
     "option_a": "直接詢問相關的人",
     "option_b": "請有經驗的人協助",
     "option_c": "列出選項後再決定",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 827,
@@ -6366,7 +6366,7 @@
     "option_a": "先採取風險較低的方案",
     "option_b": "和相關的人討論折衷方案",
     "option_c": "列出選項後再決定",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 828,
@@ -6374,7 +6374,7 @@
     "option_a": "先採取風險較低的方案",
     "option_b": "承認問題並立即修正",
     "option_c": "重新安排後續計畫",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 829,
@@ -6382,7 +6382,7 @@
     "option_a": "先處理最急迫的部分",
     "option_b": "依照既有經驗快速處理",
     "option_c": "先完成能控制的部分",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 830,
@@ -6390,14 +6390,14 @@
     "option_a": "先停下來確認資訊",
     "option_b": "把問題拆成小步驟",
     "option_c": "列出選項後再決定",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 831,
     "text": "面對「想讓生活有更多私人空間」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "直接詢問相關的人",
     "option_b": "和相關的人討論折衷方案",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 832,
@@ -6405,14 +6405,14 @@
     "option_a": "先停下來確認資訊",
     "option_b": "先完成能控制的部分",
     "option_c": "重新安排後續計畫",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 833,
     "text": "在「搬家前需要打包物品」的情境下，你覺得{target_name}最可能採取哪種應對方式？",
     "option_a": "請有經驗的人協助",
     "option_b": "給自己一點時間觀察",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 834,
@@ -6420,21 +6420,21 @@
     "option_a": "先停下來確認資訊",
     "option_b": "先採取風險較低的方案",
     "option_c": "和相關的人討論折衷方案",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 835,
     "text": "面對「半夜訂的宵夜一直未送達」，你猜{target_name}最可能採取哪種應對方式？",
     "option_a": "和相關的人討論折衷方案",
     "option_b": "依照既有經驗快速處理",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 836,
     "text": "在「旅行中每天都有共同花費」的情境下，你覺得{target_name}最可能採取哪種應對方式？",
     "option_a": "請有經驗的人協助",
     "option_b": "把問題拆成小步驟",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 837,
@@ -6442,14 +6442,14 @@
     "option_a": "請有經驗的人協助",
     "option_b": "先完成能控制的部分",
     "option_c": "重新安排後續計畫",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 838,
     "text": "如果碰上「新興趣很容易三分鐘熱度」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "新手沒有入門資源",
     "option_b": "工具不合適又無法替代",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 839,
@@ -6457,14 +6457,14 @@
     "option_a": "用人身攻擊代替討論",
     "option_b": "不尊重已經說明的界線",
     "option_c": "不讓對方把話說完",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 840,
     "text": "如果碰上「平日鬧鐘剛響時」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "照明或通風不舒服",
     "option_b": "家事責任分配不公平",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 841,
@@ -6472,7 +6472,7 @@
     "option_a": "使用能力會傷害無辜的人",
     "option_b": "能力只能用來滿足別人要求",
     "option_c": "無法選擇何時啟動能力",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 842,
@@ -6480,14 +6480,14 @@
     "option_a": "借貸沒有清楚約定",
     "option_b": "財務狀況被擅自公開",
     "option_c": "共同開銷分配不公平",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 843,
     "text": "如果碰上「共食時有人把香菜放進你的碗」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "不顧別人感受搶走共享食物",
     "option_b": "對服務人員態度不尊重",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 844,
@@ -6495,14 +6495,14 @@
     "option_a": "全程都要配合別人的偏好",
     "option_b": "人潮多到無法放鬆",
     "option_c": "完全沒有備案",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 845,
     "text": "在「出門前發現交通比預期慢」的情境下，你覺得{target_name}最難接受哪一種狀況？",
     "option_a": "有人明知有危險仍不願避開",
     "option_b": "現場沒有清楚的求助方式",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 846,
@@ -6510,14 +6510,14 @@
     "option_a": "現場動線不安全",
     "option_b": "完全沒有符合自己喜好的內容",
     "option_c": "活動規則說明不清楚",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 847,
     "text": "遇到「需要找地方好好聊天」時，{target_name}最難接受哪一種狀況？",
     "option_a": "口味失衡或調味過頭",
     "option_b": "選項無法照顧基本忌口",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 848,
@@ -6525,7 +6525,7 @@
     "option_a": "責任和期限都不清楚",
     "option_b": "回饋只有批評沒有具體建議",
     "option_c": "努力成果被別人冒領",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 849,
@@ -6533,7 +6533,7 @@
     "option_a": "行程完全沒有備案",
     "option_b": "時間表緊到沒有休息",
     "option_c": "遇到問題後只互相責怪",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 850,
@@ -6541,7 +6541,7 @@
     "option_a": "總是同一個人承擔工作",
     "option_b": "有人被排除在重要資訊之外",
     "option_c": "不願意尊重彼此的時間",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 851,
@@ -6549,7 +6549,7 @@
     "option_a": "活動讓主角感到壓力",
     "option_b": "驚喜公開了對方的私人資訊",
     "option_c": "節日變成互相比較的負擔",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 852,
@@ -6557,7 +6557,7 @@
     "option_a": "分工和功勞分配不公平",
     "option_b": "不同意見被直接嘲笑",
     "option_c": "活動規則對部分人不友善",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 853,
@@ -6565,7 +6565,7 @@
     "option_a": "長期犧牲健康換取成就",
     "option_b": "無法自主安排自己的時間",
     "option_c": "生活缺乏任何成長空間",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 854,
@@ -6573,14 +6573,14 @@
     "option_a": "未經同意突然長時間通話",
     "option_b": "大量無關通知干擾工作",
     "option_c": "發生誤會後拒絕澄清",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 855,
     "text": "在「終於有一段完整的獨處時間」的情境下，你覺得{target_name}最難接受哪一種狀況？",
     "option_a": "錯誤無法被承認和修正",
     "option_b": "需要一直壓抑真實感受",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 856,
@@ -6588,7 +6588,7 @@
     "option_a": "太油膩或吃完不舒服",
     "option_b": "外送資訊一直不更新",
     "option_c": "無法配合作息或時間",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 857,
@@ -6596,7 +6596,7 @@
     "option_a": "交通不便又難以替代",
     "option_b": "費用和實際品質不相稱",
     "option_c": "缺少在地特色或真實體驗",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 858,
@@ -6604,7 +6604,7 @@
     "option_a": "未經同意公開私人資訊",
     "option_b": "通知反覆打斷重要事情",
     "option_c": "隱私設定不透明",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 859,
@@ -6612,7 +6612,7 @@
     "option_a": "不尊重彼此的私人空間",
     "option_b": "遇到問題就拒絕溝通",
     "option_c": "承諾和實際行動落差很大",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 860,
@@ -6620,7 +6620,7 @@
     "option_a": "重大劇透沒有提醒",
     "option_b": "內容為了流量刻意誤導",
     "option_c": "劇情拖沓沒有收束",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 861,
@@ -6628,28 +6628,28 @@
     "option_a": "私人問題被當眾追問",
     "option_b": "對方不尊重你想結束話題的訊號",
     "option_c": "把無心口誤當成惡意",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 862,
     "text": "遇到「兩款產品功能相似價格差不少」時，{target_name}最難接受哪一種狀況？",
     "option_a": "商品資訊不透明",
     "option_b": "買完後被持續推銷加購",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 863,
     "text": "在「第一次去一家飲料店」的情境下，你覺得{target_name}最難接受哪一種狀況？",
     "option_a": "甜度完全不能調整",
     "option_b": "價格與份量差距太大",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 864,
     "text": "遇到「路邊遇到看似受傷的動物」時，{target_name}最難接受哪一種狀況？",
     "option_a": "忽視動物的安全與需求",
     "option_b": "以驚嚇或粗暴方式訓練",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 865,
@@ -6657,7 +6657,7 @@
     "option_a": "反覆爽約卻不提前說明",
     "option_b": "總是同一個人承擔工作",
     "option_c": "團體遇到問題只互相指責",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 866,
@@ -6665,7 +6665,7 @@
     "option_a": "製作方式讓人不安心",
     "option_b": "品質每次落差很大",
     "option_c": "食物浪費得太嚴重",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 867,
@@ -6673,7 +6673,7 @@
     "option_a": "提出問題卻不允許討論",
     "option_b": "任何選擇都不能保留彈性",
     "option_c": "需要一直壓抑真實感受",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 868,
@@ -6681,7 +6681,7 @@
     "option_a": "生活缺乏任何成長空間",
     "option_b": "付出沒有被公平對待",
     "option_c": "不能保留任何休息與自由",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 869,
@@ -6689,7 +6689,7 @@
     "option_a": "人潮多到無法放鬆",
     "option_b": "交通時間比活動還長",
     "option_c": "活動規則不安全或不清楚",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 870,
@@ -6697,7 +6697,7 @@
     "option_a": "使用能力會傷害無辜的人",
     "option_b": "能力讓私人生活完全曝光",
     "option_c": "獲得力量卻失去自由",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 871,
@@ -6705,7 +6705,7 @@
     "option_a": "回饋只是否定卻不說原因",
     "option_b": "社群氛圍排斥不同風格",
     "option_c": "工具不合適又無法替代",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 872,
@@ -6713,14 +6713,14 @@
     "option_a": "不顧收禮者實際喜好",
     "option_b": "只在意形式沒有真心交流",
     "option_c": "活動安排讓人難以參與",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 873,
     "text": "遇到「電影院這週上映很多新片」時，{target_name}最難接受哪一種狀況？",
     "option_a": "操作或規則設計不合理",
     "option_b": "劇情拖沓沒有收束",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 874,
@@ -6728,7 +6728,7 @@
     "option_a": "期待即時回覆卻不說清楚",
     "option_b": "訊息被斷章取義",
     "option_c": "大量無關通知干擾工作",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 875,
@@ -6736,7 +6736,7 @@
     "option_a": "份量太少吃不飽",
     "option_b": "選擇少又缺乏變化",
     "option_c": "無法配合作息或時間",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 876,
@@ -6744,7 +6744,7 @@
     "option_a": "甜度完全不能調整",
     "option_b": "價格與份量差距太大",
     "option_c": "飲品太甜又沒有替代選項",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 877,
@@ -6752,14 +6752,14 @@
     "option_a": "他人把你的恐懼當成笑話",
     "option_b": "問題發生後沒人願意負責",
     "option_c": "安全提醒被刻意忽略",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 878,
     "text": "遇到「想在一個月內看到進步」時，{target_name}最難接受哪一種狀況？",
     "option_a": "只追求表面進度忽視品質",
     "option_b": "工作量長期分配不公平",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 879,
@@ -6767,14 +6767,14 @@
     "option_a": "別人替你公開不想分享的資訊",
     "option_b": "有人故意讓你難堪",
     "option_c": "錯誤被放大卻不給解釋機會",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 880,
     "text": "當「群組有人分享不明抽獎活動」時，{target_name}最難接受哪一種狀況？",
     "option_a": "功能更新後反而更難用",
     "option_b": "重要資訊容易被群訊息淹沒",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 881,
@@ -6782,14 +6782,14 @@
     "option_a": "行程缺少自由調整空間",
     "option_b": "費用和實際品質不相稱",
     "option_c": "行程只追熱門打卡點",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 882,
     "text": "當「要和伴侶的好友一起吃飯」時，{target_name}最難接受哪一種狀況？",
     "option_a": "控制對方的人際往來",
     "option_b": "忽略對方明確表達的需求",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 883,
@@ -6797,14 +6797,14 @@
     "option_a": "不尊重他人的飲食界線",
     "option_b": "不顧別人感受搶走共享食物",
     "option_c": "對服務人員態度不尊重",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 884,
     "text": "面對「舞台之間距離很遠」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "音量大到不舒服",
     "option_b": "票價與體驗差距太大",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 885,
@@ -6812,7 +6812,7 @@
     "option_a": "照明或通風不舒服",
     "option_b": "家事責任分配不公平",
     "option_c": "空間缺少基本安全措施",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 886,
@@ -6820,7 +6820,7 @@
     "option_a": "拒絕承認明顯的錯誤",
     "option_b": "不讓對方把話說完",
     "option_c": "一再承諾卻完全不改變",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 887,
@@ -6828,14 +6828,14 @@
     "option_a": "忽視動物的安全與需求",
     "option_b": "以驚嚇或粗暴方式訓練",
     "option_c": "遇到問題就輕易棄養",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 888,
     "text": "面對「親戚想向你借一段時間」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "收入支出完全不做規劃",
     "option_b": "用金錢要求別人回報感情",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 889,
@@ -6843,7 +6843,7 @@
     "option_a": "有人一直無法加入討論",
     "option_b": "分工和功勞分配不公平",
     "option_c": "活動規則對部分人不友善",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 890,
@@ -6851,7 +6851,7 @@
     "option_a": "行程完全沒有備案",
     "option_b": "臨時變動卻沒人溝通",
     "option_c": "預算沒有保留緩衝",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 891,
@@ -6859,7 +6859,7 @@
     "option_a": "退換貨規則不合理",
     "option_b": "為折扣製造不必要的消費",
     "option_c": "包裝過度又不環保",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 892,
@@ -6867,7 +6867,7 @@
     "option_a": "收入支出完全不做規劃",
     "option_b": "高風險決策前沒有了解資訊",
     "option_c": "共同開銷分配不公平",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 893,
@@ -6875,14 +6875,14 @@
     "option_a": "私人問題被當眾追問",
     "option_b": "錯誤被放大卻不給解釋機會",
     "option_c": "對方不尊重你想結束話題的訊號",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 894,
     "text": "當「團體遊戲總是同一人決定規則」時，{target_name}最難接受哪一種狀況？",
     "option_a": "有人一直無法加入討論",
     "option_b": "分工和功勞分配不公平",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 895,
@@ -6890,7 +6890,7 @@
     "option_a": "創作過程一直被打斷",
     "option_b": "練習成本高到無法持續",
     "option_c": "工具不合適又無法替代",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 896,
@@ -6898,21 +6898,21 @@
     "option_a": "目標一直改卻不說明原因",
     "option_b": "工作量長期分配不公平",
     "option_c": "會議很多卻沒有結論",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 897,
     "text": "在「旅行中需要分配採買工作」的情境下，你覺得{target_name}最難接受哪一種狀況？",
     "option_a": "有人被排除在重要資訊之外",
     "option_b": "只在需要幫忙時才聯絡",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 898,
     "text": "在「朋友團體即將各自忙碌」的情境下，你覺得{target_name}最難接受哪一種狀況？",
     "option_a": "準備過程忽略重要的人",
     "option_b": "節日變成互相比較的負擔",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 899,
@@ -6920,7 +6920,7 @@
     "option_a": "共用餐具衛生讓人不放心",
     "option_b": "強迫別人接受自己的口味",
     "option_c": "用餐時一直催促別人",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 900,
@@ -6928,7 +6928,7 @@
     "option_a": "食材不新鮮",
     "option_b": "製作方式讓人不安心",
     "option_c": "為了噱頭犧牲味道",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 901,
@@ -6936,14 +6936,14 @@
     "option_a": "環境長期吵雜難以休息",
     "option_b": "睡眠一直被打斷",
     "option_c": "生活空間沒有任何個人感",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 902,
     "text": "如果碰上「只能挑一個技能用在生活中」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "能力只能用來滿足別人要求",
     "option_b": "能力讓私人生活完全曝光",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 903,
@@ -6951,21 +6951,21 @@
     "option_a": "資料沒有備份或安全保護",
     "option_b": "廣告和推播多到難以使用",
     "option_c": "功能更新後反而更難用",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 904,
     "text": "如果碰上「臨時收到一個沒有細節的邀約」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "人潮多到無法放鬆",
     "option_b": "完全沒有備案",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 905,
     "text": "當「大家對同一個景點興趣不一」時，{target_name}最難接受哪一種狀況？",
     "option_a": "同行者的需求一直被忽略",
     "option_b": "時間表緊到沒有休息",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 906,
@@ -6973,14 +6973,14 @@
     "option_a": "餐點冷掉或口感變差",
     "option_b": "選擇少又缺乏變化",
     "option_c": "外送資訊一直不更新",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 907,
     "text": "如果碰上「不常聯絡的人突然打來」，你猜{target_name}最難接受哪一種狀況？",
     "option_a": "未經同意突然長時間通話",
     "option_b": "大量無關通知干擾工作",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 908,
@@ -6988,7 +6988,7 @@
     "option_a": "控制對方的人際往來",
     "option_b": "把紀念日當成彼此比較",
     "option_c": "不願意協調生活習慣",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 909,
@@ -6996,7 +6996,7 @@
     "option_a": "提出問題卻不允許討論",
     "option_b": "錯誤無法被承認和修正",
     "option_c": "別人替你決定卻要你負責",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 910,
@@ -7004,7 +7004,7 @@
     "option_a": "無法自主安排自己的時間",
     "option_b": "重要關係一直被忽略",
     "option_c": "不能保留任何休息與自由",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 911,
@@ -7012,7 +7012,7 @@
     "option_a": "茶味太淡或苦澀明顯",
     "option_b": "客製需求常常做錯",
     "option_c": "飲品太甜又沒有替代選項",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 912,
@@ -7020,7 +7020,7 @@
     "option_a": "退換貨規則不合理",
     "option_b": "維修服務難以取得",
     "option_c": "包裝過度又不環保",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 913,
@@ -7028,7 +7028,7 @@
     "option_a": "票價與體驗差距太大",
     "option_b": "完全沒有符合自己喜好的內容",
     "option_c": "同行者全程不願意協調",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 914,
@@ -7036,7 +7036,7 @@
     "option_a": "重大劇透沒有提醒",
     "option_b": "操作或規則設計不合理",
     "option_c": "劇情拖沓沒有收束",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 915,
@@ -7044,21 +7044,21 @@
     "option_a": "忽視動物的安全與需求",
     "option_b": "沒有尊重動物的距離界線",
     "option_c": "出遊環境不適合動物",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 916,
     "text": "當「你以為對方答應了其實沒有」時，{target_name}最難接受哪一種狀況？",
     "option_a": "不讓對方把話說完",
     "option_b": "一再承諾卻完全不改變",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 917,
     "text": "在「旅伴對早起和晚睡意見不同」的情境下，你覺得{target_name}最難接受哪一種狀況？",
     "option_a": "交通不便又難以替代",
     "option_b": "住宿安全或清潔令人擔心",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 918,
@@ -7066,7 +7066,7 @@
     "option_a": "現場沒有清楚的求助方式",
     "option_b": "重要出口或路線不清楚",
     "option_c": "小狀況被誇大到無法處理",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 919,
@@ -7074,7 +7074,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "保留彈性不一次定案",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 920,
@@ -7082,7 +7082,7 @@
     "option_a": "放棄自己最不在意的部分",
     "option_b": "減少外在裝飾但保留核心品質",
     "option_c": "保留彈性不一次定案",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 921,
@@ -7090,14 +7090,14 @@
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "選擇功能較簡單的版本",
     "option_c": "把時間留給休息",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 922,
     "text": "如果碰上「群組討論晚餐聊了半小時」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "接受少一點便利性",
     "option_b": "改用共享或租借方式",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 923,
@@ -7105,7 +7105,7 @@
     "option_a": "降低預算",
     "option_b": "改選熟悉且穩妥的方案",
     "option_c": "改成大家都能接受的版本",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 924,
@@ -7113,7 +7113,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "改成大家都能接受的版本",
     "option_c": "取消次要項目",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 925,
@@ -7121,7 +7121,7 @@
     "option_a": "分成幾個階段慢慢完成",
     "option_b": "把決定交給最熟悉的人",
     "option_c": "保留彈性不一次定案",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 926,
@@ -7129,7 +7129,7 @@
     "option_a": "降低預算",
     "option_b": "分成幾個階段慢慢完成",
     "option_c": "改成大家都能接受的版本",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 927,
@@ -7137,28 +7137,28 @@
     "option_a": "把時間留給休息",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "延後到更合適的時機",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 928,
     "text": "遇到「需要快速確認集合地點」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "選擇功能較簡單的版本",
     "option_b": "先試行再決定是否擴大",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 929,
     "text": "面對「有機會搬到另一座城市」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "延後到更合適的時機",
     "option_b": "減少外在裝飾但保留核心品質",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 930,
     "text": "如果碰上「朋友準備了一份禮物給你」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "減少活動或行程數量",
     "option_b": "先試行再決定是否擴大",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 931,
@@ -7166,21 +7166,21 @@
     "option_a": "分成幾個階段慢慢完成",
     "option_b": "先試行再決定是否擴大",
     "option_c": "保留彈性不一次定案",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 932,
     "text": "面對「在聚會上叫錯新朋友名字」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "保留彈性不一次定案",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 933,
     "text": "如果碰上「訂住宿時需要在幾家間做決定」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "選擇功能較簡單的版本",
     "option_b": "改成大家都能接受的版本",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 934,
@@ -7188,14 +7188,14 @@
     "option_a": "接受少一點便利性",
     "option_b": "改成大家都能接受的版本",
     "option_c": "把決定交給最熟悉的人",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 935,
     "text": "遇到「遇到能回到過去的機器」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "減少外在裝飾但保留核心品質",
     "option_b": "保留彈性不一次定案",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 936,
@@ -7203,21 +7203,21 @@
     "option_a": "減少活動或行程數量",
     "option_b": "改選熟悉且穩妥的方案",
     "option_c": "改成大家都能接受的版本",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 937,
     "text": "面對「凌晨追劇看到一半」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "降低預算",
     "option_b": "放棄自己最不在意的部分",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 938,
     "text": "遇到「期待很久的假日一早下雨」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "接受少一點便利性",
     "option_b": "先試行再決定是否擴大",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 939,
@@ -7225,7 +7225,7 @@
     "option_a": "降低預算",
     "option_b": "減少活動或行程數量",
     "option_c": "改選熟悉且穩妥的方案",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 940,
@@ -7233,7 +7233,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "把時間留給休息",
     "option_c": "先試行再決定是否擴大",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 941,
@@ -7241,7 +7241,7 @@
     "option_a": "降低預算",
     "option_b": "把時間留給休息",
     "option_c": "改用共享或租借方式",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 942,
@@ -7249,7 +7249,7 @@
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "分成幾個階段慢慢完成",
     "option_c": "保留彈性不一次定案",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 943,
@@ -7257,7 +7257,7 @@
     "option_a": "改成大家都能接受的版本",
     "option_b": "取消次要項目",
     "option_c": "保留彈性不一次定案",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 944,
@@ -7265,7 +7265,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "取消次要項目",
     "option_c": "減少外在裝飾但保留核心品質",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 945,
@@ -7273,14 +7273,14 @@
     "option_a": "分成幾個階段慢慢完成",
     "option_b": "改用共享或租借方式",
     "option_c": "把決定交給最熟悉的人",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 946,
     "text": "當「最近作息有點混亂」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "接受少一點便利性",
     "option_b": "改成大家都能接受的版本",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 947,
@@ -7288,14 +7288,14 @@
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "分成幾個階段慢慢完成",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 948,
     "text": "當「朋友為鳳梨披薩是否合理吵成一團」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "降低預算",
     "option_b": "延後到更合適的時機",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 949,
@@ -7303,7 +7303,7 @@
     "option_a": "選擇功能較簡單的版本",
     "option_b": "把決定交給最熟悉的人",
     "option_c": "保留彈性不一次定案",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 950,
@@ -7311,7 +7311,7 @@
     "option_a": "改成大家都能接受的版本",
     "option_b": "先試行再決定是否擴大",
     "option_c": "保留彈性不一次定案",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 951,
@@ -7319,14 +7319,14 @@
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "接受少一點便利性",
     "option_c": "放棄自己最不在意的部分",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 952,
     "text": "面對「同一款飲料可調整甜度冰量」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "分成幾個階段慢慢完成",
     "option_b": "減少外在裝飾但保留核心品質",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 953,
@@ -7334,7 +7334,7 @@
     "option_a": "延後到更合適的時機",
     "option_b": "改用共享或租借方式",
     "option_c": "先試行再決定是否擴大",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 954,
@@ -7342,7 +7342,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "分成幾個階段慢慢完成",
     "option_c": "減少外在裝飾但保留核心品質",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 955,
@@ -7350,14 +7350,14 @@
     "option_a": "取消次要項目",
     "option_b": "把決定交給最熟悉的人",
     "option_c": "保留彈性不一次定案",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 956,
     "text": "面對「在安靜的房間獨處」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "接受少一點便利性",
     "option_b": "選擇功能較簡單的版本",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 957,
@@ -7365,7 +7365,7 @@
     "option_a": "延後到更合適的時機",
     "option_b": "改用共享或租借方式",
     "option_c": "取消次要項目",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 958,
@@ -7373,7 +7373,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "先試行再決定是否擴大",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 959,
@@ -7381,21 +7381,21 @@
     "option_a": "降低預算",
     "option_b": "減少活動或行程數量",
     "option_c": "把決定交給最熟悉的人",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 960,
     "text": "面對「工作或課業進度超出預期」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "減少外在裝飾但保留核心品質",
     "option_b": "把決定交給最熟悉的人",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 961,
     "text": "在「咖啡店有寵物友善座位」的情境下，你覺得{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "把時間留給休息",
     "option_b": "改成大家都能接受的版本",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 962,
@@ -7403,7 +7403,7 @@
     "option_a": "把時間留給休息",
     "option_b": "延後到更合適的時機",
     "option_c": "取消次要項目",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 963,
@@ -7411,7 +7411,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "改成大家都能接受的版本",
     "option_c": "改用共享或租借方式",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 964,
@@ -7419,14 +7419,14 @@
     "option_a": "降低預算",
     "option_b": "分成幾個階段慢慢完成",
     "option_c": "延後到更合適的時機",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 965,
     "text": "在「商場公告全館折扣」的情境下，你覺得{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "降低預算",
     "option_b": "取消次要項目",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 966,
@@ -7434,14 +7434,14 @@
     "option_a": "選擇功能較簡單的版本",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "改成大家都能接受的版本",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 967,
     "text": "當「卡在不知道從哪裡下手」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "減少活動或行程數量",
     "option_b": "接受少一點便利性",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 968,
@@ -7449,7 +7449,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "改成大家都能接受的版本",
     "option_c": "減少外在裝飾但保留核心品質",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 969,
@@ -7457,7 +7457,7 @@
     "option_a": "延後到更合適的時機",
     "option_b": "改用共享或租借方式",
     "option_c": "減少外在裝飾但保留核心品質",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 970,
@@ -7465,7 +7465,7 @@
     "option_a": "降低預算",
     "option_b": "改選熟悉且穩妥的方案",
     "option_c": "分成幾個階段慢慢完成",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 971,
@@ -7473,21 +7473,21 @@
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "分成幾個階段慢慢完成",
     "option_c": "取消次要項目",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 972,
     "text": "在「決定今天晚餐的風味」的情境下，你覺得{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "改用共享或租借方式",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 973,
     "text": "如果碰上「對方沒有說明何時歸還」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "選擇功能較簡單的版本",
-    "category": "金錢、暴富與財務界線"
+    "category": "friends"
   },
   {
     "id": 974,
@@ -7495,7 +7495,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "改用共享或租借方式",
-    "category": "寵物與動物互動"
+    "category": "family"
   },
   {
     "id": 975,
@@ -7503,7 +7503,7 @@
     "option_a": "放棄自己最不在意的部分",
     "option_b": "延後到更合適的時機",
     "option_c": "先試行再決定是否擴大",
-    "category": "超能力與趣味假設"
+    "category": "new_friends"
   },
   {
     "id": 976,
@@ -7511,14 +7511,14 @@
     "option_a": "選擇功能較簡單的版本",
     "option_b": "改成大家都能接受的版本",
     "option_c": "保留彈性不一次定案",
-    "category": "旅行規劃與突發狀況"
+    "category": "new_friends"
   },
   {
     "id": 977,
     "text": "如果碰上「進入音樂祭不同舞台」，你猜{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "分成幾個階段慢慢完成",
     "option_b": "保留彈性不一次定案",
-    "category": "音樂與現場活動"
+    "category": "new_friends"
   },
   {
     "id": 978,
@@ -7526,14 +7526,14 @@
     "option_a": "降低預算",
     "option_b": "接受少一點便利性",
     "option_c": "改用共享或租借方式",
-    "category": "禮物、節日與儀式感"
+    "category": "family"
   },
   {
     "id": 979,
     "text": "遇到「重要日子不想只說一句祝福」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "選擇功能較簡單的版本",
     "option_b": "減少外在裝飾但保留核心品質",
-    "category": "戀愛、約會與親密關係"
+    "category": "friends"
   },
   {
     "id": 980,
@@ -7541,7 +7541,7 @@
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "接受少一點便利性",
     "option_c": "改用共享或租借方式",
-    "category": "餐桌禮儀與食物爭論"
+    "category": "family"
   },
   {
     "id": 981,
@@ -7549,7 +7549,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "選擇功能較簡單的版本",
     "option_c": "先試行再決定是否擴大",
-    "category": "恐懼、驚嚇與突發小狀況"
+    "category": "new_friends"
   },
   {
     "id": 982,
@@ -7557,7 +7557,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "選擇功能較簡單的版本",
     "option_c": "延後到更合適的時機",
-    "category": "興趣、創作與技能培養"
+    "category": "new_friends"
   },
   {
     "id": 983,
@@ -7565,7 +7565,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "改成大家都能接受的版本",
     "option_c": "延後到更合適的時機",
-    "category": "居家、睡眠與日常習慣"
+    "category": "family"
   },
   {
     "id": 984,
@@ -7573,14 +7573,14 @@
     "option_a": "把時間留給休息",
     "option_b": "分成幾個階段慢慢完成",
     "option_c": "把決定交給最熟悉的人",
-    "category": "朋友相處與團體決策"
+    "category": "friends"
   },
   {
     "id": 985,
     "text": "在「家裡有其他人活動」的情境下，你覺得{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "減少活動或行程數量",
     "option_b": "改成大家都能接受的版本",
-    "category": "工作、學習與效率"
+    "category": "friends"
   },
   {
     "id": 986,
@@ -7588,7 +7588,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "改成大家都能接受的版本",
-    "category": "團體角色與社會互動"
+    "category": "friends"
   },
   {
     "id": 987,
@@ -7596,7 +7596,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "減少外在裝飾但保留核心品質",
     "option_c": "先試行再決定是否擴大",
-    "category": "衝突、情緒與人際界線"
+    "category": "friends"
   },
   {
     "id": 988,
@@ -7604,7 +7604,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "改選熟悉且穩妥的方案",
     "option_c": "分成幾個階段慢慢完成",
-    "category": "購物、消費與物品選擇"
+    "category": "family"
   },
   {
     "id": 989,
@@ -7612,7 +7612,7 @@
     "option_a": "減少活動或行程數量",
     "option_b": "取消次要項目",
     "option_c": "把決定交給最熟悉的人",
-    "category": "飲食口味與料理"
+    "category": "family"
   },
   {
     "id": 990,
@@ -7620,7 +7620,7 @@
     "option_a": "降低預算",
     "option_b": "改選熟悉且穩妥的方案",
     "option_c": "延後到更合適的時機",
-    "category": "早餐宵夜與飲食日常"
+    "category": "family"
   },
   {
     "id": 991,
@@ -7628,14 +7628,14 @@
     "option_a": "放棄自己最不在意的部分",
     "option_b": "延後到更合適的時機",
     "option_c": "保留彈性不一次定案",
-    "category": "假日與休閒生活"
+    "category": "new_friends"
   },
   {
     "id": 992,
     "text": "在「有一小時空檔想放鬆」的情境下，你覺得{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "降低預算",
     "option_b": "把決定交給最熟悉的人",
-    "category": "影視、遊戲與網路內容"
+    "category": "new_friends"
   },
   {
     "id": 993,
@@ -7643,7 +7643,7 @@
     "option_a": "改選熟悉且穩妥的方案",
     "option_b": "選擇功能較簡單的版本",
     "option_c": "先試行再決定是否擴大",
-    "category": "訊息、通話與溝通風格"
+    "category": "friends"
   },
   {
     "id": 994,
@@ -7651,14 +7651,14 @@
     "option_a": "改成大家都能接受的版本",
     "option_b": "改用共享或租借方式",
     "option_c": "取消次要項目",
-    "category": "尷尬場面與公開社交"
+    "category": "friends"
   },
   {
     "id": 995,
     "text": "遇到「公開展示照片時跳出訊息」時，{target_name}需要折衷時最願意調整哪個方面？",
     "option_a": "降低預算",
     "option_b": "減少活動或行程數量",
-    "category": "手機、隱私與數位生活"
+    "category": "new_friends"
   },
   {
     "id": 996,
@@ -7666,7 +7666,7 @@
     "option_a": "降低預算",
     "option_b": "接受少一點便利性",
     "option_c": "把時間留給休息",
-    "category": "飲料與點餐客製"
+    "category": "family"
   },
   {
     "id": 997,
@@ -7674,7 +7674,7 @@
     "option_a": "選擇功能較簡單的版本",
     "option_b": "放棄自己最不在意的部分",
     "option_c": "減少外在裝飾但保留核心品質",
-    "category": "個性、決策與壓力反應"
+    "category": "friends"
   },
   {
     "id": 998,
@@ -7682,7 +7682,7 @@
     "option_a": "降低預算",
     "option_b": "接受少一點便利性",
     "option_c": "減少外在裝飾但保留核心品質",
-    "category": "人生價值與未來生活"
+    "category": "family"
   },
   {
     "id": 999,
@@ -7690,7 +7690,7 @@
     "option_a": "接受少一點便利性",
     "option_b": "分成幾個階段慢慢完成",
     "option_c": "把決定交給最熟悉的人",
-    "category": "旅行目的地與住宿"
+    "category": "new_friends"
   },
   {
     "id": 1000,
@@ -7698,6 +7698,22 @@
     "option_a": "泰式打拋豬飯",
     "option_b": "印度香料咖哩",
     "option_c": "中式蒸魚配時蔬",
-    "category": "飲食口味與料理"
+    "category": "family"
+  },
+  {
+    "id": 1001,
+    "text": "當一群好友臨時把聚會安排交給 {target_name} 決定時，{target_name} 最可能怎麼帶大家做決定？",
+    "option_a": "先問每個人最想做什麼，再找交集",
+    "option_b": "提出兩三個方案，讓大家投票",
+    "option_c": "直接選自己最熟悉、最有把握的活動",
+    "category": "friends"
+  },
+  {
+    "id": 1002,
+    "text": "第一次和一群新朋友見面，現場一時找不到話題時，{target_name} 最可能怎麼開啟聊天？",
+    "option_a": "問大家最近看過最喜歡的電影或影集",
+    "option_b": "聊聊各自最想去的旅行目的地",
+    "option_c": "提出一個輕鬆有趣的假設題讓大家選",
+    "category": "new_friends"
   }
 ]
