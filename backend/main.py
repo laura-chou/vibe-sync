@@ -379,6 +379,13 @@ async def websocket_endpoint(websocket: WebSocket):
                     continue
 
                 room = rooms[room_code]
+                if room["status"] != "waiting":
+                    await websocket.send_text(json.dumps({
+                        "type": "ERROR",
+                        "message": "遊戲進行中，無法加入房間"
+                    }))
+                    continue
+
                 if len(room["players"]) >= 10:
                     await websocket.send_text(json.dumps({
                         "type": "ERROR",

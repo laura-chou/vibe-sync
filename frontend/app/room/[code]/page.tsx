@@ -432,22 +432,16 @@ function RoomLobbyContent({
         </div>
       )}
 
-      {/* Room Header - Hidden in game_over state */}
-      {roomState?.status !== "game_over" && (
+      {/* Room Header - Shown only in waiting state */}
+      {roomState?.status === "waiting" && (
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-slate-400 uppercase font-semibold">
                 房間號碼
               </span>
-              <span
-                className={`text-[10px] px-2 py-0.5 rounded-full font-bold border ${
-                  roomState?.status === "playing"
-                    ? "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                    : "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                }`}
-              >
-                {roomState?.status === "playing" ? "遊戲作答中" : "大廳狀態"}
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">
+                大廳狀態
               </span>
               {currentRelationship === "friends" && (
                 <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
@@ -477,22 +471,12 @@ function RoomLobbyContent({
             >
               <span>{copied ? "✓ 已複製" : "📋 複製房號"}</span>
             </button>
-            {canLeave ? (
-              <button
-                onClick={() => router.push("/")}
-                className="flex-1 sm:flex-none bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 text-xs font-semibold px-4 py-2.5 rounded-lg border border-rose-800/40 transition-colors flex items-center justify-center gap-1.5"
-              >
-                <span>離開</span>
-              </button>
-            ) : (
-              <button
-                disabled
-                title="遊戲進行中，無法離開"
-                className="flex-1 sm:flex-none bg-slate-800/40 text-slate-600 text-xs font-semibold px-4 py-2.5 rounded-lg border border-slate-800 cursor-not-allowed opacity-50 flex items-center justify-center gap-1.5"
-              >
-                <span>遊戲中</span>
-              </button>
-            )}
+            <button
+              onClick={() => router.push("/")}
+              className="flex-1 sm:flex-none bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 text-xs font-semibold px-4 py-2.5 rounded-lg border border-rose-800/40 transition-colors flex items-center justify-center gap-1.5"
+            >
+              <span>離開</span>
+            </button>
           </div>
         </div>
       )}
@@ -795,50 +779,35 @@ function RoomLobbyContent({
           <div className="space-y-2">
             <h4 className="text-xs font-bold text-slate-400">玩家作答比對：</h4>
             <div className="space-y-2 max-h-48 overflow-y-auto">
-              {lastQuestionResult.results.map((res: any) => {
-                const isTarget = res.is_target || res.player_id === lastQuestionResult.target_user_id;
-                return (
+              {lastQuestionResult.results
+                .filter(
+                  (res: any) =>
+                    !res.is_target && res.player_id !== lastQuestionResult.target_user_id
+                )
+                .map((res: any) => (
                   <div
                     key={res.player_id}
-                    className={`p-3 rounded-xl border flex items-center justify-between text-xs ${
-                      isTarget
-                        ? "bg-amber-500/10 border-amber-500/40"
-                        : "bg-slate-950 border-slate-800"
-                    }`}
+                    className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs"
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-slate-200">
-                        {res.player_name}
-                      </span>
-                      {isTarget && (
-                        <span className="bg-amber-500/30 text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-bold">
-                          主頻率
-                        </span>
-                      )}
-                    </div>
+                    <span className="font-semibold text-slate-200">
+                      {res.player_name}
+                    </span>
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-slate-400">
                         選擇: {res.answer || "未作答"}
                       </span>
-                      {isTarget ? (
-                        <span className="font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">
-                          標準答案提供者
-                        </span>
-                      ) : (
-                        <span
-                          className={`font-bold px-2 py-0.5 rounded ${
-                            res.is_correct
-                              ? "bg-emerald-500/20 text-emerald-300"
-                              : "bg-rose-500/20 text-rose-300"
-                          }`}
-                        >
-                          {res.is_correct ? "猜對" : "猜錯"}
-                        </span>
-                      )}
+                      <span
+                        className={`font-bold px-2 py-0.5 rounded ${
+                          res.is_correct
+                            ? "bg-emerald-500/20 text-emerald-300"
+                            : "bg-rose-500/20 text-rose-300"
+                        }`}
+                      >
+                        {res.is_correct ? "猜對" : "猜錯"}
+                      </span>
                     </div>
                   </div>
-                );
-              })}
+                ))}
             </div>
           </div>
         </div>
@@ -1002,7 +971,7 @@ function RoomLobbyContent({
                           )}
                         </div>
                         <span className="font-mono font-bold text-indigo-400">
-                          {isItemTarget ? "標準答案提供者" : `${item.score} / ${totalQuestionsCount} 分`}
+                          {isItemTarget ? "" : `${item.score} / ${totalQuestionsCount} 分`}
                         </span>
                       </div>
                     );

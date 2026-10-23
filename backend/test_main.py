@@ -129,6 +129,38 @@ def test_websocket_full_game_flow():
         assert room_state["scores"][host_id] == 1
         assert room_state["scores"][player_id] == 0
 
+def test_join_room_during_game():
+    client = TestClient(app)
+    with client.websocket_connect("/ws") as host_ws:
+        host_ws.send_json({"type": "CREATE_ROOM", "player_name": "Host"})
+        host_res = host_ws.receive_json()
+        room_code = host_res["room_code"]
+        host_id = host_res["player_id"]
+
+        with client.websocket_connect("/ws") as player1_ws:
+            player1_ws.send_json({"type": "JOIN_ROOM", "room_code": room_code, "player_name": "Player 1"})
+            p1_res = player1_ws.receive_json()
+            p1_id = p1_res["player_id"]
+
+            _p1_joined = player1_ws.receive_json()
+            _host_joined = host_ws.receive_json()
+
+            # Select target and start game
+            host_ws.send_json({"type": "SELECT_TARGET", "target_user_id": p1_id})
+            _t_host = host_ws.receive_json()
+            _t_p1 = player1_ws.receive_json()
+
+            host_ws.send_json({"type": "START_GAME"})
+            _s_host = host_ws.receive_json()
+            _s_p1 = player1_ws.receive_json()
+
+            # Now attempt late join by player 2
+            with client.websocket_connect("/ws") as late_ws:
+                late_ws.send_json({"type": "JOIN_ROOM", "room_code": room_code, "player_name": "Late Joiner"})
+                late_res = late_ws.receive_json()
+                assert late_res["type"] == "ERROR"
+                assert late_res["message"] == "遊戲進行中，無法加入房間"
+
 def test_room_max_players_limit():
     client = TestClient(app)
     with client.websocket_connect("/ws") as host_ws:
