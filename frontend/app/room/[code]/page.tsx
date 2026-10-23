@@ -61,6 +61,31 @@ interface RoomState {
   analysis_summary?: AnalysisSummary | null;
 }
 
+interface QuestionResultItem {
+  player_id: string;
+  player_name: string;
+  answer: string | null;
+  is_correct: boolean;
+  is_target: boolean;
+}
+
+interface QuestionResult {
+  correct_choice: string | null;
+  correct_option_text: string;
+  target_user_id: string;
+  target_user_name: string;
+  results: QuestionResultItem[];
+  room_state: RoomState;
+}
+
+interface LeaderboardItem {
+  player_id: string;
+  name: string;
+  avatar: string;
+  score: number;
+  is_target: boolean;
+}
+
 function renderOptionsDistribution(q: AnalysisQuestion) {
   const total = q.total_guessers || 1;
   const opts = [
@@ -219,8 +244,8 @@ function RoomLobbyContent({
   const [hasConnected, setHasConnected] = useState(false);
   const [playerId, setPlayerId] = useState<string | null>(null);
   const [roomState, setRoomState] = useState<RoomState | null>(null);
-  const [lastQuestionResult, setLastQuestionResult] = useState<any>(null);
-  const [leaderboard, setLeaderboard] = useState<any[]>([]);
+  const [lastQuestionResult, setLastQuestionResult] = useState<QuestionResult | null>(null);
+  const [leaderboard, setLeaderboard] = useState<LeaderboardItem[]>([]);
   const [analysisSummary, setAnalysisSummary] = useState<AnalysisSummary | null>(null);
   const [copied, setCopied] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -231,7 +256,8 @@ function RoomLobbyContent({
 
   // Initialize WebSocket connection
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8000/ws");
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000/ws";
+    const ws = new WebSocket(wsUrl);
     socketRef.current = ws;
 
     ws.onopen = () => {
@@ -817,10 +843,10 @@ function RoomLobbyContent({
             <div className="space-y-2 max-h-48 overflow-y-auto">
               {lastQuestionResult.results
                 .filter(
-                  (res: any) =>
+                  (res) =>
                     !res.is_target && res.player_id !== lastQuestionResult.target_user_id
                 )
-                .map((res: any) => (
+                .map((res) => (
                   <div
                     key={res.player_id}
                     className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs"
@@ -882,8 +908,8 @@ function RoomLobbyContent({
                 </h4>
                 <div className="space-y-2">
                   {leaderboard
-                    .filter((item: any) => item.player_id !== roomState.target_user_id)
-                    .map((item: any, rank: number) => {
+                    .filter((item) => item.player_id !== roomState.target_user_id)
+                    .map((item, rank) => {
                       const evalResult = evaluateChemistry(
                         item.score,
                         totalQuestionsCount,
@@ -973,7 +999,7 @@ function RoomLobbyContent({
                   <span>排行榜</span>
                 </h4>
                 <div className="space-y-2">
-                  {leaderboard.map((item: any, rank: number) => {
+                  {leaderboard.map((item, rank) => {
                     const isMe = item.player_id === playerId;
                     const isItemTarget = item.player_id === roomState.target_user_id || item.is_target;
                     return (
