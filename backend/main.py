@@ -121,7 +121,10 @@ def analyze_game_results(room: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             "accuracy_rate": accuracy_rate,
             "correct_count": correct_count,
             "total_guessers": total_guessers,
-            "options_distribution": options_distribution
+            "options_distribution": options_distribution,
+            "option_a": raw_q.get("option_a", ""),
+            "option_b": raw_q.get("option_b", ""),
+            "option_c": raw_q.get("option_c"),
         })
 
     if not evaluated_questions:

@@ -37,6 +37,9 @@ interface AnalysisQuestion {
     option_b: number;
     option_c: number;
   };
+  option_a?: string;
+  option_b?: string;
+  option_c?: string | null;
 }
 
 interface AnalysisSummary {
@@ -61,42 +64,69 @@ interface RoomState {
 function renderOptionsDistribution(q: AnalysisQuestion) {
   const total = q.total_guessers || 1;
   const opts = [
-    { key: "option_a", label: "選項 A", count: q.options_distribution?.option_a || 0 },
-    { key: "option_b", label: "選項 B", count: q.options_distribution?.option_b || 0 },
+    {
+      key: "option_a",
+      label: "選項 A",
+      text: q.option_a || (q.target_choice_key === "option_a" ? q.target_choice_text : ""),
+      count: q.options_distribution?.option_a || 0,
+    },
+    {
+      key: "option_b",
+      label: "選項 B",
+      text: q.option_b || (q.target_choice_key === "option_b" ? q.target_choice_text : ""),
+      count: q.options_distribution?.option_b || 0,
+    },
   ];
+
   if (
-    q.options_distribution?.option_c !== undefined &&
-    (q.options_distribution.option_c > 0 || q.target_choice_key === "option_c")
+    q.option_c ||
+    (q.options_distribution?.option_c !== undefined &&
+      (q.options_distribution.option_c > 0 || q.target_choice_key === "option_c"))
   ) {
-    opts.push({ key: "option_c", label: "選項 C", count: q.options_distribution.option_c });
+    opts.push({
+      key: "option_c",
+      label: "選項 C",
+      text: q.option_c || (q.target_choice_key === "option_c" ? q.target_choice_text : ""),
+      count: q.options_distribution?.option_c || 0,
+    });
   }
 
   return (
     <div className="space-y-1.5 pt-1">
       <div className="text-[11px] text-slate-400 font-medium">全場玩家選擇分布：</div>
-      <div className={`grid ${opts.length === 3 ? "grid-cols-3" : "grid-cols-2"} gap-1.5 text-center`}>
+      <div className="flex flex-col gap-1.5">
         {opts.map((opt) => {
           const isTarget = q.target_choice_key === opt.key;
           const pct = Math.round((opt.count / total) * 100);
           return (
             <div
               key={opt.key}
-              className={`p-2 rounded-xl border text-[11px] flex flex-col justify-between ${
+              className={`p-2.5 rounded-xl border text-xs flex items-center justify-between gap-3 ${
                 isTarget
-                  ? "bg-emerald-500/20 border-emerald-500/50 text-emerald-300 font-bold"
-                  : "bg-slate-900/60 border-slate-800 text-slate-300"
+                  ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300 font-bold"
+                  : "bg-gray-800/60 border-gray-700/50 text-slate-300"
               }`}
             >
-              <div className="flex items-center justify-between gap-1 text-[10px]">
-                <span className="font-mono">{opt.label}</span>
-                {isTarget && (
-                  <span className="text-[9px] bg-emerald-500/30 px-1 py-0.5 rounded text-emerald-200 font-bold">
-                    正解
+              <div className="flex items-center gap-2 min-w-0 flex-1 text-left">
+                <span className="font-mono text-[11px] font-bold shrink-0">
+                  {opt.label}
+                </span>
+                {opt.text && (
+                  <span className="truncate text-slate-200 font-medium">
+                    {opt.text}
                   </span>
                 )}
               </div>
-              <div className="font-black text-xs my-0.5">
-                {opt.count} 人 ({pct}%)
+
+              <div className="flex items-center gap-2 shrink-0">
+                {isTarget && (
+                  <span className="text-[10px] bg-emerald-500/30 px-1.5 py-0.5 rounded text-emerald-200 font-bold border border-emerald-500/40">
+                    正解
+                  </span>
+                )}
+                <span className="font-mono text-xs font-bold text-slate-100">
+                  {opt.count} 人 ({pct}%)
+                </span>
               </div>
             </div>
           );
