@@ -44,6 +44,88 @@ def generate_room_code() -> str:
         if code not in rooms:
             return code
 
+def analyze_game_results(room: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """Analyze game round results to find perfect_sync and signal_drop questions."""
+    target_id = room.get("target_user_id")
+    history = room.get("question_history", [])
+    if not target_id or not history:
+        return {"perfect_sync": None, "signal_drop": None}
+
+    target_p = room["players"].get(target_id, {})
+    target_name = target_p.get("name", "目標人物")
+
+    evaluated_questions = []
+
+    for item in history:
+        raw_q = item["question"]
+        q_order = item["question_order"]
+        ans_dict = item["answers"]
+
+        target_choice = ans_dict.get(target_id)  # "A", "B", or "C"
+
+        guessers_choices = [choice for p_id, choice in ans_dict.items() if p_id != target_id]
+        total_guessers = len(guessers_choices)
+
+        if target_choice == "A":
+            target_choice_key = "option_a"
+            target_choice_text = raw_q.get("option_a", "")
+        elif target_choice == "B":
+            target_choice_key = "option_b"
+            target_choice_text = raw_q.get("option_b", "")
+        elif target_choice == "C":
+            target_choice_key = "option_c"
+            target_choice_text = raw_q.get("option_c", "")
+        else:
+            target_choice_key = "option_a"
+            target_choice_text = "未選擇"
+
+        options_distribution = {
+            "option_a": sum(1 for c in guessers_choices if c == "A"),
+            "option_b": sum(1 for c in guessers_choices if c == "B"),
+            "option_c": sum(1 for c in guessers_choices if c == "C"),
+        }
+
+        correct_count = sum(1 for c in guessers_choices if c == target_choice) if target_choice else 0
+        accuracy_rate = round((correct_count / total_guessers * 100.0), 1) if total_guessers > 0 else 0.0
+
+        q_text = raw_q.get("text", "").replace("{target_name}", target_name)
+
+        evaluated_questions.append({
+            "question_id": raw_q.get("id"),
+            "question_order": q_order,
+            "text": q_text,
+            "target_choice_key": target_choice_key,
+            "target_choice_text": target_choice_text,
+            "accuracy_rate": accuracy_rate,
+            "correct_count": correct_count,
+            "total_guessers": total_guessers,
+            "options_distribution": options_distribution
+        })
+
+    if not evaluated_questions:
+        return {"perfect_sync": None, "signal_drop": None}
+
+    if all(q["total_guessers"] == 0 for q in evaluated_questions):
+        return {"perfect_sync": None, "signal_drop": None}
+
+    all_accuracies = [q["accuracy_rate"] for q in evaluated_questions]
+    all_same = len(set(all_accuracies)) == 1
+
+    if all_same:
+        perfect_sync = evaluated_questions[0]
+        signal_drop = evaluated_questions[-1]
+    else:
+        sorted_for_sync = sorted(evaluated_questions, key=lambda x: (-x["accuracy_rate"], x["question_order"]))
+        perfect_sync = sorted_for_sync[0]
+
+        sorted_for_drop = sorted(evaluated_questions, key=lambda x: (x["accuracy_rate"], x["question_order"]))
+        signal_drop = sorted_for_drop[0]
+
+    return {
+        "perfect_sync": perfect_sync,
+        "signal_drop": signal_drop
+    }
+
 def get_room_state(room_code: str) -> Optional[Dict[str, Any]]:
     """Return serializable room state without websocket objects."""
     if room_code not in rooms:
@@ -86,7 +168,8 @@ def get_room_state(room_code: str) -> Optional[Dict[str, Any]]:
         "current_question": current_q,
         "players": players_list,
         "answers": room["answers"],
-        "scores": room["scores"]
+        "scores": room["scores"],
+        "analysis_summary": room.get("analysis_summary")
     }
 
 async def broadcast_to_room(room_code: str, message: Dict[str, Any]):
@@ -114,7 +197,7 @@ async def evaluate_and_advance_question(room_code: str):
 
     current_q_idx = room["question_index"]
     correct_option_text = ""
-    if current_q_idx < len(room["questions"]) and correct_choice:
+    if current_q_idx < len(room["questions"]):
         q_info = room["questions"][current_q_idx]
         if correct_choice == "A":
             correct_option_text = q_info.get("option_a", "")
@@ -122,6 +205,15 @@ async def evaluate_and_advance_question(room_code: str):
             correct_option_text = q_info.get("option_b", "")
         elif correct_choice == "C":
             correct_option_text = q_info.get("option_c", "")
+
+        if "question_history" not in room:
+            room["question_history"] = []
+        room["question_history"].append({
+            "question_order": current_q_idx + 1,
+            "question": q_info,
+            "target_user_id": target_id,
+            "answers": dict(room["answers"])
+        })
 
     results = []
     for p_id in room["players"]:
@@ -168,6 +260,9 @@ async def evaluate_and_advance_question(room_code: str):
         # Game Over
         room["status"] = "game_over"
 
+        analysis_summary = analyze_game_results(room)
+        room["analysis_summary"] = analysis_summary
+
         # Build leaderboard excluding target user from rank score sorting
         guessers = []
         target_item = None
@@ -191,6 +286,7 @@ async def evaluate_and_advance_question(room_code: str):
         await broadcast_to_room(room_code, {
             "type": "GAME_OVER",
             "leaderboard": leaderboard,
+            "analysis_summary": analysis_summary,
             "room_state": get_room_state(room_code)
         })
     else:
@@ -244,6 +340,8 @@ async def websocket_endpoint(websocket: WebSocket):
                     "target_user_id": None,
                     "question_index": 0,
                     "questions": [],
+                    "question_history": [],
+                    "analysis_summary": None,
                     "players": {
                         player_id: {
                             "id": player_id,
@@ -380,6 +478,8 @@ async def websocket_endpoint(websocket: WebSocket):
                 room["question_index"] = 0
                 num_q = min(10, len(questions_db))
                 room["questions"] = random.sample(questions_db, num_q)
+                room["question_history"] = []
+                room["analysis_summary"] = None
                 room["answers"] = {}
                 for p_id in room["players"]:
                     room["scores"][p_id] = 0

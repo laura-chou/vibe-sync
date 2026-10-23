@@ -23,6 +23,27 @@ interface Question {
   current_index: number;
 }
 
+interface AnalysisQuestion {
+  question_id: number;
+  question_order?: number;
+  text: string;
+  target_choice_key: string;
+  target_choice_text: string;
+  accuracy_rate: number;
+  correct_count: number;
+  total_guessers: number;
+  options_distribution: {
+    option_a: number;
+    option_b: number;
+    option_c: number;
+  };
+}
+
+interface AnalysisSummary {
+  perfect_sync: AnalysisQuestion | null;
+  signal_drop: AnalysisQuestion | null;
+}
+
 interface RoomState {
   code: string;
   host_id: string;
@@ -34,6 +55,131 @@ interface RoomState {
   players: Player[];
   answers: Record<string, string>;
   scores: Record<string, number>;
+  analysis_summary?: AnalysisSummary | null;
+}
+
+function renderOptionsDistribution(q: AnalysisQuestion) {
+  const total = q.total_guessers || 1;
+  const opts = [
+    { key: "option_a", label: "選項 A", count: q.options_distribution?.option_a || 0 },
+    { key: "option_b", label: "選項 B", count: q.options_distribution?.option_b || 0 },
+  ];
+  if (
+    q.options_distribution?.option_c !== undefined &&
+    (q.options_distribution.option_c > 0 || q.target_choice_key === "option_c")
+  ) {
+    opts.push({ key: "option_c", label: "選項 C", count: q.options_distribution.option_c });
+  }
+
+  return (
+    <div className="space-y-1.5 pt-1">
+      <div className="text-[11px] text-slate-400 font-medium">全場玩家選擇分布：</div>
+      <div className={`grid ${opts.length === 3 ? "grid-cols-3" : "grid-cols-2"} gap-1.5 text-center`}>
+        {opts.map((opt) => {
+          const isTarget = q.target_choice_key === opt.key;
+          const pct = Math.round((opt.count / total) * 100);
+          return (
+            <div
+              key={opt.key}
+              className={`p-2 rounded-xl border text-[11px] flex flex-col justify-between ${
+                isTarget
+                  ? "bg-emerald-500/20 border-emerald-500/50 text-emerald-300 font-bold"
+                  : "bg-slate-900/60 border-slate-800 text-slate-300"
+              }`}
+            >
+              <div className="flex items-center justify-between gap-1 text-[10px]">
+                <span className="font-mono">{opt.label}</span>
+                {isTarget && (
+                  <span className="text-[9px] bg-emerald-500/30 px-1 py-0.5 rounded text-emerald-200 font-bold">
+                    正解
+                  </span>
+                )}
+              </div>
+              <div className="font-black text-xs my-0.5">
+                {opt.count} 人 ({pct}%)
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function AnalysisSummarySection({ summary }: { summary: AnalysisSummary | null }) {
+  if (!summary) return null;
+  const { perfect_sync, signal_drop } = summary;
+  if (!perfect_sync && !signal_drop) return null;
+
+  return (
+    <div className="space-y-3.5 pt-3 text-left border-t border-slate-800/80">
+      <div className="flex items-center justify-between">
+        <h4 className="text-xs font-bold text-slate-400 flex items-center gap-1.5">
+          <span>📡</span>
+          <span>深度同頻分析</span>
+        </h4>
+        <span className="text-[10px] text-slate-500">對比全場作答亮點</span>
+      </div>
+
+      <div className="space-y-3">
+        {/* 完美同頻帶 */}
+        {perfect_sync && (
+          <div className="bg-emerald-950/30 border border-emerald-500/40 rounded-2xl p-4 space-y-2.5 shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="inline-flex items-center gap-1 text-xs font-black text-emerald-300 bg-emerald-500/20 px-2.5 py-1 rounded-full border border-emerald-500/30">
+                <span>🎯</span>
+                <span>完美同頻帶</span>
+              </span>
+              <span className="text-xs font-mono font-black text-emerald-400">
+                {perfect_sync.accuracy_rate}% 同頻 ({perfect_sync.correct_count}/{perfect_sync.total_guessers} 人猜對)
+              </span>
+            </div>
+
+            <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed">
+              {perfect_sync.question_order ? `第 ${perfect_sync.question_order} 題：` : ""}{perfect_sync.text}
+            </p>
+
+            <div className="bg-slate-950/80 p-2.5 rounded-xl border border-emerald-500/20 text-xs">
+              <span className="text-slate-400 font-medium">目標標準答案：</span>
+              <span className="font-black text-emerald-300 ml-1">
+                {perfect_sync.target_choice_text}
+              </span>
+            </div>
+
+            {renderOptionsDistribution(perfect_sync)}
+          </div>
+        )}
+
+        {/* 訊號中斷帶 */}
+        {signal_drop && (
+          <div className="bg-rose-950/30 border border-rose-500/40 rounded-2xl p-4 space-y-2.5 shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="inline-flex items-center gap-1 text-xs font-black text-rose-300 bg-rose-500/20 px-2.5 py-1 rounded-full border border-rose-500/30">
+                <span>⚡</span>
+                <span>訊號中斷帶</span>
+              </span>
+              <span className="text-xs font-mono font-black text-rose-400">
+                {signal_drop.accuracy_rate}% 同頻 ({signal_drop.correct_count}/{signal_drop.total_guessers} 人猜對)
+              </span>
+            </div>
+
+            <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed">
+              {signal_drop.question_order ? `第 ${signal_drop.question_order} 題：` : ""}{signal_drop.text}
+            </p>
+
+            <div className="bg-slate-950/80 p-2.5 rounded-xl border border-rose-500/20 text-xs">
+              <span className="text-slate-400 font-medium">目標標準答案：</span>
+              <span className="font-black text-rose-300 ml-1">
+                {signal_drop.target_choice_text}
+              </span>
+            </div>
+
+            {renderOptionsDistribution(signal_drop)}
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
 function RoomLobbyContent({
@@ -59,6 +205,7 @@ function RoomLobbyContent({
   const [roomState, setRoomState] = useState<RoomState | null>(null);
   const [lastQuestionResult, setLastQuestionResult] = useState<any>(null);
   const [leaderboard, setLeaderboard] = useState<any[]>([]);
+  const [analysisSummary, setAnalysisSummary] = useState<AnalysisSummary | null>(null);
   const [copied, setCopied] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -127,6 +274,11 @@ function RoomLobbyContent({
         } else if (type === "GAME_OVER") {
           setRoomState(data.room_state);
           setLeaderboard(data.leaderboard);
+          if (data.analysis_summary) {
+            setAnalysisSummary(data.analysis_summary);
+          } else if (data.room_state?.analysis_summary) {
+            setAnalysisSummary(data.room_state.analysis_summary);
+          }
         } else if (type === "ERROR") {
           const msg = data.message || "發生錯誤";
           setErrorMsg(msg);
@@ -245,6 +397,8 @@ function RoomLobbyContent({
     totalQuestionsCount,
     currentRelationship
   );
+
+  const activeAnalysisSummary = analysisSummary || roomState?.analysis_summary || null;
 
   const canLeave =
     roomState?.status === "waiting" ||
@@ -746,6 +900,9 @@ function RoomLobbyContent({
                     })}
                 </div>
               </div>
+
+              {/* Analysis summary card section for Target User */}
+              <AnalysisSummarySection summary={activeAnalysisSummary} />
             </div>
           ) : (
             /* Guessing Player Share Card */
@@ -832,6 +989,9 @@ function RoomLobbyContent({
                   })}
                 </div>
               </div>
+
+              {/* Analysis summary card section for Guessers */}
+              <AnalysisSummarySection summary={activeAnalysisSummary} />
             </div>
           )}
 

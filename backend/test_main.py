@@ -182,3 +182,161 @@ def test_update_relationship():
         assert res2["type"] == "RELATIONSHIP_UPDATED"
         assert res2["relationship"] == "family"
         assert res2["room_state"]["relationship"] == "family"
+
+def test_analyze_game_results_basic():
+    from main import analyze_game_results
+
+    room = {
+        "target_user_id": "target1",
+        "players": {
+            "target1": {"id": "target1", "name": "Target Player"},
+            "p1": {"id": "p1", "name": "Player 1"},
+            "p2": {"id": "p2", "name": "Player 2"}
+        },
+        "question_history": []
+    }
+
+    # Populate 10 questions history
+    for i in range(1, 11):
+        # Target chooses 'A'
+        # For Q1: p1 and p2 both choose 'A' -> 100% accuracy
+        # For Q10: p1 and p2 both choose 'B' -> 0% accuracy
+        # For others: 50% accuracy
+        if i == 1:
+            ans = {"target1": "A", "p1": "A", "p2": "A"}
+        elif i == 10:
+            ans = {"target1": "A", "p1": "B", "p2": "B"}
+        else:
+            ans = {"target1": "A", "p1": "A", "p2": "B"}
+
+        room["question_history"].append({
+            "question_order": i,
+            "question": {
+                "id": i,
+                "text": f"Question {i} for {{target_name}}",
+                "option_a": "Option A Text",
+                "option_b": "Option B Text",
+                "option_c": "Option C Text"
+            },
+            "target_user_id": "target1",
+            "answers": ans
+        })
+
+    result = analyze_game_results(room)
+    assert result is not None
+    assert result["perfect_sync"] is not None
+    assert result["signal_drop"] is not None
+
+    ps = result["perfect_sync"]
+    sd = result["signal_drop"]
+
+    assert ps["question_id"] == 1
+    assert ps["accuracy_rate"] == 100.0
+    assert ps["correct_count"] == 2
+    assert ps["total_guessers"] == 2
+    assert ps["options_distribution"] == {"option_a": 2, "option_b": 0, "option_c": 0}
+    assert ps["target_choice_key"] == "option_a"
+    assert ps["target_choice_text"] == "Option A Text"
+    assert "Target Player" in ps["text"]
+
+    assert sd["question_id"] == 10
+    assert sd["accuracy_rate"] == 0.0
+    assert sd["correct_count"] == 0
+    assert sd["total_guessers"] == 2
+    assert sd["options_distribution"] == {"option_a": 0, "option_b": 2, "option_c": 0}
+
+def test_analyze_game_results_tie_breaking():
+    from main import analyze_game_results
+
+    room = {
+        "target_user_id": "target1",
+        "players": {
+            "target1": {"id": "target1", "name": "Target Player"},
+            "p1": {"id": "p1", "name": "Player 1"}
+        },
+        "question_history": []
+    }
+
+    # Q1, Q2, Q3 all 100% accuracy. Tie breaker should select Q1.
+    # Q4, Q5 both 0% accuracy. Tie breaker should select Q4.
+    for i in range(1, 6):
+        if i in [1, 2, 3]:
+            ans = {"target1": "A", "p1": "A"}
+        else:
+            ans = {"target1": "A", "p1": "B"}
+
+        room["question_history"].append({
+            "question_order": i,
+            "question": {
+                "id": i,
+                "text": f"Question {i}",
+                "option_a": "A",
+                "option_b": "B"
+            },
+            "target_user_id": "target1",
+            "answers": ans
+        })
+
+    result = analyze_game_results(room)
+    assert result["perfect_sync"]["question_id"] == 1
+    assert result["signal_drop"]["question_id"] == 4
+
+def test_analyze_game_results_equal_accuracies():
+    from main import analyze_game_results
+
+    room = {
+        "target_user_id": "target1",
+        "players": {
+            "target1": {"id": "target1", "name": "Target Player"},
+            "p1": {"id": "p1", "name": "Player 1"},
+            "p2": {"id": "p2", "name": "Player 2"}
+        },
+        "question_history": []
+    }
+
+    # All 10 questions have 50% accuracy
+    for i in range(1, 11):
+        room["question_history"].append({
+            "question_order": i,
+            "question": {
+                "id": i,
+                "text": f"Question {i}",
+                "option_a": "A",
+                "option_b": "B"
+            },
+            "target_user_id": "target1",
+            "answers": {"target1": "A", "p1": "A", "p2": "B"}
+        })
+
+    result = analyze_game_results(room)
+    assert result["perfect_sync"]["question_id"] == 1
+    assert result["signal_drop"]["question_id"] == 10
+
+def test_analyze_game_results_zero_guessers():
+    from main import analyze_game_results
+
+    room = {
+        "target_user_id": "target1",
+        "players": {
+            "target1": {"id": "target1", "name": "Target Player"}
+        },
+        "question_history": []
+    }
+
+    # Single player target user with no guessers
+    for i in range(1, 11):
+        room["question_history"].append({
+            "question_order": i,
+            "question": {
+                "id": i,
+                "text": f"Question {i}",
+                "option_a": "A",
+                "option_b": "B"
+            },
+            "target_user_id": "target1",
+            "answers": {"target1": "A"}
+        })
+
+    result = analyze_game_results(room)
+    assert result["perfect_sync"] is None
+    assert result["signal_drop"] is None
