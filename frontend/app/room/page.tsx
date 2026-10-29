@@ -455,7 +455,7 @@ function RoomLobbyContent() {
   }, [roomState?.status]);
 
   return (
-    <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-5 sm:p-8 space-y-6">
+    <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-5 sm:p-8 space-y-6 animate-fadeIn transition-all">
       {/* Full-Screen Disconnect Overlay Modal */}
       {hasConnected && !isConnected && (
         <div className="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
@@ -548,7 +548,7 @@ function RoomLobbyContent() {
 
       {/* STATE 1: LOBBY WAITING */}
       {roomState?.status === "waiting" && (
-        <div className="space-y-5">
+        <div className="space-y-5 animate-fadeIn">
           {/* Host Relationship Selection in Lobby */}
           {isHost && (
             <div className="space-y-2 bg-slate-950/40 p-3.5 rounded-xl border border-slate-800">
@@ -704,7 +704,7 @@ function RoomLobbyContent() {
 
       {/* STATE 2: PLAYING (QUIZ) */}
       {roomState?.status === "playing" && roomState.current_question && (
-        <div className="space-y-6">
+        <div className="space-y-6 animate-fadeIn">
           {/* Question Header Progress */}
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">
@@ -840,6 +840,7 @@ function RoomLobbyContent() {
             </div>
           </div>
 
+          {/* Correct Answer Display Section with Choice Label Badge (選項 A/B/C) */}
           <div className="bg-slate-950 p-5 rounded-2xl border border-amber-500/30 text-center space-y-3">
             <h3 className="text-base font-bold text-slate-200">
               主頻率{" "}
@@ -848,19 +849,28 @@ function RoomLobbyContent() {
               </span>{" "}
               選擇的正解為：
             </h3>
-            <div className="inline-block bg-gradient-to-r from-amber-500/20 to-indigo-500/20 border border-amber-500/40 px-6 py-3 rounded-xl text-lg sm:text-xl font-extrabold text-amber-300">
-              {lastQuestionResult.correct_option_text ||
-                (lastQuestionResult.correct_choice === "A"
-                  ? roomState?.current_question?.option_a
-                  : lastQuestionResult.correct_choice === "B"
-                  ? roomState?.current_question?.option_b
-                  : lastQuestionResult.correct_choice === "C"
-                  ? roomState?.current_question?.option_c
-                  : "") ||
-                `選項 ${lastQuestionResult.correct_choice || "未選擇"}`}
+
+            <div className="inline-flex flex-col items-center gap-1 bg-gradient-to-r from-amber-500/20 to-indigo-500/20 border border-amber-500/40 px-6 py-3.5 rounded-xl">
+              {lastQuestionResult.correct_choice && (
+                <span className="text-xs font-mono font-black text-amber-400 bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30 uppercase">
+                  選項 {lastQuestionResult.correct_choice}
+                </span>
+              )}
+              <span className="text-lg sm:text-xl font-extrabold text-amber-300 leading-relaxed break-words">
+                {lastQuestionResult.correct_option_text ||
+                  (lastQuestionResult.correct_choice === "A"
+                    ? roomState?.current_question?.option_a
+                    : lastQuestionResult.correct_choice === "B"
+                    ? roomState?.current_question?.option_b
+                    : lastQuestionResult.correct_choice === "C"
+                    ? roomState?.current_question?.option_c
+                    : "") ||
+                  `選項 ${lastQuestionResult.correct_choice || "未選擇"}`}
+              </span>
             </div>
           </div>
 
+          {/* Preserved Player Answers Comparison Section */}
           <div className="space-y-2">
             <h4 className="text-xs font-bold text-slate-400">玩家作答比對：</h4>
             <div className="space-y-2 max-h-48 overflow-y-auto">
@@ -879,7 +889,7 @@ function RoomLobbyContent() {
                     </span>
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-slate-400">
-                        選擇: {res.answer || "未作答"}
+                        選擇: {res.answer ? `選項 ${res.answer}` : "未作答"}
                       </span>
                       <span
                         className={`font-bold px-2 py-0.5 rounded ${
@@ -907,11 +917,10 @@ function RoomLobbyContent() {
               ref={cardRef}
               className="bg-gradient-to-b from-amber-950/40 via-slate-950 to-indigo-950 p-6 sm:p-8 rounded-3xl border border-amber-500/40 text-center space-y-6 shadow-2xl"
             >
-              <div className="flex justify-between items-center text-xs text-amber-400 border-b border-amber-500/20 pb-3">
+              <div className="flex justify-center items-center text-xs text-amber-400 border-b border-amber-500/20 pb-3">
                 <span className="font-extrabold tracking-wider uppercase flex items-center gap-1">
                   <span>📡 頻率同步結果</span>
                 </span>
-                <span className="font-mono">房號 #{roomCode}</span>
               </div>
 
               <div className="space-y-3 py-2">
@@ -988,11 +997,10 @@ function RoomLobbyContent() {
               className="bg-gradient-to-b from-slate-900 via-slate-950 to-indigo-950 p-6 sm:p-8 rounded-3xl border border-indigo-500/40 text-center space-y-5 shadow-2xl"
             >
               {/* Header Badge */}
-              <div className="flex justify-between items-center text-xs text-indigo-400 border-b border-indigo-500/20 pb-3">
+              <div className="flex justify-center items-center text-xs text-indigo-400 border-b border-indigo-500/20 pb-3">
                 <span className="font-extrabold tracking-wider uppercase">
                   📡 頻率同步結果
                 </span>
-                <span className="font-mono">房號 #{roomCode}</span>
               </div>
 
               {/* Chemistry Evaluation Main Banner */}
