@@ -137,7 +137,7 @@ function renderOptionsDistribution(q: AnalysisQuestion) {
                   {opt.label}
                 </span>
                 {opt.text && (
-                  <span className="truncate text-slate-200 font-medium">
+                  <span className="text-slate-200 font-medium leading-relaxed break-words">
                     {opt.text}
                   </span>
                 )}
@@ -163,7 +163,6 @@ function renderOptionsDistribution(q: AnalysisQuestion) {
 
 function AnalysisSummarySection({
   summary,
-  totalPlayers = 0,
 }: {
   summary: AnalysisSummary | null;
   totalPlayers?: number;
@@ -171,8 +170,6 @@ function AnalysisSummarySection({
   if (!summary) return null;
   const { perfect_sync, signal_drop } = summary;
   if (!perfect_sync && !signal_drop) return null;
-
-  const showGuesserCount = totalPlayers >= 4;
 
   return (
     <div className="space-y-3.5 pt-3 text-left border-t border-slate-800/80">
@@ -193,14 +190,9 @@ function AnalysisSummarySection({
                 <span>🎯</span>
                 <span>完美同頻帶</span>
               </span>
-              <span className="text-xs font-mono font-black text-emerald-400">
-                {perfect_sync.accuracy_rate}% 同頻
-                {showGuesserCount &&
-                  ` (${perfect_sync.correct_count}/${perfect_sync.total_guessers} 人猜對)`}
-              </span>
             </div>
 
-            <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed">
+            <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed break-words">
               {perfect_sync.question_order ? `第 ${perfect_sync.question_order} 題：` : ""}{perfect_sync.text}
             </p>
 
@@ -216,14 +208,9 @@ function AnalysisSummarySection({
                 <span>⚡</span>
                 <span>訊號中斷帶</span>
               </span>
-              <span className="text-xs font-mono font-black text-rose-400">
-                {signal_drop.accuracy_rate}% 同頻
-                {showGuesserCount &&
-                  ` (${signal_drop.correct_count}/${signal_drop.total_guessers} 人猜對)`}
-              </span>
             </div>
 
-            <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed">
+            <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed break-words">
               {signal_drop.question_order ? `第 ${signal_drop.question_order} 題：` : ""}{signal_drop.text}
             </p>
 
