@@ -870,39 +870,61 @@ function RoomLobbyContent() {
             </div>
           </div>
 
-          {/* Preserved Player Answers Comparison Section */}
-          <div className="space-y-2">
+          {/* Preserved Player Answers Comparison Section - Stacked Layout */}
+          <div className="space-y-2 text-left">
             <h4 className="text-xs font-bold text-slate-400">玩家作答比對：</h4>
-            <div className="space-y-2 max-h-48 overflow-y-auto">
+            <div className="space-y-2.5 max-h-64 overflow-y-auto pr-1">
               {lastQuestionResult.results
                 .filter(
                   (res) =>
                     !res.is_target && res.player_id !== lastQuestionResult.target_user_id
                 )
-                .map((res) => (
-                  <div
-                    key={res.player_id}
-                    className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs"
-                  >
-                    <span className="font-semibold text-slate-200">
-                      {res.player_name}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-slate-400">
-                        選擇: {res.answer ? `選項 ${res.answer}` : "未作答"}
-                      </span>
-                      <span
-                        className={`font-bold px-2 py-0.5 rounded ${
-                          res.is_correct
-                            ? "bg-emerald-500/20 text-emerald-300"
-                            : "bg-rose-500/20 text-rose-300"
-                        }`}
-                      >
-                        {res.is_correct ? "猜對" : "猜錯"}
-                      </span>
+                .map((res) => {
+                  const currQ = roomState?.current_question;
+                  const optionText =
+                    res.answer === "A"
+                      ? currQ?.option_a
+                      : res.answer === "B"
+                      ? currQ?.option_b
+                      : res.answer === "C"
+                      ? currQ?.option_c
+                      : null;
+
+                  return (
+                    <div
+                      key={res.player_id}
+                      className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex flex-col gap-2 text-xs"
+                    >
+                      {/* Card Header Row: Player Name (Left) vs Answer Badge & Result Tag (Right) */}
+                      <div className="flex items-center justify-between w-full">
+                        <span className="font-bold text-slate-200">
+                          {res.player_name}
+                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono text-slate-400 font-medium">
+                            選擇: {res.answer ? `選項 ${res.answer}` : "未作答"}
+                          </span>
+                          <span
+                            className={`font-bold px-2 py-0.5 rounded text-[11px] ${
+                              res.is_correct
+                                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                                : "bg-rose-500/20 text-rose-300 border border-rose-500/30"
+                            }`}
+                          >
+                            {res.is_correct ? "猜對" : "猜錯"}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Card Content Row: Option Description Text (only when answered) */}
+                      {res.answer && optionText && (
+                        <div className="bg-slate-900/60 border border-slate-800/60 rounded-lg p-2.5 text-slate-300 font-medium leading-relaxed break-words">
+                          {optionText}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
             </div>
           </div>
         </div>
