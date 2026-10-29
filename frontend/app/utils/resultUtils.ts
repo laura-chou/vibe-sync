@@ -20,33 +20,33 @@ export function evaluateChemistry(
         title: "通靈系大師",
         comment: "才剛認識就能全猜對？老實說，你是不是偷偷調查過他身家！",
       };
-    } else if (percentage >= 75) {
+    } else if (percentage >= 80) {
       return {
         percentage,
         badge: "👀",
         title: "觀察力達人",
         comment: "才見面幾次就能抓到頻率，社交能力強到有點可怕喔！",
       };
-    } else if (percentage >= 50) {
+    } else if (percentage >= 60) {
       return {
         percentage,
         badge: "✨",
         title: "直覺系盲猜",
         comment: "靠著面相跟強大直覺猜中不少，運氣也是實力的一種！",
       };
-    } else if (percentage >= 25) {
+    } else if (percentage >= 40) {
       return {
         percentage,
         badge: "🌀",
         title: "頻率大打結",
-        comment: "腦波完全不在同一條線上，互相猜測像是在開通靈大會。",
+        comment: "腦波完全不在同一條線上，互相猜測像是在聽外星人講話。",
       };
     } else {
       return {
         percentage,
         badge: "🌪️",
         title: "純靠瞎掰",
-        comment: "完全猜不透！你們今天是不是路過被抓來湊數的？",
+        comment: "完全猜不透！你今天是不是路過被抓來湊數的？",
       };
     }
   } else if (relationship === "family") {
@@ -57,21 +57,21 @@ export function evaluateChemistry(
         title: "血濃於水",
         comment: "不愧是一家人，連冰箱裡剩什麼都能精準掌握！",
       };
-    } else if (percentage >= 75) {
+    } else if (percentage >= 80) {
       return {
         percentage,
         badge: "🏆",
         title: "同屋簷的神隊友",
-        comment: "平常在家互動很溫馨，對彼此的生活習慣瞭如指掌。",
+        comment: "平常在家互動很溫馨，對彼此的生活習慣暸如指掌。",
       };
-    } else if (percentage >= 50) {
+    } else if (percentage >= 60) {
       return {
         percentage,
         badge: "🛋️",
         title: "平行時空家人",
         comment: "雖然住在同一個屋簷下，但平時各自滑手機過得很獨立喔！",
       };
-    } else if (percentage >= 25) {
+    } else if (percentage >= 40) {
       return {
         percentage,
         badge: "📦",
@@ -95,26 +95,26 @@ export function evaluateChemistry(
         title: "心電感應大師",
         comment: "簡直直接複製了對方的腦波，連晚餐要吃啥都能神預測！",
       };
-    } else if (percentage >= 75) {
+    } else if (percentage >= 80) {
       return {
         percentage,
         badge: "💖",
         title: "靈魂合拍達人",
         comment: "眼神交流就能秒懂彼此，默契好到不行。",
       };
-    } else if (percentage >= 50) {
+    } else if (percentage >= 60) {
       return {
         percentage,
         badge: "🤝",
-        title: "普通酒肉朋友",
-        comment: "平時約喝酒吃宵夜很行，心事倒是完全沒在關心對方！",
+        title: "點頭之交安全牌",
+        comment: "對彼此有基本的了解，但想深入聊天可能還需要一點話題喔！",
       };
-    } else if (percentage >= 25) {
+    } else if (percentage >= 40) {
       return {
         percentage,
         badge: "😅",
-        title: "塑膠友情認證",
-        comment: "這默契感人肺腑，你們平時其實只是在點讚交友吧？",
+        title: "普通酒肉朋友",
+        comment: "平時約喝酒吃宵夜很行，心事跟默契倒是完全沒在關心對方！",
       };
     } else {
       return {
