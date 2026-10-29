@@ -271,8 +271,8 @@ async def evaluate_and_advance_question(room_code: str):
         "room_state": get_room_state(room_code)
     })
 
-    # Wait 3.5 seconds so players can comfortably view the round result
-    await asyncio.sleep(3.5)
+    # Wait 5.0 seconds so players can comfortably view the round result
+    await asyncio.sleep(5.0)
 
     if room_code not in rooms:
         return
