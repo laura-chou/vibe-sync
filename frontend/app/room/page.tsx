@@ -119,40 +119,43 @@ function renderOptionsDistribution(q: AnalysisQuestion) {
   return (
     <div className="space-y-1.5 pt-1">
       <div className="text-[11px] text-slate-400 font-medium">全場玩家選擇分布：</div>
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-2">
         {opts.map((opt) => {
           const isTarget = q.target_choice_key === opt.key;
           const pct = Math.round((opt.count / total) * 100);
           return (
             <div
               key={opt.key}
-              className={`p-2.5 rounded-xl border text-xs flex items-center justify-between gap-3 ${
+              className={`p-3 rounded-xl border text-xs flex flex-col gap-1.5 ${
                 isTarget
                   ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300 font-bold"
                   : "bg-gray-800/60 border-gray-700/50 text-slate-300"
               }`}
             >
-              <div className="flex items-center gap-2 min-w-0 flex-1 text-left">
-                <span className="font-mono text-[11px] font-bold shrink-0">
+              {/* Row 1: Option Label (Left) vs Badge & Votes (Right) */}
+              <div className="flex items-center justify-between w-full">
+                <span className="font-mono text-[11px] font-bold">
                   {opt.label}
                 </span>
-                {opt.text && (
-                  <span className="text-slate-200 font-medium leading-relaxed break-words">
-                    {opt.text}
+
+                <div className="flex items-center gap-2">
+                  {isTarget && (
+                    <span className="text-[10px] bg-emerald-500/30 px-1.5 py-0.5 rounded text-emerald-200 font-bold border border-emerald-500/40">
+                      正解
+                    </span>
+                  )}
+                  <span className="font-mono text-xs font-bold text-slate-100">
+                    {opt.count} 人 ({pct}%)
                   </span>
-                )}
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 shrink-0">
-                {isTarget && (
-                  <span className="text-[10px] bg-emerald-500/30 px-1.5 py-0.5 rounded text-emerald-200 font-bold border border-emerald-500/40">
-                    正解
-                  </span>
-                )}
-                <span className="font-mono text-xs font-bold text-slate-100">
-                  {opt.count} 人 ({pct}%)
-                </span>
-              </div>
+              {/* Row 2: Full Option Text Description */}
+              {opt.text && (
+                <div className="text-slate-200 font-medium leading-relaxed break-words text-left">
+                  {opt.text}
+                </div>
+              )}
             </div>
           );
         })}
