@@ -895,14 +895,14 @@ function RoomLobbyContent() {
                       key={res.player_id}
                       className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex flex-col gap-2 text-xs"
                     >
-                      {/* Card Header Row: Player Name (Left) vs Answer Badge & Result Tag (Right) */}
+                      {/* Card Header Row: Player Name (Left) vs Choice Tag & Result Tag (Right) */}
                       <div className="flex items-center justify-between w-full">
                         <span className="font-bold text-slate-200">
                           {res.player_name}
                         </span>
                         <div className="flex items-center gap-2">
                           <span className="font-mono text-slate-400 font-medium">
-                            選擇: {res.answer ? `選項 ${res.answer}` : "未作答"}
+                            {res.answer ? `選項 ${res.answer}` : "未作答"}
                           </span>
                           <span
                             className={`font-bold px-2 py-0.5 rounded text-[11px] ${
@@ -916,8 +916,8 @@ function RoomLobbyContent() {
                         </div>
                       </div>
 
-                      {/* Card Content Row: Option Description Text (only when answered) */}
-                      {res.answer && optionText && (
+                      {/* Card Content Row: Option Description Text (shown ONLY when guessed incorrectly) */}
+                      {!res.is_correct && res.answer && optionText && (
                         <div className="bg-slate-900/60 border border-slate-800/60 rounded-lg p-2.5 text-slate-300 font-medium leading-relaxed break-words">
                           {optionText}
                         </div>
@@ -953,6 +953,15 @@ function RoomLobbyContent() {
               </div>
 
               <hr className="border-slate-800/80" />
+
+              {/* Emotional Reflective Quote (Family & Friends only) */}
+              {(currentRelationship === "family" || currentRelationship === "friends") && (
+                <div className="bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-pink-500/10 border border-amber-500/30 rounded-2xl p-4 text-center shadow-md">
+                  <p className="text-xs sm:text-sm font-bold text-amber-200 leading-relaxed">
+                    💡 不妨想想，你們是真的熟識彼此，還是只是認識比較久？
+                  </p>
+                </div>
+              )}
 
               {/* Leaderboard for Target User */}
               <div className="space-y-3 text-left">
@@ -1047,6 +1056,15 @@ function RoomLobbyContent() {
               </div>
 
               <hr className="border-slate-800/80" />
+
+              {/* Emotional Reflective Quote (Family & Friends only) */}
+              {(currentRelationship === "family" || currentRelationship === "friends") && (
+                <div className="bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-pink-500/10 border border-amber-500/30 rounded-2xl p-4 text-center shadow-md">
+                  <p className="text-xs sm:text-sm font-bold text-amber-200 leading-relaxed">
+                    💡 不妨想想，你們是真的熟識彼此，還是只是認識比較久？
+                  </p>
+                </div>
+              )}
 
               {/* Leaderboard Section in Card */}
               <div className="space-y-2">
