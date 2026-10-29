@@ -21,7 +21,7 @@ export default function Home() {
     if (!isNameValid) return;
     const code = Math.floor(100000 + Math.random() * 900000).toString();
     router.push(
-      `/room/${code}?isHost=true&name=${encodeURIComponent(
+      `/room?code=${code}&isHost=true&name=${encodeURIComponent(
         trimmedName
       )}&avatar=${encodeURIComponent(selectedAvatar)}`
     );
@@ -35,7 +35,7 @@ export default function Home() {
       return;
     }
     router.push(
-      `/room/${roomCode}?name=${encodeURIComponent(
+      `/room?code=${roomCode}&name=${encodeURIComponent(
         trimmedName
       )}&avatar=${encodeURIComponent(selectedAvatar)}`
     );

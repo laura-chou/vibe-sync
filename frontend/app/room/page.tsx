@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef, use, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { toPng } from "html-to-image";
-import { evaluateChemistry } from "../../utils/resultUtils";
+import { evaluateChemistry } from "../utils/resultUtils";
 
 interface Player {
   id: string;
@@ -235,17 +235,11 @@ function AnalysisSummarySection({
   );
 }
 
-function RoomLobbyContent({
-  paramsPromise,
-}: {
-  paramsPromise: Promise<{ code: string }>;
-}) {
-  const resolvedParams = use(paramsPromise);
-  const roomCode = resolvedParams.code;
-
+function RoomLobbyContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  const roomCode = searchParams.get("code") || "123456";
   const isHostParam = searchParams.get("isHost") === "true";
   const currentUserName = searchParams.get("name") || "玩家";
   const currentUserAvatar = searchParams.get("avatar") || "🦊";
@@ -469,11 +463,6 @@ function RoomLobbyContent({
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, [roomState?.status]);
-
-  const canLeave =
-    roomState?.status === "waiting" ||
-    roomState?.status === "game_over" ||
-    !roomState;
 
   return (
     <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-5 sm:p-8 space-y-6">
@@ -1120,14 +1109,12 @@ function RoomLobbyContent({
   );
 }
 
-export default function RoomClient({
-  params,
-}: {
-  params: Promise<{ code: string }>;
-}) {
+export default function RoomPage() {
   return (
-    <Suspense fallback={<div className="text-slate-400">載入大廳中...</div>}>
-      <RoomLobbyContent paramsPromise={params} />
-    </Suspense>
+    <main className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-4 sm:p-6">
+      <Suspense fallback={<div className="text-slate-400">載入大廳中...</div>}>
+        <RoomLobbyContent />
+      </Suspense>
+    </main>
   );
 }
