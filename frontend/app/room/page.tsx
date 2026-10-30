@@ -840,40 +840,22 @@ function RoomLobbyContent() {
             </div>
           </div>
 
-          {/* Correct Answer Display Section with Choice Label Badge (選項 A/B/C) */}
-          <div className="bg-slate-950 p-5 rounded-2xl border border-amber-500/30 text-center space-y-3">
-            <h3 className="text-base font-bold text-slate-200">
-              主頻率{" "}
-              <span className="text-amber-400">
-                {lastQuestionResult.target_user_name}
-              </span>{" "}
-              選擇的正解為：
-            </h3>
-
-            <div className="inline-flex flex-col items-center gap-1 bg-gradient-to-r from-amber-500/20 to-indigo-500/20 border border-amber-500/40 px-6 py-3.5 rounded-xl">
-              {lastQuestionResult.correct_choice && (
-                <span className="text-xs font-mono font-black text-amber-400 bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30 uppercase">
-                  選項 {lastQuestionResult.correct_choice}
-                </span>
-              )}
-              <span className="text-lg sm:text-xl font-extrabold text-amber-300 leading-relaxed break-words">
-                {lastQuestionResult.correct_option_text ||
-                  (lastQuestionResult.correct_choice === "A"
-                    ? roomState?.current_question?.option_a
-                    : lastQuestionResult.correct_choice === "B"
-                    ? roomState?.current_question?.option_b
-                    : lastQuestionResult.correct_choice === "C"
-                    ? roomState?.current_question?.option_c
-                    : "") ||
-                  `選項 ${lastQuestionResult.correct_choice || "未選擇"}`}
+          {/* All-Options Unified Breakdown Section */}
+          <div className="space-y-3 text-left">
+            <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
+              <h4 className="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                <span>📊</span>
+                <span>全選項比對解析</span>
+              </h4>
+              <span className="text-[11px] text-slate-400">
+                主頻率{" "}
+                <strong className="text-amber-400 font-bold">
+                  {lastQuestionResult.target_user_name}
+                </strong>
               </span>
             </div>
-          </div>
 
-          {/* Option-Centric Grouped Player Answers Comparison Section */}
-          <div className="space-y-2 text-left">
-            <h4 className="text-xs font-bold text-slate-400">玩家作答比對：</h4>
-            <div className="space-y-3 max-h-64 overflow-y-auto pr-1">
+            <div className="space-y-3 max-h-80 overflow-y-auto pr-1">
               {(() => {
                 const currQ = roomState?.current_question;
                 const guessers = lastQuestionResult.results.filter(
@@ -890,7 +872,7 @@ function RoomLobbyContent() {
                   optionKeys.push({ key: "C", label: "選項 C", text: currQ.option_c });
                 }
 
-                // Group guessers by answer choice
+                // Map all options; show correct option card or incorrect options chosen by at least 1 player
                 const optionGroups = optionKeys
                   .map((opt) => {
                     const playersInGroup = guessers.filter((g) => g.answer === opt.key);
@@ -899,24 +881,28 @@ function RoomLobbyContent() {
                       players: playersInGroup,
                     };
                   })
-                  .filter((group) => group.players.length > 0);
+                  .filter((group) => {
+                    const isCorrect = lastQuestionResult.correct_choice === group.key;
+                    // Always show correct option card, or incorrect option if chosen by >= 1 player
+                    return isCorrect || group.players.length > 0;
+                  });
 
                 // Group unanswered players
                 const unansweredPlayers = guessers.filter((g) => !g.answer);
 
                 return (
                   <>
-                    {/* Render cards for options that were chosen by at least one player */}
+                    {/* Render cards for options */}
                     {optionGroups.map((group) => {
                       const isCorrectGroup = lastQuestionResult.correct_choice === group.key;
 
                       return (
                         <div
                           key={group.key}
-                          className={`p-3.5 rounded-2xl border text-xs space-y-2.5 bg-slate-950 ${
+                          className={`p-3.5 rounded-2xl border text-xs space-y-2.5 transition-all ${
                             isCorrectGroup
-                              ? "border-emerald-500/40 bg-emerald-950/20"
-                              : "border-slate-800"
+                              ? "bg-emerald-950/40 border-emerald-500/60 shadow-lg shadow-emerald-500/10 ring-1 ring-emerald-500/30"
+                              : "bg-slate-950/80 border-slate-800/90"
                           }`}
                         >
                           {/* Card Top / Header: Option Label (Left) & Option Text Description */}
@@ -924,55 +910,63 @@ function RoomLobbyContent() {
                             <div className="flex items-center justify-between">
                               <div className="flex items-center gap-2">
                                 <span
-                                  className={`font-mono text-[11px] font-black px-2 py-0.5 rounded-md border uppercase ${
+                                  className={`font-mono text-[11px] font-black px-2.5 py-0.5 rounded-md border uppercase ${
                                     isCorrectGroup
-                                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+                                      ? "bg-emerald-500/30 text-emerald-200 border-emerald-500/50 shadow"
                                       : "bg-slate-800 text-slate-300 border-slate-700"
                                   }`}
                                 >
                                   {group.label}
                                 </span>
                                 {isCorrectGroup && (
-                                  <span className="text-[10px] bg-emerald-500/30 px-1.5 py-0.5 rounded text-emerald-200 font-bold border border-emerald-500/40">
-                                    正解
+                                  <span className="text-[10px] bg-emerald-500/40 text-emerald-200 font-extrabold px-2 py-0.5 rounded-md border border-emerald-400/50 uppercase tracking-wider">
+                                    🎯 正解
                                   </span>
                                 )}
                               </div>
-                              <span className="text-[11px] text-slate-400 font-mono">
+                              <span className="text-[11px] text-slate-400 font-mono font-semibold">
                                 {group.players.length} 人選擇
                               </span>
                             </div>
 
                             {group.text && (
-                              <p className="text-slate-200 font-semibold leading-relaxed break-words pt-1">
+                              <p className={`text-xs sm:text-sm font-bold leading-relaxed break-words pt-1 ${
+                                isCorrectGroup ? "text-emerald-100" : "text-slate-200"
+                              }`}>
                                 {group.text}
                               </p>
                             )}
                           </div>
 
                           {/* Card Sub-list: Grouped Players List */}
-                          <div className="pt-1 border-t border-slate-800/80 flex flex-wrap gap-1.5">
-                            {group.players.map((p) => (
-                              <div
-                                key={p.player_id}
-                                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs ${
-                                  p.is_correct
-                                    ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-300 font-bold"
-                                    : "bg-slate-900 border-slate-800 text-slate-300"
-                                }`}
-                              >
-                                <span>{p.player_name}</span>
-                                <span
-                                  className={`text-[10px] px-1 rounded font-bold ${
+                          <div className="pt-2 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                            {group.players.length > 0 ? (
+                              group.players.map((p) => (
+                                <div
+                                  key={p.player_id}
+                                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs ${
                                     p.is_correct
-                                      ? "bg-emerald-500/30 text-emerald-200"
-                                      : "bg-rose-500/20 text-rose-300"
+                                      ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-200 font-bold"
+                                      : "bg-rose-500/10 border-rose-500/30 text-rose-300"
                                   }`}
                                 >
-                                  {p.is_correct ? "猜對" : "猜錯"}
-                                </span>
-                              </div>
-                            ))}
+                                  <span>{p.player_name}</span>
+                                  <span
+                                    className={`text-[10px] px-1.5 py-0.2 rounded font-black ${
+                                      p.is_correct
+                                        ? "bg-emerald-500/40 text-emerald-100"
+                                        : "bg-rose-500/30 text-rose-200"
+                                    }`}
+                                  >
+                                    {p.is_correct ? "猜對" : "猜錯"}
+                                  </span>
+                                </div>
+                              ))
+                            ) : (
+                              <span className="text-[11px] text-slate-500 italic">
+                                尚無玩家選擇此選項
+                              </span>
+                            )}
                           </div>
                         </div>
                       );
