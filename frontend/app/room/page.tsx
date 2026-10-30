@@ -196,7 +196,7 @@ function AnalysisSummarySection({
             </div>
 
             <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed break-words">
-              {perfect_sync.question_order ? `第 ${perfect_sync.question_order} 題：` : ""}{perfect_sync.text}
+              {perfect_sync.text}
             </p>
 
             {renderOptionsDistribution(perfect_sync)}
@@ -214,7 +214,7 @@ function AnalysisSummarySection({
             </div>
 
             <p className="text-xs sm:text-sm font-extrabold text-slate-100 leading-relaxed break-words">
-              {signal_drop.question_order ? `第 ${signal_drop.question_order} 題：` : ""}{signal_drop.text}
+              {signal_drop.text}
             </p>
 
             {renderOptionsDistribution(signal_drop)}
@@ -855,7 +855,14 @@ function RoomLobbyContent() {
               </span>
             </div>
 
-            <div className="space-y-3 max-h-80 overflow-y-auto pr-1">
+            {/* Display Question Stem */}
+            {roomState?.current_question?.text && (
+              <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 text-slate-200 text-xs sm:text-sm font-bold leading-relaxed">
+                {roomState.current_question.text}
+              </div>
+            )}
+
+            <div className="space-y-3">
               {(() => {
                 const currQ = roomState?.current_question;
                 const guessers = lastQuestionResult.results.filter(
@@ -863,7 +870,7 @@ function RoomLobbyContent() {
                     !res.is_target && res.player_id !== lastQuestionResult.target_user_id
                 );
 
-                // Option keys to check in order A, B, C
+                // Option keys A, B, C
                 const optionKeys: Array<{ key: "A" | "B" | "C"; label: string; text?: string | null }> = [
                   { key: "A", label: "選項 A", text: currQ?.option_a },
                   { key: "B", label: "選項 B", text: currQ?.option_b },
@@ -872,27 +879,21 @@ function RoomLobbyContent() {
                   optionKeys.push({ key: "C", label: "選項 C", text: currQ.option_c });
                 }
 
-                // Map all options; show correct option card or incorrect options chosen by at least 1 player
-                const optionGroups = optionKeys
-                  .map((opt) => {
-                    const playersInGroup = guessers.filter((g) => g.answer === opt.key);
-                    return {
-                      ...opt,
-                      players: playersInGroup,
-                    };
-                  })
-                  .filter((group) => {
-                    const isCorrect = lastQuestionResult.correct_choice === group.key;
-                    // Always show correct option card, or incorrect option if chosen by >= 1 player
-                    return isCorrect || group.players.length > 0;
-                  });
+                // Map all options without filtering out unchosen ones
+                const optionGroups = optionKeys.map((opt) => {
+                  const playersInGroup = guessers.filter((g) => g.answer === opt.key);
+                  return {
+                    ...opt,
+                    players: playersInGroup,
+                  };
+                });
 
                 // Group unanswered players
                 const unansweredPlayers = guessers.filter((g) => !g.answer);
 
                 return (
                   <>
-                    {/* Render cards for options */}
+                    {/* Render cards for ALL options */}
                     {optionGroups.map((group) => {
                       const isCorrectGroup = lastQuestionResult.correct_choice === group.key;
 
