@@ -254,7 +254,6 @@ function RoomLobbyContent() {
   // Dynamic countdown timer for single question result state
   useEffect(() => {
     if (roomState?.status === "question_result") {
-      setResultCountdown(5);
       const interval = setInterval(() => {
         setResultCountdown((prev) => (prev > 0 ? prev - 1 : 0));
       }, 1000);
@@ -264,7 +263,7 @@ function RoomLobbyContent() {
 
   // Initialize WebSocket connection
   useEffect(() => {
-    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000/ws";
+    const wsUrl = process.env.WS_URL || "ws://localhost:8000/ws";
     const ws = new WebSocket(wsUrl);
     socketRef.current = ws;
 
@@ -321,6 +320,7 @@ function RoomLobbyContent() {
         } else if (type === "QUESTION_RESULT") {
           setRoomState(data.room_state);
           setLastQuestionResult(data);
+          setResultCountdown(5);
         } else if (type === "GAME_OVER") {
           setRoomState(data.room_state);
           setLeaderboard(data.leaderboard);
