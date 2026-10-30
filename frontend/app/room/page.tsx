@@ -870,61 +870,136 @@ function RoomLobbyContent() {
             </div>
           </div>
 
-          {/* Preserved Player Answers Comparison Section - Stacked Layout */}
+          {/* Option-Centric Grouped Player Answers Comparison Section */}
           <div className="space-y-2 text-left">
             <h4 className="text-xs font-bold text-slate-400">玩家作答比對：</h4>
-            <div className="space-y-2.5 max-h-64 overflow-y-auto pr-1">
-              {lastQuestionResult.results
-                .filter(
+            <div className="space-y-3 max-h-64 overflow-y-auto pr-1">
+              {(() => {
+                const currQ = roomState?.current_question;
+                const guessers = lastQuestionResult.results.filter(
                   (res) =>
                     !res.is_target && res.player_id !== lastQuestionResult.target_user_id
-                )
-                .map((res) => {
-                  const currQ = roomState?.current_question;
-                  const optionText =
-                    res.answer === "A"
-                      ? currQ?.option_a
-                      : res.answer === "B"
-                      ? currQ?.option_b
-                      : res.answer === "C"
-                      ? currQ?.option_c
-                      : null;
+                );
 
-                  return (
-                    <div
-                      key={res.player_id}
-                      className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex flex-col gap-2 text-xs"
-                    >
-                      {/* Card Header Row: Player Name (Left) vs Choice Tag & Result Tag (Right) */}
-                      <div className="flex items-center justify-between w-full">
-                        <span className="font-bold text-slate-200">
-                          {res.player_name}
-                        </span>
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono text-slate-400 font-medium">
-                            {res.answer ? `選項 ${res.answer}` : "未作答"}
-                          </span>
-                          <span
-                            className={`font-bold px-2 py-0.5 rounded text-[11px] ${
-                              res.is_correct
-                                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
-                                : "bg-rose-500/20 text-rose-300 border border-rose-500/30"
-                            }`}
-                          >
-                            {res.is_correct ? "猜對" : "猜錯"}
-                          </span>
+                // Option keys to check in order A, B, C
+                const optionKeys: Array<{ key: "A" | "B" | "C"; label: string; text?: string | null }> = [
+                  { key: "A", label: "選項 A", text: currQ?.option_a },
+                  { key: "B", label: "選項 B", text: currQ?.option_b },
+                ];
+                if (currQ?.option_c) {
+                  optionKeys.push({ key: "C", label: "選項 C", text: currQ.option_c });
+                }
+
+                // Group guessers by answer choice
+                const optionGroups = optionKeys
+                  .map((opt) => {
+                    const playersInGroup = guessers.filter((g) => g.answer === opt.key);
+                    return {
+                      ...opt,
+                      players: playersInGroup,
+                    };
+                  })
+                  .filter((group) => group.players.length > 0);
+
+                // Group unanswered players
+                const unansweredPlayers = guessers.filter((g) => !g.answer);
+
+                return (
+                  <>
+                    {/* Render cards for options that were chosen by at least one player */}
+                    {optionGroups.map((group) => {
+                      const isCorrectGroup = lastQuestionResult.correct_choice === group.key;
+
+                      return (
+                        <div
+                          key={group.key}
+                          className={`p-3.5 rounded-2xl border text-xs space-y-2.5 bg-slate-950 ${
+                            isCorrectGroup
+                              ? "border-emerald-500/40 bg-emerald-950/20"
+                              : "border-slate-800"
+                          }`}
+                        >
+                          {/* Card Top / Header: Option Label (Left) & Option Text Description */}
+                          <div className="space-y-1">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <span
+                                  className={`font-mono text-[11px] font-black px-2 py-0.5 rounded-md border uppercase ${
+                                    isCorrectGroup
+                                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+                                      : "bg-slate-800 text-slate-300 border-slate-700"
+                                  }`}
+                                >
+                                  {group.label}
+                                </span>
+                                {isCorrectGroup && (
+                                  <span className="text-[10px] bg-emerald-500/30 px-1.5 py-0.5 rounded text-emerald-200 font-bold border border-emerald-500/40">
+                                    正解
+                                  </span>
+                                )}
+                              </div>
+                              <span className="text-[11px] text-slate-400 font-mono">
+                                {group.players.length} 人選擇
+                              </span>
+                            </div>
+
+                            {group.text && (
+                              <p className="text-slate-200 font-semibold leading-relaxed break-words pt-1">
+                                {group.text}
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Card Sub-list: Grouped Players List */}
+                          <div className="pt-1 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                            {group.players.map((p) => (
+                              <div
+                                key={p.player_id}
+                                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs ${
+                                  p.is_correct
+                                    ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-300 font-bold"
+                                    : "bg-slate-900 border-slate-800 text-slate-300"
+                                }`}
+                              >
+                                <span>{p.player_name}</span>
+                                <span
+                                  className={`text-[10px] px-1 rounded font-bold ${
+                                    p.is_correct
+                                      ? "bg-emerald-500/30 text-emerald-200"
+                                      : "bg-rose-500/20 text-rose-300"
+                                  }`}
+                                >
+                                  {p.is_correct ? "猜對" : "猜錯"}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                    {/* Render Unanswered Section if any player failed to answer */}
+                    {unansweredPlayers.length > 0 && (
+                      <div className="p-3 rounded-xl border border-slate-800/80 bg-slate-950/60 text-xs space-y-2">
+                        <div className="flex items-center justify-between text-slate-400 font-semibold">
+                          <span>未作答玩家</span>
+                          <span className="font-mono">{unansweredPlayers.length} 人</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {unansweredPlayers.map((p) => (
+                            <span
+                              key={p.player_id}
+                              className="px-2.5 py-1 bg-slate-900 border border-slate-800 text-slate-400 rounded-lg"
+                            >
+                              {p.player_name}
+                            </span>
+                          ))}
                         </div>
                       </div>
-
-                      {/* Card Content Row: Option Description Text (shown ONLY when guessed incorrectly) */}
-                      {!res.is_correct && res.answer && optionText && (
-                        <div className="bg-slate-900/60 border border-slate-800/60 rounded-lg p-2.5 text-slate-300 font-medium leading-relaxed break-words">
-                          {optionText}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </div>
         </div>
