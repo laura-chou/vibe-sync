@@ -581,6 +581,7 @@ async def websocket_endpoint(websocket: WebSocket):
             room = rooms[current_room_code]
             if current_player_id in room["players"]:
                 leaving_player_name = room["players"][current_player_id]["name"]
+                was_target = (room.get("target_user_id") == current_player_id)
                 del room["players"][current_player_id]
                 room["scores"].pop(current_player_id, None)
                 room["answers"].pop(current_player_id, None)
@@ -595,7 +596,7 @@ async def websocket_endpoint(websocket: WebSocket):
                         room["players"][new_host_id]["is_host"] = True
                         logger.info(f"Host disconnected. Host status for room {current_room_code} transferred to new host ID: {new_host_id}")
 
-                    if room["target_user_id"] == current_player_id:
+                    if was_target:
                         room["target_user_id"] = None
 
                     await broadcast_to_room(current_room_code, {
@@ -605,8 +606,11 @@ async def websocket_endpoint(websocket: WebSocket):
                         "room_state": get_room_state(current_room_code)
                     })
 
-                    # Check for game abort threshold: abort game if active and remaining players < 2
-                    if room["status"] in ["playing", "question_result"] and len(room["players"]) < 2:
+                    # Check for game abort conditions during active game:
+                    # 1. Target user disconnected, OR
+                    # 2. Remaining players < 2
+                    is_active_game = room["status"] in ["playing", "question_result"]
+                    if is_active_game and (was_target or len(room["players"]) < 2):
                         room["status"] = "waiting"
                         room["question_index"] = 0
                         room["questions"] = []
@@ -617,11 +621,16 @@ async def websocket_endpoint(websocket: WebSocket):
                         for p_id in room["players"]:
                             room["scores"][p_id] = 0
 
-                        logger.info(f"Game aborted in room {current_room_code} due to insufficient players (< 2 players). State reset to waiting.")
+                        if was_target:
+                            logger.info(f"Game aborted in room {current_room_code} due to target user disconnection.")
+                            abort_msg = "主頻率已離開，遊戲被迫終止"
+                        else:
+                            logger.info(f"Game aborted in room {current_room_code} due to insufficient players (< 2 players). State reset to waiting.")
+                            abort_msg = "其他玩家已離開，人數不足無法繼續遊戲"
 
                         await broadcast_to_room(current_room_code, {
                             "type": "GAME_ABORTED",
-                            "message": "其他玩家已離開，人數不足無法繼續遊戲",
+                            "message": abort_msg,
                             "room_state": get_room_state(current_room_code)
                         })
                     elif room["status"] == "playing" and len(room["answers"]) >= len(room["players"]) and len(room["players"]) > 0:

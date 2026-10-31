@@ -401,6 +401,67 @@ def test_analyze_game_results_equal_accuracies():
     assert result["perfect_sync"]["question_id"] == 1
     assert result["signal_drop"]["question_id"] == 10
 
+def test_game_aborted_when_target_user_disconnects():
+    client = TestClient(app)
+
+    with client.websocket_connect("/ws") as host_ws, client.websocket_connect("/ws") as extra_ws:
+        host_ws.send_json({"type": "CREATE_ROOM", "player_name": "Host"})
+        h_res = host_ws.receive_json()
+        room_code = h_res["room_code"]
+        host_id = h_res["player_id"]
+
+        extra_ws.send_json({"type": "JOIN_ROOM", "room_code": room_code, "player_name": "Extra Player"})
+        e_res = extra_ws.receive_json()
+        extra_id = e_res["player_id"]
+        _e_b = extra_ws.receive_json()
+        _h_b = host_ws.receive_json()
+
+        with client.websocket_connect("/ws") as target_ws:
+            target_ws.send_json({"type": "JOIN_ROOM", "room_code": room_code, "player_name": "Target Player"})
+            t_res = target_ws.receive_json()
+            target_id = t_res["player_id"]
+
+            _t_b = target_ws.receive_json()
+            _e_b2 = extra_ws.receive_json()
+            _h_b2 = host_ws.receive_json()
+
+            # Host selects target_id as target
+            host_ws.send_json({"type": "SELECT_TARGET", "target_user_id": target_id})
+            _s_h = host_ws.receive_json()
+            _s_e = extra_ws.receive_json()
+            _s_t = target_ws.receive_json()
+
+            # Host starts game
+            host_ws.send_json({"type": "START_GAME"})
+            _start_h = host_ws.receive_json()
+            _start_e = extra_ws.receive_json()
+            _start_t = target_ws.receive_json()
+
+            assert _start_h["room_state"]["status"] == "playing"
+            assert _start_h["room_state"]["target_user_id"] == target_id
+            assert len(rooms[room_code]["players"]) == 3
+
+            # target_ws exits here, disconnecting target while host and extra remain!
+
+        # Host and extra should receive PLAYER_LEFT then GAME_ABORTED
+        left_msg = host_ws.receive_json()
+        assert left_msg["type"] == "PLAYER_LEFT"
+        assert left_msg["player_id"] == target_id
+
+        abort_msg = host_ws.receive_json()
+        assert abort_msg["type"] == "GAME_ABORTED"
+        assert abort_msg["message"] == "主頻率已離開，遊戲被迫終止"
+        assert abort_msg["room_state"]["status"] == "waiting"
+        assert abort_msg["room_state"]["target_user_id"] is None
+        assert abort_msg["room_state"]["scores"][host_id] == 0
+        assert abort_msg["room_state"]["scores"][extra_id] == 0
+
+        # Room in memory is reset to waiting even though 2 players remain
+        room = rooms[room_code]
+        assert room["status"] == "waiting"
+        assert len(room["players"]) == 2
+        assert room["target_user_id"] is None
+
 def test_websocket_disconnected_runtime_error_handled(monkeypatch):
     from starlette.websockets import WebSocketDisconnected
     from fastapi import WebSocket
@@ -468,8 +529,9 @@ def test_game_aborted_when_player_disconnects():
             _p_bcast = player_ws.receive_json()
             _h_bcast = host_ws.receive_json()
 
-            # Host selects target and starts game
-            host_ws.send_json({"type": "SELECT_TARGET", "target_user_id": player_id})
+            # Host selects host_id (the remaining player) as target!
+            # So player_id is NOT the target user. When player_id leaves, it tests condition A (< 2 players, non-target leaving)
+            host_ws.send_json({"type": "SELECT_TARGET", "target_user_id": host_id})
             _t_h = host_ws.receive_json()
             _t_p = player_ws.receive_json()
 
@@ -479,7 +541,7 @@ def test_game_aborted_when_player_disconnects():
 
             assert _s_h["room_state"]["status"] == "playing"
 
-            # Player disconnects while game is playing
+            # Non-target player disconnects while game is playing
             # Closing player_ws context triggers WebSocketDisconnect
 
         # Host should receive PLAYER_LEFT then GAME_ABORTED
