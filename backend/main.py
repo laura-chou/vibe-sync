@@ -10,9 +10,10 @@ from typing import Dict, Any, Optional, List
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
 )
-logger = logging.getLogger("vibe-sync-backend")
+logger = logging.getLogger()
 
 app = FastAPI(title="WebSocket Game Backend")
 
@@ -336,7 +337,7 @@ def read_root():
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
-    logger.info("新的 WebSocket 客戶端已連線")
+    logger.info("New WebSocket client connected")
 
     current_player_id: Optional[str] = None
     current_room_code: Optional[str] = None
@@ -347,7 +348,7 @@ async def websocket_endpoint(websocket: WebSocket):
             try:
                 data = json.loads(raw_data)
             except json.JSONDecodeError:
-                logger.warning("接收到無效的 JSON 格式: %s", raw_data)
+                logger.warning("Received invalid JSON format: %s", raw_data)
                 await websocket.send_text(json.dumps({"type": "ERROR", "message": "Invalid JSON format."}))
                 continue
 
@@ -406,7 +407,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 avatar = data.get("avatar", "🦊")
 
                 if room_code not in rooms:
-                    logger.warning(f"加入房間失敗: 房間 {room_code} 不存在")
+                    logger.warning(f"Failed to join room: Room {room_code} does not exist")
                     await websocket.send_text(json.dumps({
                         "type": "ERROR",
                         "message": f"房間 {room_code} 不存在"
@@ -415,7 +416,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
                 room = rooms[room_code]
                 if room["status"] != "waiting":
-                    logger.warning(f"加入房間失敗: 房間 {room_code} 遊戲進行中無法加入")
+                    logger.warning(f"Failed to join room: Game in room {room_code} is already in progress")
                     await websocket.send_text(json.dumps({
                         "type": "ERROR",
                         "message": "遊戲進行中，無法加入房間"
@@ -423,7 +424,7 @@ async def websocket_endpoint(websocket: WebSocket):
                     continue
 
                 if len(room["players"]) >= 10:
-                    logger.warning(f"加入房間失敗: 房間 {room_code} 人數已達 10 人上限")
+                    logger.warning(f"Failed to join room: Room {room_code} reached maximum capacity (10 players)")
                     await websocket.send_text(json.dumps({
                         "type": "ERROR",
                         "message": "房間人數已達 10 人上限"
@@ -444,7 +445,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 current_player_id = player_id
                 current_room_code = room_code
 
-                logger.info(f"玩家 {player_name} (ID: {player_id}) 成功加入房間 {room_code}")
+                logger.info(f"Player {player_name} (ID: {player_id}) successfully joined room {room_code}")
 
                 await websocket.send_text(json.dumps({
                     "type": "ROOM_JOINED",
@@ -571,9 +572,9 @@ async def websocket_endpoint(websocket: WebSocket):
 
     except WebSocketDisconnect:
         if current_room_code or current_player_id:
-            logger.info(f"WebSocket 客戶端斷線 (玩家ID: {current_player_id}, 房間代碼: {current_room_code})")
+            logger.info(f"WebSocket client disconnected (Player ID: {current_player_id}, Room: {current_room_code})")
         else:
-            logger.info("WebSocket 客戶端斷線 (未加入任何房間)")
+            logger.info("WebSocket client disconnected (Not in any room)")
 
         if current_room_code and current_room_code in rooms:
             room = rooms[current_room_code]
@@ -585,13 +586,13 @@ async def websocket_endpoint(websocket: WebSocket):
 
                 if len(room["players"]) == 0:
                     del rooms[current_room_code]
-                    logger.info(f"房間 {current_room_code} 所有玩家已離開，房間已銷毀")
+                    logger.info(f"All players left. Room {current_room_code} has been destroyed")
                 else:
                     if room["host_id"] == current_player_id:
                         new_host_id = next(iter(room["players"]))
                         room["host_id"] = new_host_id
                         room["players"][new_host_id]["is_host"] = True
-                        logger.info(f"房主斷線，房間 {current_room_code} 房主轉移至新房主 ID: {new_host_id}")
+                        logger.info(f"Host disconnected. Host status for room {current_room_code} transferred to new host ID: {new_host_id}")
 
                     if room["target_user_id"] == current_player_id:
                         room["target_user_id"] = None
