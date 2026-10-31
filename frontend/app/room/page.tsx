@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { toPng } from "html-to-image";
@@ -263,7 +265,7 @@ function RoomLobbyContent() {
 
   // Initialize WebSocket connection
   useEffect(() => {
-    const wsUrl = process.env.WS_URL || "ws://localhost:8000/ws";
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000/ws";
     const ws = new WebSocket(wsUrl);
     socketRef.current = ws;
 
@@ -465,12 +467,12 @@ function RoomLobbyContent() {
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               與伺服器連線已中斷，請重新加入房間。
             </p>
-            <button
-              onClick={() => router.push("/")}
-              className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg transition-all text-sm"
+            <Link
+              href="/"
+              className="w-full block text-center bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg transition-all text-sm"
             >
               返回首頁
-            </button>
+            </Link>
           </div>
         </div>
       )}

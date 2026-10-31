@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -15,6 +16,8 @@ export default function Home() {
 
   const trimmedName = playerName.trim();
   const isNameValid = trimmedName.length > 0;
+
+  const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   // Generate 6-digit room code
   const handleCreateRoom = () => {
@@ -46,9 +49,11 @@ export default function Home() {
       <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 space-y-6">
         {/* Header */}
         <div className="text-center space-y-2 flex flex-col items-center">
-          <img
-            src="/android-chrome-192x192.png"
+          <Image
+            src={`${BASE_PATH}/android-chrome-192x192.png`}
             alt="頻率同步中 Vibe Sync"
+            width={64}
+            height={64}
             className="w-16 h-16 rounded-2xl mb-2 object-cover border border-indigo-500/30 shadow-lg"
           />
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">

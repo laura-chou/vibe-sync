@@ -12,30 +12,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const metadata: Metadata = {
   title: "頻率同步中 Vibe Sync",
-  description: "雙人/多人即時線上對戰與猜謎大廳",
+  description: "即時多人默契問答的網頁遊戲",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: `${BASE_PATH}/favicon.ico` },
+      { url: `${BASE_PATH}/favicon-16x16.png`, sizes: "16x16", type: "image/png" },
+      { url: `${BASE_PATH}/favicon-32x32.png`, sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: `${BASE_PATH}/apple-touch-icon.png`, sizes: "180x180", type: "image/png" },
     ],
     other: [
       {
         rel: "android-chrome-192x192",
-        url: "/android-chrome-192x192.png",
+        url: `${BASE_PATH}/android-chrome-192x192.png`,
       },
       {
         rel: "android-chrome-512x512",
-        url: "/android-chrome-512x512.png",
+        url: `${BASE_PATH}/android-chrome-512x512.png`,
       },
     ],
   },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

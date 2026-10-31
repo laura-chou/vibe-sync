@@ -5,11 +5,27 @@
 ### 核心功能
 
 * **即時雙向互動**：基於 WebSocket 架構，支援多人即時加入、房號同步與答題狀態更新。
-* **多元關係模式**：支援「好友 (🍻)」、「新朋友 (🆕)」與「家人 (❤️)」三種關係類型設定。
-* **深度同頻分析**：遊戲結束後自動分析全場作答數據，標示出「完美同頻帶」與「訊號中斷帶」。
-* **結果分析**：提供深度同頻分析與排行榜數據，視覺化呈現玩家之間的默契指數、答題亮點及全場作答分布。
+        <details>
+        <summary>🔍 查看遊戲大廳畫面</summary>
+        <br>
+        <img src="./assets/lobby.jpg" alt="遊戲大廳與個性化設定" width="50%">
+        </details>
 
-### 遊戲流程圖
+* **多元關係模式**：支援「好友 (🍻)」、「新朋友 (🆕)」與「家人 (❤️)」三種關係類型設定。
+        <details>
+            <summary>🔍 查看房間等待畫面</summary>
+            <br>
+        <img src="./assets/room.jpg" alt="即時房態與多元關係模式" width="50%">
+        </details>
+
+* **結果分析**：提供深度同頻分析與排行榜數據，視覺化呈現玩家之間的默契指數、答題亮點及全場作答分布。
+        <details>
+        <summary>🔍 查看同頻分析畫面</summary>
+        <br>
+        <img src="./assets/result.jpg" alt="深度同頻分析頁面" width="50%">
+        </details>
+
+### 系統流程圖
 
 ```mermaid
 sequenceDiagram
@@ -34,5 +50,3 @@ sequenceDiagram
     Note over Client,Server: 4. 遊戲結束
     Server-->>Client: 廣播: GAME_OVER (最終排行榜與分析)
 ```
-
-### Demo
