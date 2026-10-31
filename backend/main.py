@@ -1,5 +1,6 @@
 import logging
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from starlette.websockets import WebSocketDisconnected
 from fastapi.middleware.cors import CORSMiddleware
 import random
 import json
@@ -570,7 +571,7 @@ async def websocket_endpoint(websocket: WebSocket):
             else:
                 await websocket.send_text(json.dumps({"type": "ERROR", "message": f"未知的事件類型: {event_type}"}))
 
-    except WebSocketDisconnect:
+    except (WebSocketDisconnect, WebSocketDisconnected):
         if current_room_code or current_player_id:
             logger.info(f"WebSocket client disconnected (Player ID: {current_player_id}, Room: {current_room_code})")
         else:

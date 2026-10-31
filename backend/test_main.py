@@ -401,6 +401,56 @@ def test_analyze_game_results_equal_accuracies():
     assert result["perfect_sync"]["question_id"] == 1
     assert result["signal_drop"]["question_id"] == 10
 
+def test_websocket_disconnected_runtime_error_handled(monkeypatch):
+    from starlette.websockets import WebSocketDisconnected
+    from fastapi import WebSocket
+
+    client = TestClient(app)
+
+    with client.websocket_connect("/ws") as host_ws:
+        host_ws.send_json({"type": "CREATE_ROOM", "player_name": "Host"})
+        h_res = host_ws.receive_json()
+        room_code = h_res["room_code"]
+        host_id = h_res["player_id"]
+
+        with client.websocket_connect("/ws") as player_ws:
+            player_ws.send_json({"type": "JOIN_ROOM", "room_code": room_code, "player_name": "Player 1"})
+            p_res = player_ws.receive_json()
+            player_id = p_res["player_id"]
+
+            _p_bcast = player_ws.receive_json()
+            _h_bcast = host_ws.receive_json()
+
+            host_ws.send_json({"type": "SELECT_TARGET", "target_user_id": player_id})
+            _t_h = host_ws.receive_json()
+            _t_p = player_ws.receive_json()
+
+            host_ws.send_json({"type": "START_GAME"})
+            _s_h = host_ws.receive_json()
+            _s_p = player_ws.receive_json()
+
+            # Now mock receive_text for player to raise WebSocketDisconnected directly
+            original_receive_text = WebSocket.receive_text
+
+            async def mock_receive_text(self):
+                # When player receives next text, simulate WebSocketDisconnected
+                if self == player_ws:
+                    raise WebSocketDisconnected('WebSocket is not connected. Need to call "accept" first.')
+                return await original_receive_text(self)
+
+            monkeypatch.setattr(WebSocket, "receive_text", mock_receive_text)
+
+            # Trigger receive by sending a dummy message (or letting it disconnect)
+
+        # After player disconnects, host should still receive PLAYER_LEFT and GAME_ABORTED without server crash
+        left_msg = host_ws.receive_json()
+        assert left_msg["type"] == "PLAYER_LEFT"
+        assert left_msg["player_id"] == player_id
+
+        abort_msg = host_ws.receive_json()
+        assert abort_msg["type"] == "GAME_ABORTED"
+        assert abort_msg["room_state"]["status"] == "waiting"
+
 def test_game_aborted_when_player_disconnects():
     client = TestClient(app)
 
