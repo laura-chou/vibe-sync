@@ -282,7 +282,7 @@ async def evaluate_and_advance_question(room_code: str):
     # Wait 5.0 seconds so players can comfortably view the round result
     await asyncio.sleep(5.0)
 
-    if room_code not in rooms:
+    if room_code not in rooms or room["status"] != "question_result" or len(room["players"]) < 2:
         return
 
     # Advance to next question or end game
@@ -604,6 +604,25 @@ async def websocket_endpoint(websocket: WebSocket):
                         "room_state": get_room_state(current_room_code)
                     })
 
-                    # Check if all remaining players submitted answer
-                    if room["status"] == "playing" and len(room["answers"]) >= len(room["players"]) and len(room["players"]) > 0:
+                    # Check for game abort threshold: abort game if active and remaining players < 2
+                    if room["status"] in ["playing", "question_result"] and len(room["players"]) < 2:
+                        room["status"] = "waiting"
+                        room["question_index"] = 0
+                        room["questions"] = []
+                        room["question_history"] = []
+                        room["analysis_summary"] = None
+                        room["answers"] = {}
+                        room["target_user_id"] = None
+                        for p_id in room["players"]:
+                            room["scores"][p_id] = 0
+
+                        logger.info(f"Game aborted in room {current_room_code} due to insufficient players (< 2 players). State reset to waiting.")
+
+                        await broadcast_to_room(current_room_code, {
+                            "type": "GAME_ABORTED",
+                            "message": "其他玩家已離開，人數不足無法繼續遊戲",
+                            "room_state": get_room_state(current_room_code)
+                        })
+                    elif room["status"] == "playing" and len(room["answers"]) >= len(room["players"]) and len(room["players"]) > 0:
+                        # Check if all remaining players submitted answer
                         await evaluate_and_advance_question(current_room_code)
