@@ -283,7 +283,10 @@ async def evaluate_and_advance_question(room_code: str):
     # Wait 5.0 seconds so players can comfortably view the round result
     await asyncio.sleep(5.0)
 
-    if room_code not in rooms or room["status"] != "question_result" or len(room["players"]) < 2:
+    if room_code not in rooms:
+        return
+    room = rooms[room_code]
+    if room["status"] != "question_result" or len(room["players"]) < 2:
         return
 
     # Advance to next question or end game
