@@ -46,7 +46,14 @@ sequenceDiagram
     Client->>Server: ws.send: SUBMIT_ANSWER (送出選擇)
     Note over Server: 當所有人答完
     Server-->>Client: 廣播: QUESTION_RESULT (公佈正解與下題)
+
+    Note over Client,Server: 4. 異常處理與防護機制 (玩家中途離線)
+    alt 一般玩家離開 (剩餘人數 >= 2)
+        Server-->>Client: 廣播: PLAYER_LEFT (更新剩餘玩家名單與分數)
+    else 觸發熔斷 (主頻率離開 OR 剩餘人數 < 2)
+        Server-->>Client: 廣播: GAME_ABORTED (重置房間為 waiting，退回大廳)
+    end
     
-    Note over Client,Server: 4. 遊戲結束
+    Note over Client,Server: 5. 遊戲結束
     Server-->>Client: 廣播: GAME_OVER (最終排行榜與分析)
 ```
