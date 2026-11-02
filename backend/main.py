@@ -521,6 +521,14 @@ async def websocket_endpoint(websocket: WebSocket):
                     await websocket.send_text(json.dumps({"type": "ERROR", "message": "僅房主可開始遊戲"}))
                     continue
 
+                if len(room["players"]) < 2:
+                    logger.warning(f"Failed to start game in room {current_room_code}: Insufficient players (< 2 players)")
+                    await websocket.send_text(json.dumps({
+                        "type": "ERROR",
+                        "message": "人數不足，至少需要 2 人才能開始遊戲"
+                    }))
+                    continue
+
                 if not room["target_user_id"]:
                     await websocket.send_text(json.dumps({"type": "ERROR", "message": "請先指定主頻率再開始遊戲"}))
                     continue

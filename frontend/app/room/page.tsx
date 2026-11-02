@@ -240,6 +240,7 @@ function RoomLobbyContent() {
   // WebSocket & State
   const [isConnected, setIsConnected] = useState(false);
   const [hasConnected, setHasConnected] = useState(false);
+  const [isTimedOut, setIsTimedOut] = useState(false);
   const [playerId, setPlayerId] = useState<string | null>(null);
   const [roomState, setRoomState] = useState<RoomState | null>(null);
   const [lastQuestionResult, setLastQuestionResult] = useState<QuestionResult | null>(null);
@@ -252,6 +253,7 @@ function RoomLobbyContent() {
 
   const socketRef = useRef<WebSocket | null>(null);
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const hasReceivedRoomState = useRef<boolean>(false);
 
   // Dynamic countdown timer for single question result state
   useEffect(() => {
@@ -265,6 +267,15 @@ function RoomLobbyContent() {
 
   // Initialize WebSocket connection
   useEffect(() => {
+    let timeoutTimer: NodeJS.Timeout | null = null;
+
+    // 10-second timeout to receive room_state
+    timeoutTimer = setTimeout(() => {
+      if (!hasReceivedRoomState.current) {
+        setIsTimedOut(true);
+      }
+    }, 10000);
+
     const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000/ws";
     const ws = new WebSocket(wsUrl);
     socketRef.current = ws;
@@ -300,6 +311,13 @@ function RoomLobbyContent() {
       try {
         const data = JSON.parse(event.data);
         const type = data.type;
+
+        if (data.room_state) {
+          hasReceivedRoomState.current = true;
+          if (timeoutTimer) {
+            clearTimeout(timeoutTimer);
+          }
+        }
 
         if (type === "ROOM_CREATED") {
           setPlayerId(data.player_id);
@@ -344,11 +362,23 @@ function RoomLobbyContent() {
       }
     };
 
+    ws.onerror = () => {
+      if (!hasReceivedRoomState.current) {
+        setIsTimedOut(true);
+      }
+    };
+
     ws.onclose = () => {
       setIsConnected(false);
+      if (!hasReceivedRoomState.current) {
+        setIsTimedOut(true);
+      }
     };
 
     return () => {
+      if (timeoutTimer) {
+        clearTimeout(timeoutTimer);
+      }
       ws.close();
     };
   }, [roomCode, isHostParam, currentUserName, currentUserAvatar, relationshipParam]);
@@ -462,8 +492,8 @@ function RoomLobbyContent() {
 
   return (
     <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-5 sm:p-8 space-y-6 animate-fadeIn transition-all">
-      {/* Full-Screen Disconnect Overlay Modal */}
-      {hasConnected && !isConnected && (
+      {/* Full-Screen Disconnect Overlay Modal (when disconnected after initial connection succeeded and roomState exists) */}
+      {hasConnected && !isConnected && roomState && (
         <div className="fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-sm w-full text-center space-y-4">
             <div className="text-4xl animate-bounce">⚠️</div>
@@ -500,6 +530,67 @@ function RoomLobbyContent() {
               確定
             </button>
           </div>
+        </div>
+      )}
+
+      {/* STATE 0: INITIAL LOADING OR TIMEOUT ERROR (When roomState is null) */}
+      {!roomState && !errorMsg && (
+        <div className="py-12 sm:py-16 text-center space-y-6 animate-fadeIn">
+          {isTimedOut ? (
+            /* Timeout or Connection Failure State */
+            <div className="space-y-5 max-w-md mx-auto">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-3xl animate-bounce">
+                ⚠️
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold text-slate-100">連線逾時 / 失敗</h3>
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  連線失敗，請檢查伺服器狀態或網路連線。
+                </p>
+              </div>
+
+              <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
+                <button
+                  type="button"
+                  onClick={() => window.location.reload()}
+                  className="bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2"
+                >
+                  <span>🔄</span>
+                  <span>重新連線</span>
+                </button>
+                <Link
+                  href="/"
+                  className="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 px-6 rounded-xl border border-slate-700 transition-colors text-sm flex items-center justify-center gap-2"
+                >
+                  <span>🏠</span>
+                  <span>返回首頁</span>
+                </Link>
+              </div>
+            </div>
+          ) : (
+            /* Elegant Spinner & Pulse Loading Component */
+            <div className="space-y-5 max-w-sm mx-auto">
+              <div className="relative w-16 h-16 mx-auto flex items-center justify-center">
+                <div className="absolute inset-0 rounded-full border-4 border-indigo-500/20 animate-pulse" />
+                <div className="w-12 h-12 rounded-full border-4 border-transparent border-t-indigo-500 border-r-purple-500 animate-spin" />
+                <div className="absolute text-xl">📡</div>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-base font-bold text-slate-200">
+                  {isConnected ? "正在同步房間狀態..." : "正在與伺服器建立連線..."}
+                </h3>
+                <p className="text-xs text-slate-400 animate-pulse">
+                  {isConnected ? "正在同步房間狀態，請稍候..." : "正在努力連線中，請稍候..."}
+                </p>
+              </div>
+
+              <div className="flex justify-center items-center gap-1.5 text-[11px] text-slate-500 font-mono">
+                <span>房號:</span>
+                <span className="font-bold text-indigo-400">{roomCode}</span>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -685,11 +776,20 @@ function RoomLobbyContent() {
 
               <button
                 onClick={handleStartGame}
-                disabled={!roomState.target_user_id}
+                disabled={roomState.players.length < 2 || !roomState.target_user_id}
                 className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 disabled:opacity-40 disabled:cursor-not-allowed text-white font-extrabold py-3.5 px-6 rounded-xl shadow-lg transition-all transform active:scale-[0.99] flex items-center justify-center gap-2 text-base"
               >
-                <span>🚀</span>
-                <span>開始遊戲</span>
+                {roomState.players.length < 2 ? (
+                  <>
+                    <span className="animate-pulse">⏳</span>
+                    <span>等待其他玩家加入中 ({roomState.players.length}/10)...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>🚀</span>
+                    <span>開始遊戲</span>
+                  </>
+                )}
               </button>
             </div>
           ) : (
@@ -1226,7 +1326,18 @@ function RoomLobbyContent() {
 export default function RoomPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-4 sm:p-6">
-      <Suspense fallback={<div className="text-slate-400">載入大廳中...</div>}>
+      <Suspense
+        fallback={
+          <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-8 sm:p-12 text-center animate-fadeIn">
+            <div className="relative w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border-4 border-indigo-500/20 animate-pulse" />
+              <div className="w-12 h-12 rounded-full border-4 border-transparent border-t-indigo-500 border-r-purple-500 animate-spin" />
+              <div className="absolute text-xl">⏳</div>
+            </div>
+            <p className="text-sm font-semibold text-slate-300">載入遊戲大廳中...</p>
+          </div>
+        }
+      >
         <RoomLobbyContent />
       </Suspense>
     </main>

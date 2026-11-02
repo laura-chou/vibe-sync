@@ -129,6 +129,30 @@ def test_websocket_full_game_flow():
         assert room_state["scores"][host_id] == 1
         assert room_state["scores"][player_id] == 0
 
+def test_start_game_fails_with_fewer_than_two_players():
+    client = TestClient(app)
+    with client.websocket_connect("/ws") as host_ws:
+        # Create room as single host player
+        host_ws.send_json({
+            "type": "CREATE_ROOM",
+            "player_name": "Lone Host"
+        })
+        res = host_ws.receive_json()
+        room_code = res["room_code"]
+        host_id = res["player_id"]
+
+        # Set target user to self
+        host_ws.send_json({"type": "SELECT_TARGET", "target_user_id": host_id})
+        _t = host_ws.receive_json()
+
+        # Try to start game with only 1 player in room
+        host_ws.send_json({"type": "START_GAME"})
+        err = host_ws.receive_json()
+
+        assert err["type"] == "ERROR"
+        assert err["message"] == "人數不足，至少需要 2 人才能開始遊戲"
+        assert rooms[room_code]["status"] == "waiting"
+
 def test_join_room_during_game():
     client = TestClient(app)
     with client.websocket_connect("/ws") as host_ws:
