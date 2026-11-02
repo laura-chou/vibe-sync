@@ -362,17 +362,8 @@ function RoomLobbyContent() {
       }
     };
 
-    ws.onerror = () => {
-      if (!hasReceivedRoomState.current) {
-        setIsTimedOut(true);
-      }
-    };
-
     ws.onclose = () => {
       setIsConnected(false);
-      if (!hasReceivedRoomState.current) {
-        setIsTimedOut(true);
-      }
     };
 
     return () => {
@@ -549,18 +540,10 @@ function RoomLobbyContent() {
                 </p>
               </div>
 
-              <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
-                <button
-                  type="button"
-                  onClick={() => window.location.reload()}
-                  className="bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2"
-                >
-                  <span>🔄</span>
-                  <span>重新連線</span>
-                </button>
+              <div className="pt-2 flex justify-center">
                 <Link
                   href="/"
-                  className="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 px-6 rounded-xl border border-slate-700 transition-colors text-sm flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto min-w-[160px] bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 px-6 rounded-xl border border-slate-700 transition-colors text-sm flex items-center justify-center gap-2"
                 >
                   <span>🏠</span>
                   <span>返回首頁</span>
@@ -782,7 +765,7 @@ function RoomLobbyContent() {
                 {roomState.players.length < 2 ? (
                   <>
                     <span className="animate-pulse">⏳</span>
-                    <span>等待其他玩家加入中 ({roomState.players.length}/10)...</span>
+                    <span>等待其他玩家加入中</span>
                   </>
                 ) : (
                   <>
