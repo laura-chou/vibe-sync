@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const AVATARS = ["🦊", "🦝", "🦄", "🐨", "🐼", "🐔", "🐲", "🐯", "🐰", "🐻"];
+const AVATARS = ["🦊", "🐴", "🦄", "🐨", "🐼", "🐔", "🦁", "🐯", "🐰", "🐻"];
 
 export default function Home() {
   const router = useRouter();
