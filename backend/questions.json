@@ -4921,10 +4921,10 @@
   },
   {
     "id": 616,
-    "text": "選一個適合慢慢觀察的地方，{target_name}會去哪？",
-    "option_a": "植物溫室",
-    "option_b": "港口",
-    "option_c": "火車站",
+    "text": "如果想找個地方慢慢待著、觀察周遭的人與風景，{target_name}會選哪一種？",
+    "option_a": "安靜的植物溫室",
+    "option_b": "熱鬧的港口",
+    "option_c": "人來人往的火車站",
     "category": "new_friends"
   },
   {
@@ -4940,7 +4940,7 @@
     "text": "若要在不用上班的假日午後散步放鬆大腦，哪一種天氣最適合 {target_name}？",
     "option_a": "微雨綿綿",
     "option_b": "微風涼爽的晴天",
-    "option_c": "起晨的清晨",
+    "option_c": "涼爽無雨的陰天",
     "category": "new_friends"
   },
   {
